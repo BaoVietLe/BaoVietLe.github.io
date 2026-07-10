@@ -29,10 +29,6 @@
         }
         body { font-family: 'UEH', sans-serif; background-color: #ffffff; }
 
-        /* ==========================================
-           CẤU HÌNH CSS MẪU CHO 5 HEADINGS (Theo yêu cầu)
-           Bạn có thể đổi size, màu sắc ở đây và gọi class="heading-1" trong HTML
-           ========================================== */
         .heading-1 { font-family: 'UEH', sans-serif; font-size: 32px; font-weight: bold; text-transform: uppercase; line-height: 1.2; margin-bottom: 15px;}
         .heading-2 { font-family: 'UEH', sans-serif; font-size: 20px; font-weight: bold; color: var(--ueh-gray); margin-bottom: 12px;}
         .heading-3 { font-family: 'UEH', sans-serif; font-size: 18px; font-weight: 500; color: var(--ueh-teal-light); }
@@ -66,21 +62,26 @@
 </head>
 <body class="antialiased text-gray-800">
 
-    <header class="bg-[#005b64] text-white">
-        <div class="container mx-auto px-4 lg:px-8 max-w-7xl h-14 flex items-center justify-between">
-            <div class="flex items-center">
-                <img src="https://tuyensinh.ueh.edu.vn/wp-content/uploads/2021/03/UEH-Top-501-THE-01-1-1536x423.png" alt="UEH" class="h-10 object-contain">
-            </div>
-            <nav class="hidden lg:flex space-x-6 text-sm font-semibold">
-                <a href="#" class="hover:text-gray-300 flex items-center">Chương trình đào tạo <i class="fas fa-chevron-down ml-1 text-[10px]"></i></a>
-                <a href="#" class="hover:text-gray-300 flex items-center">Có thể bạn quan tâm <i class="fas fa-chevron-down ml-1 text-[10px]"></i></a>
-                <a href="#" class="hover:text-gray-300">Xét tuyển trực tuyến</a>
-                <a href="#" class="hover:text-gray-300">UEH Shop</a>
-                <a href="#" class="hover:text-gray-300">Đăng ký tư vấn</a>
-                <a href="#" class="hover:text-gray-300 text-lg ml-2"><i class="fas fa-search"></i></a>
-            </nav>
+   <header class="bg-[#005b64] text-white">
+    <div class="container mx-auto px-4 lg:px-8 max-w-7xl h-14 flex items-center justify-between">
+        <div class="flex items-center">
+            <img src="https://tuyensinh.ueh.edu.vn/wp-content/uploads/2021/03/UEH-Top-501-THE-01-1-1536x423.png" alt="UEH" class="h-10 object-contain">
         </div>
-    </header>
+        <nav class="flex items-center space-x-6 text-sm font-semibold">
+            <a href="#" class="hover:text-gray-300 hidden lg:flex items-center">Chương trình đào tạo <i class="fas fa-chevron-down ml-1 text-[10px]"></i></a>
+            <a href="#" class="hover:text-gray-300 hidden lg:flex items-center">Có thể bạn quan tâm <i class="fas fa-chevron-down ml-1 text-[10px]"></i></a>
+            <a href="#" class="hover:text-gray-300 hidden lg:flex">Xét tuyển trực tuyến</a>
+            
+            <!-- Cờ song ngữ đã đưa vào đây, trước icon tìm kiếm -->
+            <div class="flex space-x-2 mr-4">
+                <img src="https://flagcdn.com/w20/vn.png" alt="VN" class="cursor-pointer border border-white">
+                <img src="https://flagcdn.com/w20/gb.png" alt="EN" class="cursor-pointer opacity-50 hover:opacity-100">
+            </div>
+
+            <a href="#" class="hover:text-gray-300 text-lg"><i class="fas fa-search"></i></a>
+        </nav>
+    </div>
+</header>
 
     <section class="border-b border-gray-100 py-6">
         <div class="container mx-auto px-4 lg:px-8 max-w-7xl flex flex-col md:flex-row items-center justify-between gap-4">
@@ -104,21 +105,23 @@
 
     <main class="container mx-auto px-4 lg:px-8 py-8 max-w-7xl flex flex-col lg:flex-row gap-10">
         
-        <aside class="w-full lg:w-64 flex-shrink-0">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="heading-2 mb-0">Bộ lọc tìm kiếm</h2>
-                <a href="javascript:void(0)" onclick="clearFilters()" class="text-[13px] text-gray-400 hover:text-[#0B7681]">Xóa bộ lọc</a>
-            </div>
-            
-            <div class="space-y-4">
-                <div>
-                    <label class="block text-sm text-gray-500 mb-1">Tôi đang học</label>
-                    <select id="filter1" onchange="triggerSearch()" class="custom-select w-full text-[13px] text-gray-600 px-3 outline-none">
-                        <option value="">Tất cả</option>
-                        <option value="THPT">Học sinh THPT</option>
-                        <option value="DaiHoc">Sinh viên Đại học</option>
-                    </select>
-                </div>
+       <aside class="w-full lg:w-64 flex-shrink-0">
+    <h2 class="heading-2 mb-2">Bộ lọc tìm kiếm</h2>
+    
+    <!-- "Xóa bộ lọc" được đưa xuống riêng 1 hàng -->
+    <div class="mb-6">
+        <a href="javascript:void(0)" onclick="clearFilters()" class="text-[13px] text-[#0B7681] hover:underline">Xóa bộ lọc</a>
+    </div>
+    
+    <div class="space-y-4">
+        <div>
+            <label class="block text-sm text-gray-500 mb-1">Tôi đang học</label>
+            <select id="filter1" onchange="triggerSearch()" class="custom-select w-full text-[13px] text-gray-600 px-3 outline-none">
+                <option value="">Tất cả</option>
+                <option value="THPT">Học sinh THPT</option>
+                <option value="DaiHoc">Sinh viên Đại học</option>
+            </select>
+        </div>
                 <div>
                     <label class="block text-sm text-gray-500 mb-1">Tôi muốn học</label>
                     <select id="filter2" onchange="triggerSearch()" class="custom-select w-full text-[13px] text-gray-600 px-3 outline-none">
