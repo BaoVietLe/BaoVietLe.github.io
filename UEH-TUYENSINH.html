@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style id="elementor-pro-custom-fonts-inline-css">
-        /* Cấu hình Font SVN-Poppins gốc từ file của bạn */
         @font-face { font-family: 'UEH'; font-style: normal; font-weight: normal; font-display: auto; src: url('https://tuyensinh.ueh.edu.vn/wp-content/uploads/2022/03/SVN-Poppins.ttf') format('truetype'); }
         @font-face { font-family: 'UEH'; font-style: normal; font-weight: 900; font-display: auto; src: url('https://tuyensinh.ueh.edu.vn/wp-content/uploads/2022/03/SVN-PoppinsBlack.ttf') format('truetype'); }
         @font-face { font-family: 'UEH'; font-style: normal; font-weight: bold; font-display: auto; src: url('https://tuyensinh.ueh.edu.vn/wp-content/uploads/2022/03/SVN-PoppinsBold.ttf') format('truetype'); }
@@ -254,9 +253,6 @@
 
 
     <script>
-        /** * 1. FILE DATA: TIN BÀI (Giả lập file js riêng)
-         * - Sẽ phân trang 10 bài / trang.
-         */
         const dataTinBai = [];
         // Tạo 98 bài viết mẫu để test phân trang
         for (let i = 1; i <= 98; i++) {
@@ -270,11 +266,7 @@
             });
         }
 
-        /** * 2. FILE DATA: NGÀNH HỌC (Giả lập file js riêng)
-         * - Sẽ phân trang 20 bài / trang (2 cột).
-         */
         const dataNganhHoc = [];
-        // Tạo 23 ngành mẫu
         for (let i = 1; i <= 23; i++) {
             dataNganhHoc.push({
                 id: i,
@@ -286,10 +278,6 @@
                 keywords: "công nghệ kỹ thuật"
             });
         }
-
-        /**
-         * 3. LOGIC XỬ LÝ CHÍNH
-         */
         const state = {
             currentTab: 'news', // 'news' | 'majors'
             currentPage: 1,
