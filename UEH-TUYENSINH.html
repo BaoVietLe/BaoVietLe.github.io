@@ -2,13 +2,14 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="profile" href="http://gmpg.org/xfn/11">
-    <title>Search – CỔNG TUYỂN SINH UEH</title>
-    <meta name="robots" content="max-image-preview:large">
-    <link rel="alternate" type="application/rss+xml" title="Dòng thông tin CỔNG TUYỂN SINH UEH »" href="https://tuyensinh.ueh.edu.vn/feed/">
-    <link rel="alternate" type="application/rss+xml" title="CỔNG TUYỂN SINH UEH » Dòng bình luận" href="https://tuyensinh.ueh.edu.vn/comments/feed/">
-    
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<title>Search – CỔNG TUYỂN SINH UEH</title>
+<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Dòng thông tin CỔNG TUYỂN SINH UEH »" href="https://tuyensinh.ueh.edu.vn/feed/">
+<link rel="alternate" type="application/rss+xml" title="CỔNG TUYỂN SINH UEH » Dòng bình luận" href="https://tuyensinh.ueh.edu.vn/comments/feed/">
+<link rel="alternate" title="oNhúng (JSON)" type="application/json+oembed" href="https://tuyensinh.ueh.edu.vn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftuyensinh.ueh.edu.vn%2Fsearch%2F">
+<link rel="alternate" title="oNhúng (XML)" type="text/xml+oembed" href="https://tuyensinh.ueh.edu.vn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftuyensinh.ueh.edu.vn%2Fsearch%2F&amp;format=xml">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
@@ -25,7 +26,7 @@
             --ueh-teal-light: #0B7681;
             --ueh-orange: #F26F33;
             --ueh-gray: #5F646F;
-            --ueh-red: #da291c;
+            --ueh-red: #0B7681;
         }
         body { font-family: 'UEH', sans-serif; background-color: #ffffff; }
 
@@ -98,8 +99,6 @@
         
        <aside class="w-full lg:w-64 flex-shrink-0">
     <h2 class="heading-2 mb-2">Bộ lọc tìm kiếm</h2>
-    
-    <!-- "Xóa bộ lọc" được đưa xuống riêng 1 hàng -->
     <div class="mb-6">
         <a href="javascript:void(0)" onclick="clearFilters()" class="text-[13px] text-[#0B7681] hover:underline">Xóa bộ lọc</a>
     </div>
@@ -109,17 +108,22 @@
             <label class="block text-sm text-gray-500 mb-1">Tôi đang học</label>
             <select id="filter1" onchange="triggerSearch()" class="custom-select w-full text-[13px] text-gray-600 px-3 outline-none">
                 <option value="">Tất cả</option>
-                <option value="THPT">Học sinh THPT</option>
-                <option value="DaiHoc">Sinh viên Đại học</option>
+                <option value="THPT">Cao đẳng</option>
+                <option value="DaiHoc">Đại học</option>
+                <option value="DaiHoc">Thạc sĩ</option>
+                <option value="DaiHoc">THPT</option>
+                <option value="DaiHoc">Trung cấp</option>
             </select>
         </div>
                 <div>
                     <label class="block text-sm text-gray-500 mb-1">Tôi muốn học</label>
                     <select id="filter2" onchange="triggerSearch()" class="custom-select w-full text-[13px] text-gray-600 px-3 outline-none">
                         <option value="">Tất cả</option>
-                        <option value="KinhDoanh">Kinh doanh</option>
-                        <option value="CongNghe">Công nghệ</option>
-                        <option value="Luat">Luật</option>
+                        <option value="KinhDoanh">Chứng chỉ ngắn hạn</option>
+                        <option value="KinhDoanh">Cử nhân Đại học</option>
+                        <option value="KinhDoanh">Liên kết quốc tế</option>
+                        <option value="CongNghe">Thạc sĩ</option>
+                        <option value="Luat">Tiến sĩ</option>
                     </select>
                 </div>
                 <div>
@@ -127,7 +131,8 @@
                     <select id="filter3" onchange="triggerSearch()" class="custom-select w-full text-[13px] text-gray-600 px-3 outline-none">
                         <option value="">Tất cả</option>
                         <option value="ChinhQuy">Đại học chính quy</option>
-                        <option value="SauDaiHoc">Sau Đại học</option>
+                        <option value="SauDaiHoc">Khóa ngắn hạn</option>
+                        <option value="SauDaiHoc">Vừa học vừa </option>
                     </select>
                 </div>
                 <div>
