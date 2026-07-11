@@ -563,26 +563,27 @@
     const titleEl = document.getElementById('sectionTitle');
 
     if (tabName === 'news') {
-        tabNews.className = "flex items-center justify-between border-2 border-[#0B7681] rounded-full px-5 lg:px-6 py-2 h-[56px] w-[250px] bg-white cursor-pointer tab-active-news";
+        tabNews.className = "flex items-center justify-between border-2 border-[#0B7681] rounded-full px-5 py-2 h-[56px] w-full md:w-[250px] shrink-0 bg-white cursor-pointer tab-active-news";
         tabNews.querySelector('i').classList.add('text-[#0B7681]');
         
-        tabMajors.className = "flex items-center justify-between border border-gray-300 rounded-full px-5 lg:px-6 py-2 h-[56px] w-[250px] bg-white cursor-pointer text-gray-400 hover:border-[#F26F33]";
+        tabMajors.className = "flex items-center justify-between border border-gray-300 rounded-full px-5 py-2 h-[56px] w-full md:w-[250px] shrink-0 bg-white cursor-pointer text-gray-400 hover:border-[#F26F33]";
         tabMajors.querySelector('div').classList.remove('text-[#F26F33]');
         tabMajors.querySelector('i').classList.remove('text-[#F26F33]');
         
         titleEl.innerHTML = `<span class="text-[#0B7681]">TIN</span> <span class="text-[#F26F33]">TUYỂN SINH</span>`;
     } else {
-        tabMajors.className = "flex items-center justify-between border-2 border-[#F26F33] rounded-full px-5 lg:px-6 py-2 h-[56px] w-[250px] bg-white cursor-pointer tab-active-major";
+        tabMajors.className = "flex items-center justify-between border-2 border-[#F26F33] rounded-full px-5 py-2 h-[56px] w-full md:w-[250px] shrink-0 bg-white cursor-pointer tab-active-major";
         tabMajors.querySelector('i').classList.add('text-[#F26F33]');
         
-        tabNews.className = "flex items-center justify-between border border-gray-300 rounded-full px-5 lg:px-6 py-2 h-[56px] w-[250px] bg-white cursor-pointer text-gray-400 hover:border-[#0B7681]";
+        tabNews.className = "flex items-center justify-between border border-gray-300 rounded-full px-5 py-2 h-[56px] w-full md:w-[250px] shrink-0 bg-white cursor-pointer text-gray-400 hover:border-[#0B7681]";
         tabNews.querySelector('div').classList.remove('text-[#0B7681]');
         tabNews.querySelector('i').classList.remove('text-[#0B7681]');
         
         titleEl.innerHTML = `<span class="text-[#0B7681]">NGÀNH</span> <span class="text-[#F26F33]">HỌC</span>`;
     }
-        renderData();
-    }
+    
+    renderData();
+}
 
     function nextPage() {
         const itemsPerPage = state.currentTab === 'news' ? 10 : 20;
