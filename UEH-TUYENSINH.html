@@ -2,14 +2,12 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<title>Search – CỔNG TUYỂN SINH UEH</title>
-<meta name="robots" content="max-image-preview:large">
-<link rel="alternate" type="application/rss+xml" title="Dòng thông tin CỔNG TUYỂN SINH UEH »" href="https://tuyensinh.ueh.edu.vn/feed/">
-<link rel="alternate" type="application/rss+xml" title="CỔNG TUYỂN SINH UEH » Dòng bình luận" href="https://tuyensinh.ueh.edu.vn/comments/feed/">
-<link rel="alternate" title="oNhúng (JSON)" type="application/json+oembed" href="https://tuyensinh.ueh.edu.vn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftuyensinh.ueh.edu.vn%2Fsearch%2F">
-<link rel="alternate" title="oNhúng (XML)" type="text/xml+oembed" href="https://tuyensinh.ueh.edu.vn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftuyensinh.ueh.edu.vn%2Fsearch%2F&amp;format=xml">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <title>Search – CỔNG TUYỂN SINH UEH</title>
+    <meta name="robots" content="max-image-preview:large">
+    <link rel="alternate" type="application/rss+xml" title="Dòng thông tin CỔNG TUYỂN SINH UEH »" href="https://tuyensinh.ueh.edu.vn/feed/">
+    <link rel="alternate" type="application/rss+xml" title="CỔNG TUYỂN SINH UEH » Dòng bình luận" href="https://tuyensinh.ueh.edu.vn/comments/feed/">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
@@ -34,7 +32,6 @@
         .heading-2 { font-family: 'UEH', sans-serif; font-size: 20px; font-weight: bold; color: var(--ueh-gray); margin-bottom: 12px;}
         .heading-3 { font-family: 'UEH', sans-serif; font-size: 18px; font-weight: 500; color: var(--ueh-teal-light); }
         .heading-4 { font-family: 'UEH', sans-serif; font-size: 16px; font-weight: normal; color: var(--ueh-gray); }
-        .heading-5 { font-family: 'UEH', sans-serif; font-size: 14px; font-weight: normal; color: #5F646F; font-style: italic; }
 
         .custom-select {
             appearance: none;
@@ -56,10 +53,15 @@
         .gradient-box {
             background: linear-gradient(90deg, rgba(11, 118, 129, 0.8) 0%, rgba(11, 118, 129, 0.8) 100%), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
         }
-	.text-ueh-teal { color: var(--ueh-teal); }
-    .text-ueh-orange { color: var(--ueh-orange); }
-    .bg-ueh-teal { background-color: var(--ueh-teal); }
-    .bg-ueh-dark { background-color: #004a52; }
+        
+        /* Ẩn scrollbar cho khu vực SDG */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
     </style>
 </head>
 <body class="antialiased text-gray-800">
@@ -69,592 +71,515 @@
         <div class="flex items-center">
             <img src="https://tuyensinh.ueh.edu.vn/wp-content/uploads/2021/03/UEH-Top-501-THE-01-1-1536x423.png" alt="UEH" class="h-10 object-contain">
         </div>
-        <nav class="flex items-center space-x-6 text-sm font-semibold">
+        <nav class="flex items-center space-x-4 lg:space-x-6 text-sm font-semibold">
             <a href="#" class="hover:text-gray-300 hidden lg:flex items-center">Chương trình đào tạo <i class="fas fa-chevron-down ml-1 text-[10px]"></i></a>
             <a href="#" class="hover:text-gray-300 hidden lg:flex items-center">Có thể bạn quan tâm <i class="fas fa-chevron-down ml-1 text-[10px]"></i></a>
             <a href="#" class="hover:text-gray-300 hidden lg:flex">Xét tuyển trực tuyến</a>
             <a href="#" class="hover:text-gray-300 hidden lg:flex">UEH Shop</a>
             <a href="#" class="hover:text-gray-300 hidden lg:flex">Đăng ký tư vấn</a>
-            <div class="flex space-x-2 mr-4">
-                <img src="https://flagcdn.com/w20/vn.png" alt="VN" class="cursor-pointer border border-white">
-                <img src="https://flagcdn.com/w20/gb.png" alt="EN" class="cursor-pointer opacity-50 hover:opacity-100">
+            <div class="flex space-x-2 mr-2 lg:mr-4">
+                <img src="https://flagcdn.com/w20/vn.png" alt="VN" class="cursor-pointer border border-white h-4 w-6 object-cover">
+                <img src="https://flagcdn.com/w20/gb.png" alt="EN" class="cursor-pointer opacity-50 hover:opacity-100 h-4 w-6 object-cover">
             </div>
-            <a href="#" class="hover:text-gray-300 text-lg"><i class="fas fa-search"></i></a>
+            <a href="#" class="hover:text-gray-300 text-lg"><i class="fas fa-bars lg:hidden"></i><i class="fas fa-search hidden lg:inline-block"></i></a>
         </nav>
     </div>
 </header>
 
-    <section class="border-b border-gray-100 py-6">
+<section class="border-b border-gray-100 py-4 lg:py-6">
     <div class="container mx-auto px-4 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 w-full">
         <div class="w-full">
-            <div class="flex w-full border border-gray-300 rounded-sm overflow-hidden h-12">
-                <div class="flex items-center justify-center px-4 bg-white text-gray-400">
-                    <i class="fas fa-user-circle text-lg"></i>
+            <div class="flex w-full border border-gray-300 rounded-sm overflow-hidden h-10 lg:h-12">
+                <div class="flex items-center justify-center px-3 lg:px-4 bg-white text-gray-400">
+                    <i class="fas fa-user-circle text-base lg:text-lg"></i>
                 </div>
-                <input type="text" id="searchInput" placeholder="Tìm kiếm...." class="flex-grow focus:outline-none text-base px-2">
-                <button onclick="triggerSearch()" class="bg-[#003840] w-16 flex items-center justify-center text-white hover:bg-[#0B7681] transition">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm...." class="flex-grow focus:outline-none text-sm lg:text-base px-2">
+                <button onclick="triggerSearch()" class="bg-[#003840] w-12 lg:w-16 flex items-center justify-center text-white hover:bg-[#0B7681] transition">
                     <i class="fas fa-search"></i>
                 </button>
             </div>
         </div>
     </div>
 </section>
-    <main class="container mx-auto px-4 lg:px-8 py-8 max-w-7xl flex flex-col lg:flex-row gap-10">
+
+<main class="container mx-auto px-4 lg:px-8 py-6 lg:py-8 max-w-7xl flex flex-col lg:flex-row gap-8 lg:gap-10">
+    <aside class="w-full lg:w-64 flex-shrink-0">
+        <div class="flex justify-between items-center mb-2">
+            <h2 class="heading-2 !mb-0">Bộ lọc tìm kiếm</h2>
+            <a href="javascript:void(0)" onclick="clearFilters()" class="text-[13px] text-[#0B7681] hover:underline lg:hidden">Xóa bộ lọc</a>
+        </div>
+        <div class="mb-6 hidden lg:block">
+            <a href="javascript:void(0)" onclick="clearFilters()" class="text-[13px] text-[#0B7681] hover:underline">Xóa bộ lọc</a>
+        </div>
         
-       <aside class="w-full lg:w-64 flex-shrink-0">
-    <h2 class="heading-2 mb-2">Bộ lọc tìm kiếm</h2>
-    <div class="mb-6">
-        <a href="javascript:void(0)" onclick="clearFilters()" class="text-[13px] text-[#0B7681] hover:underline">Xóa bộ lọc</a>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-4">
+            <div>
+                <label class="block text-sm text-gray-500 mb-1">Tôi đang học</label>
+                <select id="filter1" onchange="triggerSearch()" class="custom-select w-full text-[13px] text-gray-600 px-3 outline-none">
+                    <option value="">Tất cả</option>
+                    <option value="THPT">Cao đẳng</option>
+                    <option value="DaiHoc">Đại học</option>
+                    <option value="ThacSi">Thạc sĩ</option>
+                    <option value="THPT">THPT</option>
+                    <option value="TrungCap">Trung cấp</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-sm text-gray-500 mb-1">Tôi muốn học</label>
+                <select id="filter2" onchange="triggerSearch()" class="custom-select w-full text-[13px] text-gray-600 px-3 outline-none">
+                    <option value="">Tất cả</option>
+                    <option value="CCNH">Chứng chỉ ngắn hạn</option>
+                    <option value="CuNhan">Cử nhân Đại học</option>
+                    <option value="LienKet">Liên kết quốc tế</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-sm text-gray-500 mb-1">Hệ đào tạo</label>
+                <select id="filter3" onchange="triggerSearch()" class="custom-select w-full text-[13px] text-gray-600 px-3 outline-none">
+                    <option value="">Tất cả</option>
+                    <option value="ChinhQuy">Đại học chính quy</option>
+                    <option value="NganHan">Khóa ngắn hạn</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-sm text-gray-500 mb-1">Lĩnh vực</label>
+                <select id="filter4" onchange="triggerSearch()" class="custom-select w-full text-[13px] text-gray-600 px-3 outline-none">
+                    <option value="">Tất cả</option>
+                    <option value="KinhTe">Kinh tế</option>
+                    <option value="QuanTri">Quản trị</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-sm text-gray-500 mb-1">Chương trình</label>
+                <select id="filter5" onchange="triggerSearch()" class="custom-select w-full text-[13px] text-gray-600 px-3 outline-none">
+                    <option value="">Tất cả</option>
+                    <option value="TienTien">Chương trình Tiên tiến</option>
+                    <option value="ChatLuongCao">Chất lượng cao</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mt-8 lg:mt-10">
+            <h2 class="heading-2 mb-3 lg:mb-4">Từ khóa tìm kiếm nổi bật</h2>
+            <div class="flex flex-wrap gap-2">
+                <span onclick="clickKeyword('Kinh doanh')" class="px-4 py-1.5 bg-gray-50 border border-gray-200 rounded-full text-[12px] lg:text-[13px] text-gray-500 cursor-pointer hover:bg-gray-100 hover:text-[#0B7681] transition">Kinh doanh</span>
+                <span onclick="clickKeyword('Quản trị')" class="px-4 py-1.5 bg-gray-50 border border-gray-200 rounded-full text-[12px] lg:text-[13px] text-gray-500 cursor-pointer hover:bg-gray-100 hover:text-[#0B7681] transition">Quản trị</span>
+                <span onclick="clickKeyword('Xu hướng')" class="px-4 py-1.5 bg-gray-50 border border-gray-200 rounded-full text-[12px] lg:text-[13px] text-gray-500 cursor-pointer hover:bg-gray-100 hover:text-[#0B7681] transition">Xu hướng</span>
+                <span onclick="clickKeyword('Công nghệ')" class="px-4 py-1.5 bg-gray-50 border border-gray-200 rounded-full text-[12px] lg:text-[13px] text-gray-500 cursor-pointer hover:bg-gray-100 hover:text-[#0B7681] transition">Công nghệ</span>
+            </div>
+        </div>
+    </aside>
+
+    <div class="flex-grow w-full overflow-hidden">
+        <div class="mb-6">
+            <h2 class="heading-2 mb-4">Tìm theo SDGs</h2>
+            
+            <!-- Vùng cuộn SDG kèm nút mũi tên -->
+            <div class="relative group">
+                <!-- Nút cuộn trái (mặc định ẩn) -->
+                <button id="sdg-btn-left" onclick="scrollSDGs(-300)" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 z-10 w-9 h-9 bg-white rounded-full border border-gray-200 shadow hover:bg-gray-50 transition hidden items-center justify-center">
+                    <i class="fas fa-chevron-left text-gray-600 text-sm"></i>
+                </button>
+
+                <!-- Thanh chứa danh sách SDG -->
+                <div id="sdg-container" class="flex gap-4 overflow-x-auto no-scrollbar scroll-smooth py-1 px-1">
+                    <!-- Các card SDG -->
+                    <div onclick="filterBySDG(1)" class="sdg-card flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#e5243b] transition flex-shrink-0 bg-white w-[230px]">
+                        <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-01.jpg" alt="SDG 1" class="w-10 h-10 object-contain rounded-sm">
+                        <div class="flex flex-col">
+                            <span class="text-[12px] text-gray-500">SDG 1</span>
+                            <span class="text-[13px] font-semibold text-gray-800 leading-tight">Xóa đói giảm nghèo</span>
+                        </div>
+                    </div>
+                    <div onclick="filterBySDG(2)" class="sdg-card flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#dda63a] transition flex-shrink-0 bg-white w-[230px]">
+                        <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-02.jpg" alt="SDG 2" class="w-10 h-10 object-contain rounded-sm">
+                        <div class="flex flex-col">
+                            <span class="text-[12px] text-gray-500">SDG 2</span>
+                            <span class="text-[13px] font-semibold text-gray-800 leading-tight">Xóa đói, đạt an ninh lương thực</span>
+                        </div>
+                    </div>
+                    <div onclick="filterBySDG(3)" class="sdg-card flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#4c9f38] transition flex-shrink-0 bg-white w-[230px]">
+                        <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-03.jpg" alt="SDG 3" class="w-10 h-10 object-contain rounded-sm">
+                        <div class="flex flex-col">
+                            <span class="text-[12px] text-gray-500">SDG 3</span>
+                            <span class="text-[13px] font-semibold text-gray-800 leading-tight">Sức khỏe và cuộc sống tốt</span>
+                        </div>
+                    </div>
+                    <div onclick="filterBySDG(4)" id="sdg-card-4" class="sdg-card flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#c5192d] transition flex-shrink-0 bg-white w-[230px]">
+                        <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-04.jpg" alt="SDG 4" class="w-10 h-10 object-contain rounded-sm">
+                        <div class="flex flex-col">
+                            <span class="text-[12px] text-gray-500">SDG 4</span>
+                            <span class="text-[13px] font-semibold text-gray-800 leading-tight">Giáo dục chất lượng</span>
+                        </div>
+                    </div>
+                    <div onclick="filterBySDG(5)" class="sdg-card flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#ff3a21] transition flex-shrink-0 bg-white w-[230px]">
+                        <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-05.jpg" alt="SDG 5" class="w-10 h-10 object-contain rounded-sm">
+                        <div class="flex flex-col">
+                            <span class="text-[12px] text-gray-500">SDG 5</span>
+                            <span class="text-[13px] font-semibold text-gray-800 leading-tight">Bình đẳng giới</span>
+                        </div>
+                    </div>
+                    <div onclick="filterBySDG(6)" class="sdg-card flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#26bde2] transition flex-shrink-0 bg-white w-[230px]">
+                        <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-06.jpg" alt="SDG 6" class="w-10 h-10 object-contain rounded-sm">
+                        <div class="flex flex-col">
+                            <span class="text-[12px] text-gray-500">SDG 6</span>
+                            <span class="text-[13px] font-semibold text-gray-800 leading-tight">Nước sạch và vệ sinh</span>
+                        </div>
+                    </div>
+                    <div onclick="filterBySDG(7)" class="sdg-card flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#fcc30b] transition flex-shrink-0 bg-white w-[230px]">
+                        <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-07.jpg" alt="SDG 7" class="w-10 h-10 object-contain rounded-sm">
+                        <div class="flex flex-col">
+                            <span class="text-[12px] text-gray-500">SDG 7</span>
+                            <span class="text-[13px] font-semibold text-gray-800 leading-tight">Năng lượng sạch, giá hợp lý</span>
+                        </div>
+                    </div>
+                    <div onclick="filterBySDG(8)" class="sdg-card flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#a21942] transition flex-shrink-0 bg-white w-[230px]">
+                        <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-08.jpg" alt="SDG 8" class="w-10 h-10 object-contain rounded-sm">
+                        <div class="flex flex-col">
+                            <span class="text-[12px] text-gray-500">SDG 8</span>
+                            <span class="text-[13px] font-semibold text-gray-800 leading-tight">Việc làm và tăng trưởng</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nút cuộn phải -->
+                <button id="sdg-btn-right" onclick="scrollSDGs(300)" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 lg:translate-x-3 z-10 w-9 h-9 bg-white rounded-full border border-gray-200 shadow hover:bg-gray-50 transition flex items-center justify-center">
+                    <i class="fas fa-chevron-right text-gray-600 text-sm"></i>
+                </button>
+            </div>
+        </div>
+
+        <p class="text-gray-500 text-[14px] lg:text-[15px] mb-6">
+            Đã tìm thấy <span id="totalResults" class="text-[#F26F33] font-bold text-base lg:text-lg">0</span> kết quả giống với từ khóa của bạn
+        </p>
+
+        <div class="flex flex-col sm:flex-row flex-wrap xl:flex-nowrap gap-4 mb-8 lg:mb-10">
+            <button onclick="switchTab('news')" id="tab-news" class="flex items-center justify-between border-2 border-[#0B7681] rounded-full px-5 lg:px-6 py-2 w-full sm:w-[calc(50%-0.5rem)] xl:w-56 bg-white cursor-pointer tab-active-news">
+                <div class="flex flex-col items-center flex-grow text-[#0B7681]">
+                    <span id="count-news" class="font-bold text-[20px] lg:text-[22px] leading-tight">0</span>
+                    <span class="text-[12px] lg:text-[13px] font-semibold">Tin tuyển sinh</span>
+                </div>
+                <i class="fas fa-chevron-right text-[#0B7681] text-xs"></i>
+            </button>
+
+            <button onclick="switchTab('majors')" id="tab-majors" class="flex items-center justify-between border border-gray-300 rounded-full px-5 lg:px-6 py-2 w-full sm:w-[calc(50%-0.5rem)] xl:w-56 bg-white cursor-pointer text-gray-400 hover:border-[#F26F33]">
+                <div class="flex flex-col items-center flex-grow">
+                    <span id="count-majors" class="font-bold text-[20px] lg:text-[22px] leading-tight">0</span>
+                    <span class="text-[12px] lg:text-[13px] font-semibold">Ngành học</span>
+                </div>
+                <i class="fas fa-chevron-right text-xs"></i>
+            </button>
+
+            <div class="gradient-box rounded-full px-4 lg:px-6 py-2 h-[56px] lg:h-[60px] w-full xl:flex-grow flex flex-col justify-center text-white sm:w-full">
+                <span class="font-bold text-center text-[13px] lg:text-[15px] leading-tight">Không có kết quả khớp</span>
+                <div class="flex justify-center text-[10px] lg:text-[11px] mt-0.5 gap-2 opacity-90">
+                    <span class="cursor-pointer hover:underline">Xem tất cả tin tuyển sinh &rarr;</span> |
+                    <span class="cursor-pointer hover:underline">Xem tất cả ngành học &rarr;</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-6 gap-4 sm:gap-0">
+            <h1 class="heading-1 !mb-0" id="sectionTitle">
+                <span class="text-[#0B7681]">TIN</span> <span class="text-[#F26F33]">TUYỂN SINH</span>
+            </h1>
+            <div class="flex flex-wrap sm:flex-nowrap items-center gap-2 lg:gap-3 pb-1 w-full sm:w-auto">
+                <select id="sortControl" onchange="triggerSearch()" class="appearance-none border border-gray-300 rounded-full pl-4 pr-8 py-1.5 lg:py-2 text-[13px] lg:text-[15px] font-medium text-gray-600 bg-white outline-none cursor-pointer shadow-sm hover:border-gray-400 w-full sm:w-auto" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23666\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><polyline points=\'6 9 12 15 18 9\'></polyline></svg>'); background-repeat: no-repeat; background-position: right 12px center; background-size: 14px;">
+                    <option value="newest">Sắp xếp theo (Mới nhất)</option>
+                    <option value="oldest">Cũ nhất</option>
+                </select>
+                
+                <button onclick="nextPage()" id="pageIndicatorBtn" class="border border-gray-300 rounded-full px-4 lg:px-5 py-1.5 lg:py-2 text-[13px] lg:text-[15px] font-medium text-gray-600 bg-white hover:bg-gray-50 shadow-sm transition whitespace-nowrap">
+                    Trang 1 <i class="fas fa-chevron-right text-[10px] lg:text-[12px] ml-1"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="resultContainer" class="w-full"></div>
+    </div>
+</main>
+
+<footer class="bg-[#005b64] text-white pt-10 pb-6 mt-10">
+    <div class="container mx-auto px-4 lg:px-8 max-w-7xl">
+        <h2 class="text-xl font-bold mb-6">Liên hệ bộ phận tuyển sinh</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8 text-[13px] lg:text-sm leading-loose">
+            <div>
+                <ul class="space-y-1">
+                    <li><a href="#" class="hover:text-gray-300 flex items-center"><i class="fas fa-globe mr-3 w-4"></i> Đại học Chính quy</a></li>
+                    <li><a href="#" class="hover:text-gray-300 flex items-center"><i class="fas fa-globe mr-3 w-4"></i> Đại học Vừa làm vừa học</a></li>
+                    <li><a href="#" class="hover:text-gray-300 flex items-center"><i class="fas fa-globe mr-3 w-4"></i> Sau Đại học</a></li>
+                    <li><a href="#" class="hover:text-gray-300 flex items-center"><i class="fab fa-facebook-f mr-3 w-4"></i> UEH Mekong</a></li>
+                    <li><a href="#" class="hover:text-gray-300 flex items-center"><i class="fas fa-leaf mr-3 w-4"></i> UEH Green Campus</a></li>
+                    <li><a href="#" class="hover:text-gray-300 flex items-center"><i class="fas fa-vr-cardboard mr-3 w-4"></i> UEH Virtual Tour</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <div class="flex items-start mb-2">
+                    <i class="fas fa-home mt-1.5 mr-3 w-4"></i>
+                    <p><span class="font-bold">Tại TP.HCM:</span> 59C Nguyễn Đình Chiểu, P.<br>Xuân Hòa, TP.HCM</p>
+                </div>
+                <div class="flex items-start">
+                    <i class="fas fa-phone-alt mt-1.5 mr-3 w-4"></i>
+                    <div>
+                        <p><span class="font-bold">ĐHCQ:</span> 0902.230.082 và 0941.230.082</p>
+                        <p><span class="font-bold">ĐHVLH:</span> 0938.527.438</p>
+                        <p><span class="font-bold">Thạc sĩ:</span> (028) 7306.1976 ext 3001</p>
+                        <p><span class="font-bold">Tiến sĩ:</span> (028) 7306.1976 ext 3008, 3010</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="flex items-start mb-4">
+                    <i class="fas fa-home mt-1.5 mr-3 w-4"></i>
+                    <p><span class="font-bold">Tại UEH Mekong (PHVL):</span> 01B Nguyễn<br>Trung Trực, phường Tân Hạnh, tỉnh Vĩnh<br>Long</p>
+                </div>
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-phone-alt mr-3 w-4"></i>
+                    <p class="font-bold">(027) 03.823.443 - 0899.002.939</p>
+                </div>
+                
+                <div class="flex space-x-4 ml-7 text-lg">
+                    <a href="#" class="hover:text-gray-300 transition"><i class="fas fa-globe"></i></a>
+                    <a href="#" class="hover:text-gray-300 transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-gray-300 transition"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="hover:text-gray-300 transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-gray-300 transition"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="flex justify-end -mt-6 mb-4">
+            <div class="w-8 h-8 rounded-full bg-black bg-opacity-20 flex items-center justify-center cursor-pointer hover:bg-opacity-40 transition" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <i class="fas fa-arrow-up"></i>
+            </div>
+        </div>
     </div>
     
-    <div class="space-y-4">
-        <div>
-            <label class="block text-sm text-gray-500 mb-1">Tôi đang học</label>
-            <select id="filter1" onchange="triggerSearch()" class="custom-select w-full text-[13px] text-gray-600 px-3 outline-none">
-                <option value="">Tất cả</option>
-                <option value="THPT">Cao đẳng</option>
-                <option value="DaiHoc">Đại học</option>
-                <option value="DaiHoc">Thạc sĩ</option>
-                <option value="DaiHoc">THPT</option>
-                <option value="DaiHoc">Trung cấp</option>
-            </select>
-        </div>
-                <div>
-                    <label class="block text-sm text-gray-500 mb-1">Tôi muốn học</label>
-                    <select id="filter2" onchange="triggerSearch()" class="custom-select w-full text-[13px] text-gray-600 px-3 outline-none">
-                        <option value="">Tất cả</option>
-                        <option value="KinhDoanh">Chứng chỉ ngắn hạn</option>
-                        <option value="KinhDoanh">Cử nhân Đại học</option>
-                        <option value="KinhDoanh">Liên kết quốc tế</option>
-                        <option value="CongNghe">Thạc sĩ</option>
-                        <option value="Luat">Tiến sĩ</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-sm text-gray-500 mb-1">Hệ đào tạo</label>
-                    <select id="filter3" onchange="triggerSearch()" class="custom-select w-full text-[13px] text-gray-600 px-3 outline-none">
-                        <option value="">Tất cả</option>
-                        <option value="ChinhQuy">Đại học chính quy</option>
-                        <option value="SauDaiHoc">Khóa ngắn hạn</option>
-                        <option value="SauDaiHoc">Vừa học vừa </option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-sm text-gray-500 mb-1">Lĩnh vực</label>
-                    <select id="filter4" onchange="triggerSearch()" class="custom-select w-full text-[13px] text-gray-600 px-3 outline-none">
-                        <option value="">Tất cả</option>
-                        <option value="KinhTe">Kinh tế</option>
-                        <option value="QuanTri">Quản trị</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-sm text-gray-500 mb-1">Chương trình</label>
-                    <select id="filter5" onchange="triggerSearch()" class="custom-select w-full text-[13px] text-gray-600 px-3 outline-none">
-                        <option value="">Tất cả</option>
-                        <option value="TienTien">Chương trình Tiên tiến</option>
-                        <option value="ChatLuongCao">Chất lượng cao</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="mt-10">
-                <h2 class="heading-2 mb-4">Từ khóa tìm kiếm nổi bật</h2>
-                <div class="flex flex-wrap gap-2">
-                    <span onclick="clickKeyword('Kinh doanh')" class="px-4 py-1.5 bg-gray-50 border border-gray-200 rounded-full text-[13px] text-gray-500 cursor-pointer hover:bg-gray-100 hover:text-[#0B7681] transition">Kinh doanh</span>
-                    <span onclick="clickKeyword('Quản trị')" class="px-4 py-1.5 bg-gray-50 border border-gray-200 rounded-full text-[13px] text-gray-500 cursor-pointer hover:bg-gray-100 hover:text-[#0B7681] transition">Quản trị</span>
-                    <span onclick="clickKeyword('Xu hướng')" class="px-4 py-1.5 bg-gray-50 border border-gray-200 rounded-full text-[13px] text-gray-500 cursor-pointer hover:bg-gray-100 hover:text-[#0B7681] transition">Xu hướng</span>
-                    <span onclick="clickKeyword('Công nghệ')" class="px-4 py-1.5 bg-gray-50 border border-gray-200 rounded-full text-[13px] text-gray-500 cursor-pointer hover:bg-gray-100 hover:text-[#0B7681] transition">Công nghệ</span>
-                </div>
-            </div>
-        </aside>
-
-        <div class="flex-grow w-full">
-            <div class="mb-6">
-                <h2 class="heading-2 mb-4">Tìm theo SDGs</h2>
-                <div class="flex gap-4 overflow-x-auto pb-2">
-                    <!-- SDG 1: Xóa đói giảm nghèo -->
-  <div onclick="filterBySDG(1)" id="sdg-card-1" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#e5243b] transition flex-shrink-0 bg-white">
-    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-01.jpg" alt="SDG 1" class="w-10 h-10 object-contain rounded-sm">
-    <div class="flex flex-col">
-      <span class="text-[12px] text-gray-500">SDG 1</span>
-      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Xóa đói giảm nghèo</span>
+    <div class="bg-[#004a52] text-center py-3 text-xs">
+        <p>Đại học Kinh tế Thành phố Hồ Chí Minh © 2025. All Rights Reserved.</p>
     </div>
-  </div>
+</footer>
 
-  <!-- SDG 2: Xóa đói, đạt được an ninh lương thực -->
-  <div onclick="filterBySDG(2)" id="sdg-card-2" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#dda63a] transition flex-shrink-0 bg-white">
-    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-02.jpg" alt="SDG 2" class="w-10 h-10 object-contain rounded-sm">
-    <div class="flex flex-col">
-      <span class="text-[12px] text-gray-500">SDG 2</span>
-      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Xóa đói, đạt an ninh lương thực</span>
-    </div>
-  </div>
+<script>
+    // Xử lý scroll SDG 
+    const sdgContainer = document.getElementById('sdg-container');
+    const btnLeft = document.getElementById('sdg-btn-left');
+    const btnRight = document.getElementById('sdg-btn-right');
 
-  <!-- SDG 3: Sức khỏe và cuộc sống tốt đẹp -->
-  <div onclick="filterBySDG(3)" id="sdg-card-3" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#4c9f38] transition flex-shrink-0 bg-white">
-    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-03.jpg" alt="SDG 3" class="w-10 h-10 object-contain rounded-sm">
-    <div class="flex flex-col">
-      <span class="text-[12px] text-gray-500">SDG 3</span>
-      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Sức khỏe và cuộc sống tốt</span>
-    </div>
-  </div>
+    function scrollSDGs(amount) {
+        sdgContainer.scrollBy({ left: amount, behavior: 'smooth' });
+    }
 
-  <!-- SDG 4: Giáo dục chất lượng -->
-  <div onclick="filterBySDG(4)" id="sdg-card-4" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#c5192d] transition flex-shrink-0 bg-white">
-    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-04.jpg" alt="SDG 4" class="w-10 h-10 object-contain rounded-sm">
-    <div class="flex flex-col">
-      <span class="text-[12px] text-gray-500">SDG 4</span>
-      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Giáo dục chất lượng</span>
-    </div>
-  </div>
+    // Ẩn/hiện nút scroll dựa theo vị trí trượt thực tế
+    sdgContainer.addEventListener('scroll', () => {
+        const isAtStart = sdgContainer.scrollLeft === 0;
+        const isAtEnd = sdgContainer.scrollLeft + sdgContainer.clientWidth >= sdgContainer.scrollWidth - 1;
 
-  <!-- SDG 5: Bình đẳng giới -->
-  <div onclick="filterBySDG(5)" id="sdg-card-5" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#ff3a21] transition flex-shrink-0 bg-white">
-    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-05.jpg" alt="SDG 5" class="w-10 h-10 object-contain rounded-sm">
-    <div class="flex flex-col">
-      <span class="text-[12px] text-gray-500">SDG 5</span>
-      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Bình đẳng giới</span>
-    </div>
-  </div>
+        btnLeft.style.display = isAtStart ? 'none' : 'flex';
+        btnRight.style.display = isAtEnd ? 'none' : 'flex';
+    });
 
-  <!-- SDG 6: Nước sạch và vệ sinh -->
-  <div onclick="filterBySDG(6)" id="sdg-card-6" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#26bde2] transition flex-shrink-0 bg-white">
-    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-06.jpg" alt="SDG 6" class="w-10 h-10 object-contain rounded-sm">
-    <div class="flex flex-col">
-      <span class="text-[12px] text-gray-500">SDG 6</span>
-      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Nước sạch và vệ sinh</span>
-    </div>
-  </div>
-
-  <!-- SDG 7: Năng lượng sạch và giá cả hợp lý -->
-  <div onclick="filterBySDG(7)" id="sdg-card-7" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#fcc30b] transition flex-shrink-0 bg-white">
-    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-07.jpg" alt="SDG 7" class="w-10 h-10 object-contain rounded-sm">
-    <div class="flex flex-col">
-      <span class="text-[12px] text-gray-500">SDG 7</span>
-      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Năng lượng sạch, giá hợp lý</span>
-    </div>
-  </div>
-
-  <!-- SDG 8: Việc làm bền vững và tăng trưởng kinh tế -->
-  <div onclick="filterBySDG(8)" id="sdg-card-8" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#a21942] transition flex-shrink-0 bg-white">
-    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-08.jpg" alt="SDG 8" class="w-10 h-10 object-contain rounded-sm">
-    <div class="flex flex-col">
-      <span class="text-[12px] text-gray-500">SDG 8</span>
-      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Việc làm và tăng trưởng</span>
-    </div>
-  </div>
-
-  <!-- SDG 9: Công nghiệp, đổi mới và cơ sở hạ tầng -->
-  <div onclick="filterBySDG(9)" id="sdg-card-9" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#fd6925] transition flex-shrink-0 bg-white">
-    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-09.jpg" alt="SDG 9" class="w-10 h-10 object-contain rounded-sm">
-    <div class="flex flex-col">
-      <span class="text-[12px] text-gray-500">SDG 9</span>
-      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Công nghiệp, đổi mới, hạ tầng</span>
-    </div>
-  </div>
-
-  <!-- SDG 10: Giảm bất bình đẳng -->
-  <div onclick="filterBySDG(10)" id="sdg-card-10" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#dd1367] transition flex-shrink-0 bg-white">
-    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-10.jpg" alt="SDG 10" class="w-10 h-10 object-contain rounded-sm">
-    <div class="flex flex-col">
-      <span class="text-[12px] text-gray-500">SDG 10</span>
-      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Giảm bất bình đẳng</span>
-    </div>
-  </div>
-
-  <!-- SDG 11: Các thành phố và cộng đồng bền vững -->
-  <div onclick="filterBySDG(11)" id="sdg-card-11" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#fd9d24] transition flex-shrink-0 bg-white">
-    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-11.jpg" alt="SDG 11" class="w-10 h-10 object-contain rounded-sm">
-    <div class="flex flex-col">
-      <span class="text-[12px] text-gray-500">SDG 11</span>
-      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Đô thị và cộng đồng bền vững</span>
-    </div>
-  </div>
-
-  <!-- SDG 12: Tiêu thụ và sản xuất có trách nhiệm -->
-  <div onclick="filterBySDG(12)" id="sdg-card-12" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#bf8b2e] transition flex-shrink-0 bg-white">
-    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-12.jpg" alt="SDG 12" class="w-10 h-10 object-contain rounded-sm">
-    <div class="flex flex-col">
-      <span class="text-[12px] text-gray-500">SDG 12</span>
-      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Tiêu thụ và sản xuất bền vững</span>
-    </div>
-  </div>
-
-  <!-- SDG 13: Hành động ứng phó với biến đổi khí hậu -->
-  <div onclick="filterBySDG(13)" id="sdg-card-13" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#3f7e44] transition flex-shrink-0 bg-white">
-    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-13.jpg" alt="SDG 13" class="w-10 h-10 object-contain rounded-sm">
-    <div class="flex flex-col">
-      <span class="text-[12px] text-gray-500">SDG 13</span>
-      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Hành động ứng phó BĐKH</span>
-    </div>
-  </div>
-
-  <!-- SDG 14: Tài nguyên và môi trường biển -->
-  <div onclick="filterBySDG(14)" id="sdg-card-14" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#0a97d9] transition flex-shrink-0 bg-white">
-    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-14.jpg" alt="SDG 14" class="w-10 h-10 object-contain rounded-sm">
-    <div class="flex flex-col">
-      <span class="text-[12px] text-gray-500">SDG 14</span>
-      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Tài nguyên và môi trường biển</span>
-    </div>
-  </div>
-
-  <!-- SDG 15: Hệ sinh thái trên cạn -->
-  <div onclick="filterBySDG(15)" id="sdg-card-15" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#56c02b] transition flex-shrink-0 bg-white">
-    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-15.jpg" alt="SDG 15" class="w-10 h-10 object-contain rounded-sm">
-    <div class="flex flex-col">
-      <span class="text-[12px] text-gray-500">SDG 15</span>
-      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Hệ sinh thái trên cạn</span>
-    </div>
-  </div>
-
-  <!-- SDG 16: Hòa bình, công lý và thể chế vững mạnh -->
-  <div onclick="filterBySDG(16)" id="sdg-card-16" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#00689d] transition flex-shrink-0 bg-white">
-    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-16.jpg" alt="SDG 16" class="w-10 h-10 object-contain rounded-sm">
-    <div class="flex flex-col">
-      <span class="text-[12px] text-gray-500">SDG 16</span>
-      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Hòa bình, công lý, thể chế</span>
-                </div>
-            </div>
-	<!-- SDG 17: Hệ sinh thái trên cạn -->
-  <div onclick="filterBySDG(17)" id="sdg-card-17" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#56c02b] transition flex-shrink-0 bg-white">
-    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-17.jpg" alt="SDG 17" class="w-10 h-10 object-contain rounded-sm">
-    <div class="flex flex-col">
-      <span class="text-[12px] text-gray-500">SDG </span>
-      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Quan hệ đối tác vì các mục tiêu</span>
-    </div>
-  </div>
-				</div>
-            <p class="text-gray-500 text-[15px] mb-6">
-                Đã tìm thấy <span id="totalResults" class="text-[#F26F33] font-bold text-lg">0</span> kết quả giống với từ khóa của bạn
-            </p>
-
-            <div class="flex flex-col lg:flex-row gap-4 mb-10 items-center">
-                <button onclick="switchTab('news')" id="tab-news" class="flex items-center justify-between border-2 border-[#0B7681] rounded-full px-6 py-2 w-full lg:w-56 bg-white cursor-pointer tab-active-news">
-                    <div class="flex flex-col items-center flex-grow text-[#0B7681]">
-                        <span id="count-news" class="font-bold text-[22px] leading-tight">0</span>
-                        <span class="text-[13px] font-semibold">Tin tuyển sinh</span>
-                    </div>
-                    <i class="fas fa-chevron-right text-[#0B7681] text-xs"></i>
-                </button>
-
-                <button onclick="switchTab('majors')" id="tab-majors" class="flex items-center justify-between border border-gray-300 rounded-full px-6 py-2 w-full lg:w-56 bg-white cursor-pointer text-gray-400 hover:border-[#F26F33]">
-                    <div class="flex flex-col items-center flex-grow">
-                        <span id="count-majors" class="font-bold text-[22px] leading-tight">0</span>
-                        <span class="text-[13px] font-semibold">Ngành học</span>
-                    </div>
-                    <i class="fas fa-chevron-right text-xs"></i>
-                </button>
-
-                <div class="gradient-box rounded-full px-6 py-2 h-[60px] flex-grow flex flex-col justify-center text-white min-w-[300px]">
-                    <span class="font-bold text-center text-[15px] leading-tight">Không có kết quả khớp</span>
-                    <div class="flex justify-center text-[11px] mt-0.5 gap-2 opacity-90">
-                        <span class="cursor-pointer hover:underline">Xem tất cả tin tuyển sinh &rarr;</span> |
-                        <span class="cursor-pointer hover:underline">Xem tất cả ngành học &rarr;</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex justify-between items-end mb-6">
-                <h1 class="heading-1" id="sectionTitle">
-                    <span class="text-[#0B7681]">TIN</span> <span class="text-[#F26F33]">TUYỂN SINH</span>
-                </h1>
-                <div class="flex items-center gap-3 pb-1">
-                    <select id="sortControl" onchange="triggerSearch()" class="appearance-none border border-gray-300 rounded-full pl-5 pr-8 py-2 text-[15px] font-medium text-gray-600 bg-white outline-none cursor-pointer shadow-sm hover:border-gray-400" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23666\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><polyline points=\'6 9 12 15 18 9\'></polyline></svg>'); background-repeat: no-repeat; background-position: right 12px center; background-size: 14px;">
-                        <option value="newest">Sắp xếp theo (Mới nhất)</option>
-                        <option value="oldest">Cũ nhất</option>
-                    </select>
-                    
-                    <button onclick="nextPage()" id="pageIndicatorBtn" class="border border-gray-300 rounded-full px-5 py-2 text-[15px] font-medium text-gray-600 bg-white hover:bg-gray-50 shadow-sm transition">
-                        Trang 1 <i class="fas fa-chevron-right text-[12px] ml-1"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div id="resultContainer" class="w-full">
-                </div>
-            
-        </div>
-    </main>
-
-    <footer class="bg-ueh-teal text-white pt-10 pb-6 mt-10">
-        <div class="container mx-auto px-4 lg:px-8 max-w-7xl">
-            <h2 class="style-h3 font-bold mb-6">Liên hệ bộ phận tuyển sinh</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8 text-sm leading-loose">
-                <div>
-                    <ul class="space-y-1">
-                        <li><a href="#" class="hover:text-gray-300 flex items-center"><i class="fas fa-globe mr-3 w-4"></i> Đại học Chính quy</a></li>
-                        <li><a href="#" class="hover:text-gray-300 flex items-center"><i class="fas fa-globe mr-3 w-4"></i> Đại học Vừa làm vừa học</a></li>
-                        <li><a href="#" class="hover:text-gray-300 flex items-center"><i class="fas fa-globe mr-3 w-4"></i> Sau Đại học</a></li>
-                        <li><a href="#" class="hover:text-gray-300 flex items-center"><i class="fab fa-facebook-f mr-3 w-4"></i> UEH Mekong</a></li>
-                        <li><a href="#" class="hover:text-gray-300 flex items-center"><i class="fas fa-leaf mr-3 w-4"></i> UEH Green Campus</a></li>
-                        <li><a href="#" class="hover:text-gray-300 flex items-center"><i class="fas fa-vr-cardboard mr-3 w-4"></i> UEH Virtual Tour</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <div class="flex items-start mb-2">
-                        <i class="fas fa-home mt-1.5 mr-3 w-4"></i>
-                        <p><span class="font-bold">Tại TP.HCM:</span> 59C Nguyễn Đình Chiểu, P.<br>Xuân Hòa, TP.HCM</p>
-                    </div>
-                    <div class="flex items-start">
-                        <i class="fas fa-phone-alt mt-1.5 mr-3 w-4"></i>
-                        <div>
-                            <p><span class="font-bold">ĐHCQ:</span> 0902.230.082 và 0941.230.082</p>
-                            <p><span class="font-bold">ĐHVLH:</span> 0938.527.438</p>
-                            <p><span class="font-bold">Thạc sĩ:</span> (028) 7306.1976 ext 3001</p>
-                            <p><span class="font-bold">Tiến sĩ:</span> (028) 7306.1976 ext 3008, 3010</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div>
-                    <div class="flex items-start mb-4">
-                        <i class="fas fa-home mt-1.5 mr-3 w-4"></i>
-                        <p><span class="font-bold">Tại UEH Mekong (PHVL):</span> 01B Nguyễn<br>Trung Trực, phường Tân Hạnh, tỉnh Vĩnh<br>Long</p>
-                    </div>
-                    <div class="flex items-center mb-6">
-                        <i class="fas fa-phone-alt mr-3 w-4"></i>
-                        <p class="font-bold">(027) 03.823.443 - 0899.002.939</p>
-                    </div>
-                    
-                    <div class="flex space-x-4 ml-7 text-lg">
-                        <a href="#" class="hover:text-gray-300 transition"><i class="fas fa-globe"></i></a>
-                        <a href="#" class="hover:text-gray-300 transition"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="hover:text-gray-300 transition"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="hover:text-gray-300 transition"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="hover:text-gray-300 transition"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="flex justify-end -mt-6 mb-4">
-                <div class="w-8 h-8 rounded-full bg-black bg-opacity-20 flex items-center justify-center cursor-pointer hover:bg-opacity-40 transition" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                    <i class="fas fa-arrow-up"></i>
-                </div>
-            </div>
-        </div>
-        
-        <div class="bg-ueh-dark text-center py-3 text-xs">
-            <p>Đại học Kinh tế Thành phố Hồ Chí Minh © 2025. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-
-
-    <script>
-        const dataTinBai = [];
-        // Tạo 98 bài viết mẫu để test phân trang
-        for (let i = 1; i <= 98; i++) {
-            dataTinBai.push({
-                id: i,
-                title: `Ngành nghề mới – Những "cái bắt tay" định hình tương lai: Kinh tế, Luật (Bài ${i})`,
-                meta: "Học sinh THPT, Học viện Thạc sĩ/Nghiên cứu sinh, Kinh tế chính trị quốc tế, Luật...",
-                date: `2026-04-${(i%28)+1 < 10 ? '0'+((i%28)+1) : ((i%28)+1)}`,
-                sdg: 4,
-                keywords: "kinh doanh luật"
-            });
-        }
-
-        const dataNganhHoc = [];
-        for (let i = 1; i <= 23; i++) {
-            dataNganhHoc.push({
-                id: i,
-                code: "EPD",
-                title: `Engineering Product Development (Ngành ${i})`,
-                degree: "Bachelor of Engineering",
-                date: `2026-01-${i < 10 ? '0'+i : i}`,
-                sdg: 4,
-                keywords: "công nghệ kỹ thuật"
-            });
-        }
-        const state = {
-            currentTab: 'news', // 'news' | 'majors'
-            currentPage: 1,
-            searchQuery: '',
-            selectedSDG: null,
-            sortBy: 'newest'
-        };
-
-        // Khởi tạo giao diện
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('searchInput').addEventListener('keyup', (e) => {
-                if(e.key === 'Enter') triggerSearch();
-            });
-            updateCounts();
-            renderData();
+    const dataTinBai = [];
+    for (let i = 1; i <= 98; i++) {
+        dataTinBai.push({
+            id: i,
+            title: `Ngành nghề mới – Những "cái bắt tay" định hình tương lai: Kinh tế, Luật (Bài ${i})`,
+            meta: "Học sinh THPT, Học viện Thạc sĩ/Nghiên cứu sinh, Kinh tế chính trị quốc tế, Luật...",
+            date: `2026-04-${(i%28)+1 < 10 ? '0'+((i%28)+1) : ((i%28)+1)}`,
+            sdg: 4,
+            keywords: "kinh doanh luật"
         });
+    }
 
-        // Hàm xử lý khi bấm vào từ khóa nổi bật
-        function clickKeyword(keyword) {
-            document.getElementById('searchInput').value = keyword;
-            triggerSearch();
-        }
+    const dataNganhHoc = [];
+    for (let i = 1; i <= 23; i++) {
+        dataNganhHoc.push({
+            id: i,
+            code: "EPD",
+            title: `Engineering Product Development (Ngành ${i})`,
+            degree: "Bachelor of Engineering",
+            date: `2026-01-${i < 10 ? '0'+i : i}`,
+            sdg: 4,
+            keywords: "công nghệ kỹ thuật"
+        });
+    }
 
-        // Bấm nút Tìm Kiếm hoặc Thay đổi Bộ Lọc
-        function triggerSearch() {
-            state.searchQuery = document.getElementById('searchInput').value.toLowerCase();
-            state.sortBy = document.getElementById('sortControl').value;
-            state.currentPage = 1;
-            updateCounts();
-            renderData();
-        }
+    const state = {
+        currentTab: 'news',
+        currentPage: 1,
+        searchQuery: '',
+        selectedSDG: null,
+        sortBy: 'newest'
+    };
 
-        // Lọc theo SDG
-        function filterBySDG(id) {
-            if(state.selectedSDG === id) {
-                state.selectedSDG = null; // Tắt nếu bấm lại
-                document.getElementById('sdg-card-4').classList.remove('sdg-active');
-            } else {
-                state.selectedSDG = id;
-                document.getElementById('sdg-card-4').classList.add('sdg-active');
-            }
-            triggerSearch();
-        }
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('searchInput').addEventListener('keyup', (e) => {
+            if(e.key === 'Enter') triggerSearch();
+        });
+        updateCounts();
+        renderData();
+        
+        // Kích hoạt scroll event lúc ban đầu để xử lý ẩn hiện mũi tên
+        sdgContainer.dispatchEvent(new Event('scroll'));
+    });
 
-        // Xóa tất cả bộ lọc
-        function clearFilters() {
-            document.getElementById('searchInput').value = '';
-            document.getElementById('filter1').value = '';
-            document.getElementById('filter2').value = '';
-            document.getElementById('filter3').value = '';
-            document.getElementById('filter4').value = '';
-            document.getElementById('filter5').value = '';
-            
+    function clickKeyword(keyword) {
+        document.getElementById('searchInput').value = keyword;
+        triggerSearch();
+    }
+
+    function triggerSearch() {
+        state.searchQuery = document.getElementById('searchInput').value.toLowerCase();
+        state.sortBy = document.getElementById('sortControl').value;
+        state.currentPage = 1;
+        updateCounts();
+        renderData();
+    }
+
+    function filterBySDG(id) {
+        document.querySelectorAll('.sdg-card').forEach(card => card.classList.remove('sdg-active'));
+        if(state.selectedSDG === id) {
             state.selectedSDG = null;
-            document.getElementById('sdg-card-4').classList.remove('sdg-active');
-            triggerSearch();
+        } else {
+            state.selectedSDG = id;
+            document.getElementById('sdg-card-' + id)?.classList.add('sdg-active');
         }
+        triggerSearch();
+    }
 
-        // Chuyển đổi Tab
-        function switchTab(tabName) {
-            state.currentTab = tabName;
+    function clearFilters() {
+        document.getElementById('searchInput').value = '';
+        ['filter1', 'filter2', 'filter3', 'filter4', 'filter5'].forEach(id => {
+            document.getElementById(id).value = '';
+        });
+        
+        state.selectedSDG = null;
+        document.querySelectorAll('.sdg-card').forEach(card => card.classList.remove('sdg-active'));
+        triggerSearch();
+    }
+
+    function switchTab(tabName) {
+        state.currentTab = tabName;
+        state.currentPage = 1;
+        
+        const tabNews = document.getElementById('tab-news');
+        const tabMajors = document.getElementById('tab-majors');
+        const titleEl = document.getElementById('sectionTitle');
+
+        if (tabName === 'news') {
+            tabNews.className = "flex items-center justify-between border-2 border-[#0B7681] rounded-full px-5 lg:px-6 py-2 w-full sm:w-[calc(50%-0.5rem)] xl:w-56 bg-white cursor-pointer tab-active-news";
+            tabNews.querySelector('i').classList.add('text-[#0B7681]');
+            
+            tabMajors.className = "flex items-center justify-between border border-gray-300 rounded-full px-5 lg:px-6 py-2 w-full sm:w-[calc(50%-0.5rem)] xl:w-56 bg-white cursor-pointer text-gray-400 hover:border-[#F26F33]";
+            tabMajors.querySelector('div').classList.remove('text-[#F26F33]');
+            tabMajors.querySelector('i').classList.remove('text-[#F26F33]');
+            
+            titleEl.innerHTML = `<span class="text-[#0B7681]">TIN</span> <span class="text-[#F26F33]">TUYỂN SINH</span>`;
+        } else {
+            tabMajors.className = "flex items-center justify-between border-2 border-[#F26F33] rounded-full px-5 lg:px-6 py-2 w-full sm:w-[calc(50%-0.5rem)] xl:w-56 bg-white cursor-pointer tab-active-major";
+            tabMajors.querySelector('i').classList.add('text-[#F26F33]');
+            
+            tabNews.className = "flex items-center justify-between border border-gray-300 rounded-full px-5 lg:px-6 py-2 w-full sm:w-[calc(50%-0.5rem)] xl:w-56 bg-white cursor-pointer text-gray-400 hover:border-[#0B7681]";
+            tabNews.querySelector('div').classList.remove('text-[#0B7681]');
+            tabNews.querySelector('i').classList.remove('text-[#0B7681]');
+            
+            titleEl.innerHTML = `<span class="text-[#0B7681]">NGÀNH</span> <span class="text-[#F26F33]">HỌC</span>`;
+        }
+        renderData();
+    }
+
+    function nextPage() {
+        const itemsPerPage = state.currentTab === 'news' ? 10 : 20;
+        const sourceData = state.currentTab === 'news' ? getFilteredData(dataTinBai) : getFilteredData(dataNganhHoc);
+        const totalPages = Math.ceil(sourceData.length / itemsPerPage);
+        
+        if (state.currentPage < totalPages) {
+            state.currentPage++;
+        } else {
             state.currentPage = 1;
-            
-            const tabNews = document.getElementById('tab-news');
-            const tabMajors = document.getElementById('tab-majors');
-            const titleEl = document.getElementById('sectionTitle');
+        }
+        renderData();
+    }
 
-            if (tabName === 'news') {
-                tabNews.className = "flex items-center justify-between border-2 border-[#0B7681] rounded-full px-6 py-2 w-full lg:w-56 bg-white cursor-pointer tab-active-news";
-                tabNews.querySelector('i').classList.add('text-[#0B7681]');
-                
-                tabMajors.className = "flex items-center justify-between border border-gray-300 rounded-full px-6 py-2 w-full lg:w-56 bg-white cursor-pointer text-gray-400 hover:border-[#F26F33]";
-                tabMajors.querySelector('div').classList.remove('text-[#F26F33]');
-                tabMajors.querySelector('i').classList.remove('text-[#F26F33]');
-                
-                titleEl.innerHTML = `<span class="text-[#0B7681]">TIN</span> <span class="text-[#F26F33]">TUYỂN SINH</span>`;
-            } else {
-                tabMajors.className = "flex items-center justify-between border-2 border-[#F26F33] rounded-full px-6 py-2 w-full lg:w-56 bg-white cursor-pointer tab-active-major";
-                tabMajors.querySelector('i').classList.add('text-[#F26F33]');
-                
-                tabNews.className = "flex items-center justify-between border border-gray-300 rounded-full px-6 py-2 w-full lg:w-56 bg-white cursor-pointer text-gray-400 hover:border-[#0B7681]";
-                tabNews.querySelector('div').classList.remove('text-[#0B7681]');
-                tabNews.querySelector('i').classList.remove('text-[#0B7681]');
-                
-                titleEl.innerHTML = `<span class="text-[#0B7681]">NGÀNH</span> <span class="text-[#F26F33]">HỌC</span>`;
+    function updateCounts() {
+        const filteredNews = getFilteredData(dataTinBai);
+        const filteredMajors = getFilteredData(dataNganhHoc);
+        
+        document.getElementById('count-news').innerText = filteredNews.length;
+        document.getElementById('count-majors').innerText = filteredMajors.length;
+        document.getElementById('totalResults').innerText = filteredNews.length + filteredMajors.length;
+    }
+
+    function getFilteredData(arrayData) {
+        return arrayData.filter(item => {
+            if(state.selectedSDG && item.sdg !== state.selectedSDG) return false;
+            if(state.searchQuery) {
+                const str = (item.title + ' ' + (item.meta||'') + ' ' + (item.keywords||'')).toLowerCase();
+                if(!str.includes(state.searchQuery)) return false;
             }
-            renderData();
+            return true;
+        }).sort((a, b) => {
+            const dateA = new Date(a.date);
+            const dateB = new Date(b.date);
+            return state.sortBy === 'newest' ? dateB - dateA : dateA - dateB;
+        });
+    }
+
+    function renderData() {
+        const container = document.getElementById('resultContainer');
+        const pageBtn = document.getElementById('pageIndicatorBtn');
+        container.innerHTML = '';
+        
+        const isNews = state.currentTab === 'news';
+        const itemsPerPage = isNews ? 10 : 20;
+        const currentData = getFilteredData(isNews ? dataTinBai : dataNganhHoc);
+        
+        pageBtn.innerHTML = `Trang ${state.currentPage} <i class="fas fa-chevron-right text-[10px] lg:text-[12px] ml-1"></i>`;
+
+        const startIndex = (state.currentPage - 1) * itemsPerPage;
+        const paginatedItems = currentData.slice(startIndex, startIndex + itemsPerPage);
+
+        if(paginatedItems.length === 0) {
+            container.innerHTML = `<p class="text-gray-500 py-10 text-center">Không tìm thấy dữ liệu.</p>`;
+            return;
         }
 
-        // Chuyển trang (click vào nút Trang 1 >)
-        function nextPage() {
-            const itemsPerPage = state.currentTab === 'news' ? 10 : 20;
-            const sourceData = state.currentTab === 'news' ? getFilteredData(dataTinBai) : getFilteredData(dataNganhHoc);
-            const totalPages = Math.ceil(sourceData.length / itemsPerPage);
-            
-            if (state.currentPage < totalPages) {
-                state.currentPage++;
-            } else {
-                state.currentPage = 1; // Quay lại trang 1 nếu đã hết
-            }
-            renderData();
-        }
-
-        // Đếm tổng số kết quả hiển thị trên UI
-        function updateCounts() {
-            const filteredNews = getFilteredData(dataTinBai);
-            const filteredMajors = getFilteredData(dataNganhHoc);
-            
-            document.getElementById('count-news').innerText = filteredNews.length;
-            document.getElementById('count-majors').innerText = filteredMajors.length;
-            document.getElementById('totalResults').innerText = filteredNews.length + filteredMajors.length;
-        }
-
-        // Lõi Lọc dữ liệu chung
-        function getFilteredData(arrayData) {
-            return arrayData.filter(item => {
-                if(state.selectedSDG && item.sdg !== state.selectedSDG) return false;
-                
-                if(state.searchQuery) {
-                    const str = (item.title + ' ' + (item.meta||'') + ' ' + (item.keywords||'')).toLowerCase();
-                    if(!str.includes(state.searchQuery)) return false;
-                }
-                // Các bộ lọc select box có thể được thêm logic tại đây dựa theo yêu cầu meta data...
-                return true;
-            }).sort((a, b) => {
-                // Sắp xếp Mới Nhất / Cũ Nhất
-                const dateA = new Date(a.date);
-                const dateB = new Date(b.date);
-                return state.sortBy === 'newest' ? dateB - dateA : dateA - dateB;
+        if(isNews) {
+            container.className = "flex flex-col space-y-4";
+            paginatedItems.forEach(item => {
+                const dateObj = new Date(item.date);
+                const dateStr = `${String(dateObj.getDate()).padStart(2,'0')}/${String(dateObj.getMonth()+1).padStart(2,'0')}/${dateObj.getFullYear()}`;
+                container.innerHTML += `
+                    <div class="border border-gray-100 rounded p-4 lg:p-6 shadow-sm bg-white hover:shadow-md transition">
+                        <h3 class="heading-3 mb-2 hover:underline cursor-pointer text-base lg:text-lg">${item.title}</h3>
+                        <p class="heading-4 text-[13px] lg:text-sm mb-3">${item.meta}</p>
+                        <div class="flex items-center text-xs lg:text-sm text-gray-400 font-medium">
+                            <i class="far fa-calendar-alt text-[#F26F33] mr-2"></i> ${dateStr}
+                        </div>
+                    </div>
+                `;
+            });
+        } else {
+            container.className = "grid grid-cols-1 md:grid-cols-2 gap-x-6 lg:gap-x-12 gap-y-0";
+            paginatedItems.forEach(item => {
+                container.innerHTML += `
+                    <div class="border-b border-gray-200 py-4 relative cursor-pointer major-card">
+                        <div class="text-[10px] lg:text-[11px] text-[#F26F33] font-bold uppercase tracking-wider mb-1">${item.code}</div>
+                        <h3 class="text-gray-800 text-[15px] lg:text-[17px] font-medium pr-8 transition-colors">${item.title}</h3>
+                        <p class="text-[12px] lg:text-[13px] text-gray-400 mt-1">${item.degree}</p>
+                        <div class="absolute bottom-5 right-1 text-gray-400 arrow-icon transition-colors">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="5" x2="19" y2="19"></line><polyline points="10 19 19 19 19 10"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                `;
             });
         }
-
-        // Render HTML ra màn hình
-        function renderData() {
-            const container = document.getElementById('resultContainer');
-            const pageBtn = document.getElementById('pageIndicatorBtn');
-            container.innerHTML = '';
-            
-            const isNews = state.currentTab === 'news';
-            const itemsPerPage = isNews ? 10 : 20;
-            const currentData = getFilteredData(isNews ? dataTinBai : dataNganhHoc);
-            
-            // Render text nút Phân trang
-            pageBtn.innerHTML = `Trang ${state.currentPage} <i class="fas fa-chevron-right text-[12px] ml-1"></i>`;
-
-            const startIndex = (state.currentPage - 1) * itemsPerPage;
-            const paginatedItems = currentData.slice(startIndex, startIndex + itemsPerPage);
-
-            if(paginatedItems.length === 0) {
-                container.innerHTML = `<p class="text-gray-500 py-10 text-center">Không tìm thấy dữ liệu.</p>`;
-                return;
-            }
-
-            if(isNews) {
-                container.className = "flex flex-col space-y-4";
-                paginatedItems.forEach(item => {
-                    const dateObj = new Date(item.date);
-                    const dateStr = `${String(dateObj.getDate()).padStart(2,'0')}/${String(dateObj.getMonth()+1).padStart(2,'0')}/${dateObj.getFullYear()}`;
-                    container.innerHTML += `
-                        <div class="border border-gray-100 rounded p-6 shadow-sm bg-white hover:shadow-md transition">
-                            <h3 class="heading-3 mb-2 hover:underline cursor-pointer">${item.title}</h3>
-                            <p class="heading-4 text-sm mb-3">${item.meta}</p>
-                            <div class="flex items-center text-sm text-gray-400 font-medium">
-                                <i class="far fa-calendar-alt text-[#F26F33] mr-2"></i> ${dateStr}
-                            </div>
-                        </div>
-                    `;
-                });
-            } else {
-                // 2 Cột cho Ngành Học
-                container.className = "grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-0";
-                paginatedItems.forEach(item => {
-                    container.innerHTML += `
-                        <div class="border-b border-gray-200 py-4 relative cursor-pointer major-card">
-                            <div class="text-[11px] text-[#F26F33] font-bold uppercase tracking-wider mb-1">${item.code}</div>
-                            <h3 class="text-gray-800 text-[17px] font-medium pr-8 transition-colors">${item.title}</h3>
-                            <p class="text-[13px] text-gray-400 mt-1">${item.degree}</p>
-                            <div class="absolute bottom-5 right-1 text-gray-400 arrow-icon transition-colors">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="5" y1="5" x2="19" y2="19"></line><polyline points="10 19 19 19 19 10"></polyline>
-                                </svg>
-                            </div>
-                        </div>
-                    `;
-                });
-            }
-        }
-    </script>
+    }
+</script>
 </body>
 </html>
