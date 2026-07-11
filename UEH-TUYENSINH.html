@@ -170,165 +170,160 @@
 
         <div class="flex-grow w-full">
             <div class="mb-6">
-    <h2 class="heading-2 mb-4">Tìm theo SDGs</h2>
-    <div class="flex gap-4 overflow-x-auto pb-2">
-        
-        <!-- SDG 1 -->
-        <div onclick="filterBySDG(1)" id="sdg-card-1" class="flex items-center gap-3 border-2 border-[var(--ueh-teal)] rounded px-3 py-2 cursor-pointer hover:border-[var(--ueh-teal)] transition flex-shrink-0 bg-transparent">
-            <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-01.jpg" alt="SDG 1" class="w-10 h-10 object-contain rounded-sm border border-gray-100">
-            <div class="flex flex-col">
-                <span class="text-[12px] text-gray-500">SDG 1</span>
-                <span class="text-[14px] font-semibold text-gray-800 leading-tight">Xóa nghèo</span>
-            </div>
-        </div>
-
-        <!-- SDG 2 -->
-        <div onclick="filterBySDG(2)" id="sdg-card-2" class="flex items-center gap-3 border-2 border-[var(--ueh-teal)] rounded px-3 py-2 cursor-pointer hover:border-[var(--ueh-teal)] transition flex-shrink-0 bg-transparent">
-            <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-02.jpg" alt="SDG 2" class="w-10 h-10 object-contain rounded-sm border border-gray-100">
-            <div class="flex flex-col">
-                <span class="text-[12px] text-gray-500">SDG 2</span>
-                <span class="text-[14px] font-semibold text-gray-800 leading-tight">Xóa đói</span>
-            </div>
-        </div>
-
-        <!-- SDG 3 -->
-        <div onclick="filterBySDG(3)" id="sdg-card-3" class="flex items-center gap-3 border-2 border-[var(--ueh-teal)] rounded px-3 py-2 cursor-pointer hover:border-[var(--ueh-teal)] transition flex-shrink-0 bg-transparent">
-            <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-03.jpg" alt="SDG 3" class="w-10 h-10 object-contain rounded-sm border border-gray-100">
-            <div class="flex flex-col">
-                <span class="text-[12px] text-gray-500">SDG 3</span>
-                <span class="text-[14px] font-semibold text-gray-800 leading-tight">Sức khỏe & Cuộc sống tốt</span>
-            </div>
-        </div>
-
-        <!-- SDG 4 -->
-        <div onclick="filterBySDG(4)" id="sdg-card-4" class="flex items-center gap-3 border-2 border-[var(--ueh-teal)] rounded px-3 py-2 cursor-pointer hover:border-[var(--ueh-teal)] transition flex-shrink-0 bg-transparent">
-            <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-04.jpg" alt="SDG 4" class="w-10 h-10 object-contain rounded-sm border border-gray-100">
-            <div class="flex flex-col">
-                <span class="text-[12px] text-gray-500">SDG 4</span>
-                <span class="text-[14px] font-semibold text-gray-800 leading-tight">Giáo dục chất lượng</span>
-            </div>
-        </div>
-
-        <!-- SDG 5 -->
-        <div onclick="filterBySDG(5)" id="sdg-card-5" class="flex items-center gap-3 border-2 border-[var(--ueh-teal)] rounded px-3 py-2 cursor-pointer hover:border-[var(--ueh-teal)] transition flex-shrink-0 bg-transparent">
-            <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-05.jpg" alt="SDG 5" class="w-10 h-10 object-contain rounded-sm border border-gray-100">
-            <div class="flex flex-col">
-                <span class="text-[12px] text-gray-500">SDG 5</span>
-                <span class="text-[14px] font-semibold text-gray-800 leading-tight">Bình đẳng giới</span>
-            </div>
-        </div>
-
-        <!-- SDG 6 -->
-        <div onclick="filterBySDG(6)" id="sdg-card-6" class="flex items-center gap-3 border-2 border-[var(--ueh-teal)] rounded px-3 py-2 cursor-pointer hover:border-[var(--ueh-teal)] transition flex-shrink-0 bg-transparent">
-            <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-06.jpg" alt="SDG 6" class="w-10 h-10 object-contain rounded-sm border border-gray-100">
-            <div class="flex flex-col">
-                <span class="text-[12px] text-gray-500">SDG 6</span>
-                <span class="text-[14px] font-semibold text-gray-800 leading-tight">Nước sạch & Vệ sinh</span>
-            </div>
-        </div>
-
-        <!-- SDG 7 -->
-        <div onclick="filterBySDG(7)" id="sdg-card-7" class="flex items-center gap-3 border-2 border-[var(--ueh-teal)] rounded px-3 py-2 cursor-pointer hover:border-[var(--ueh-teal)] transition flex-shrink-0 bg-transparent">
-            <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-07.jpg" alt="SDG 7" class="w-10 h-10 object-contain rounded-sm border border-gray-100">
-            <div class="flex flex-col">
-                <span class="text-[12px] text-gray-500">SDG 7</span>
-                <span class="text-[14px] font-semibold text-gray-800 leading-tight">Năng lượng sạch</span>
-            </div>
-        </div>
-
-        <!-- SDG 8 -->
-        <div onclick="filterBySDG(8)" id="sdg-card-8" class="flex items-center gap-3 border-2 border-[var(--ueh-teal)] rounded px-3 py-2 cursor-pointer hover:border-[var(--ueh-teal)] transition flex-shrink-0 bg-transparent">
-            <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-08.jpg" alt="SDG 8" class="w-10 h-10 object-contain rounded-sm border border-gray-100">
-            <div class="flex flex-col">
-                <span class="text-[12px] text-gray-500">SDG 8</span>
-                <span class="text-[14px] font-semibold text-gray-800 leading-tight">Việc làm & Tăng trưởng</span>
-            </div>
-        </div>
-
-        <!-- SDG 9 -->
-        <div onclick="filterBySDG(9)" id="sdg-card-9" class="flex items-center gap-3 border-2 border-[var(--ueh-teal)] rounded px-3 py-2 cursor-pointer hover:border-[var(--ueh-teal)] transition flex-shrink-0 bg-transparent">
-            <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-09.jpg" alt="SDG 9" class="w-10 h-10 object-contain rounded-sm border border-gray-100">
-            <div class="flex flex-col">
-                <span class="text-[12px] text-gray-500">SDG 9</span>
-                <span class="text-[14px] font-semibold text-gray-800 leading-tight">Công nghiệp & Đổi mới</span>
-            </div>
-        </div>
-
-        <!-- SDG 10 -->
-        <div onclick="filterBySDG(10)" id="sdg-card-10" class="flex items-center gap-3 border-2 border-[var(--ueh-teal)] rounded px-3 py-2 cursor-pointer hover:border-[var(--ueh-teal)] transition flex-shrink-0 bg-transparent">
-            <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-10.jpg" alt="SDG 10" class="w-10 h-10 object-contain rounded-sm border border-gray-100">
-            <div class="flex flex-col">
-                <span class="text-[12px] text-gray-500">SDG 10</span>
-                <span class="text-[14px] font-semibold text-gray-800 leading-tight">Giảm bất bình đẳng</span>
-            </div>
-        </div>
-
-        <!-- SDG 11 -->
-        <div onclick="filterBySDG(11)" id="sdg-card-11" class="flex items-center gap-3 border-2 border-[var(--ueh-teal)] rounded px-3 py-2 cursor-pointer hover:border-[var(--ueh-teal)] transition flex-shrink-0 bg-transparent">
-            <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-11.jpg" alt="SDG 11" class="w-10 h-10 object-contain rounded-sm border border-gray-100">
-            <div class="flex flex-col">
-                <span class="text-[12px] text-gray-500">SDG 11</span>
-                <span class="text-[14px] font-semibold text-gray-800 leading-tight">Thành phố bền vững</span>
-            </div>
-        </div>
-
-        <!-- SDG 12 -->
-        <div onclick="filterBySDG(12)" id="sdg-card-12" class="flex items-center gap-3 border-2 border-[var(--ueh-teal)] rounded px-3 py-2 cursor-pointer hover:border-[var(--ueh-teal)] transition flex-shrink-0 bg-transparent">
-            <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-12.jpg" alt="SDG 12" class="w-10 h-10 object-contain rounded-sm border border-gray-100">
-            <div class="flex flex-col">
-                <span class="text-[12px] text-gray-500">SDG 12</span>
-                <span class="text-[14px] font-semibold text-gray-800 leading-tight">Tiêu dùng trách nhiệm</span>
-            </div>
-        </div>
-
-        <!-- SDG 13 -->
-        <div onclick="filterBySDG(13)" id="sdg-card-13" class="flex items-center gap-3 border-2 border-[var(--ueh-teal)] rounded px-3 py-2 cursor-pointer hover:border-[var(--ueh-teal)] transition flex-shrink-0 bg-transparent">
-            <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-13.jpg" alt="SDG 13" class="w-10 h-10 object-contain rounded-sm border border-gray-100">
-            <div class="flex flex-col">
-                <span class="text-[12px] text-gray-500">SDG 13</span>
-                <span class="text-[14px] font-semibold text-gray-800 leading-tight">Hành động vì khí hậu</span>
-            </div>
-        </div>
-
-        <!-- SDG 14 -->
-        <div onclick="filterBySDG(14)" id="sdg-card-14" class="flex items-center gap-3 border-2 border-[var(--ueh-teal)] rounded px-3 py-2 cursor-pointer hover:border-[var(--ueh-teal)] transition flex-shrink-0 bg-transparent">
-            <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-14.jpg" alt="SDG 14" class="w-10 h-10 object-contain rounded-sm border border-gray-100">
-            <div class="flex flex-col">
-                <span class="text-[12px] text-gray-500">SDG 14</span>
-                <span class="text-[14px] font-semibold text-gray-800 leading-tight">Tài nguyên nước</span>
-            </div>
-        </div>
-
-        <!-- SDG 15 -->
-        <div onclick="filterBySDG(15)" id="sdg-card-15" class="flex items-center gap-3 border-2 border-[var(--ueh-teal)] rounded px-3 py-2 cursor-pointer hover:border-[var(--ueh-teal)] transition flex-shrink-0 bg-transparent">
-            <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-15.jpg" alt="SDG 15" class="w-10 h-10 object-contain rounded-sm border border-gray-100">
-            <div class="flex flex-col">
-                <span class="text-[12px] text-gray-500">SDG 15</span>
-                <span class="text-[14px] font-semibold text-gray-800 leading-tight">Tài nguyên đất</span>
-            </div>
-        </div>
-
-        <!-- SDG 16 -->
-        <div onclick="filterBySDG(16)" id="sdg-card-16" class="flex items-center gap-3 border-2 border-[var(--ueh-teal)] rounded px-3 py-2 cursor-pointer hover:border-[var(--ueh-teal)] transition flex-shrink-0 bg-transparent">
-            <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-16.jpg" alt="SDG 16" class="w-10 h-10 object-contain rounded-sm border border-gray-100">
-            <div class="flex flex-col">
-                <span class="text-[12px] text-gray-500">SDG 16</span>
-                <span class="text-[14px] font-semibold text-gray-800 leading-tight">Hòa bình & Công lý</span>
-            </div>
-        </div>
-
-        <!-- SDG 17 -->
-        <div onclick="filterBySDG(17)" id="sdg-card-17" class="flex items-center gap-3 border-2 border-[var(--ueh-teal)] rounded px-3 py-2 cursor-pointer hover:border-[var(--ueh-teal)] transition flex-shrink-0 bg-transparent">
-            <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-17.jpg" alt="SDG 17" class="w-10 h-10 object-contain rounded-sm border border-gray-100">
-            <div class="flex flex-col">
-                <span class="text-[12px] text-gray-500">SDG 17</span>
-                <span class="text-[14px] font-semibold text-gray-800 leading-tight">Hợp tác vì mục tiêu</span>
-            </div>
-        </div>
-
+                <h2 class="heading-2 mb-4">Tìm theo SDGs</h2>
+                <div class="flex gap-4 overflow-x-auto pb-2">
+                    <!-- SDG 1: Xóa đói giảm nghèo -->
+  <div onclick="filterBySDG(1)" id="sdg-card-1" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#e5243b] transition flex-shrink-0 bg-white">
+    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-01.jpg" alt="SDG 1" class="w-10 h-10 object-contain rounded-sm">
+    <div class="flex flex-col">
+      <span class="text-[12px] text-gray-500">SDG 1</span>
+      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Xóa đói giảm nghèo</span>
     </div>
-</div>
+  </div>
+
+  <!-- SDG 2: Xóa đói, đạt được an ninh lương thực -->
+  <div onclick="filterBySDG(2)" id="sdg-card-2" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#dda63a] transition flex-shrink-0 bg-white">
+    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-02.jpg" alt="SDG 2" class="w-10 h-10 object-contain rounded-sm">
+    <div class="flex flex-col">
+      <span class="text-[12px] text-gray-500">SDG 2</span>
+      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Xóa đói, đạt an ninh lương thực</span>
+    </div>
+  </div>
+
+  <!-- SDG 3: Sức khỏe và cuộc sống tốt đẹp -->
+  <div onclick="filterBySDG(3)" id="sdg-card-3" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#4c9f38] transition flex-shrink-0 bg-white">
+    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-03.jpg" alt="SDG 3" class="w-10 h-10 object-contain rounded-sm">
+    <div class="flex flex-col">
+      <span class="text-[12px] text-gray-500">SDG 3</span>
+      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Sức khỏe và cuộc sống tốt</span>
+    </div>
+  </div>
+
+  <!-- SDG 4: Giáo dục chất lượng -->
+  <div onclick="filterBySDG(4)" id="sdg-card-4" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#c5192d] transition flex-shrink-0 bg-white">
+    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-04.jpg" alt="SDG 4" class="w-10 h-10 object-contain rounded-sm">
+    <div class="flex flex-col">
+      <span class="text-[12px] text-gray-500">SDG 4</span>
+      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Giáo dục chất lượng</span>
+    </div>
+  </div>
+
+  <!-- SDG 5: Bình đẳng giới -->
+  <div onclick="filterBySDG(5)" id="sdg-card-5" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#ff3a21] transition flex-shrink-0 bg-white">
+    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-05.jpg" alt="SDG 5" class="w-10 h-10 object-contain rounded-sm">
+    <div class="flex flex-col">
+      <span class="text-[12px] text-gray-500">SDG 5</span>
+      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Bình đẳng giới</span>
+    </div>
+  </div>
+
+  <!-- SDG 6: Nước sạch và vệ sinh -->
+  <div onclick="filterBySDG(6)" id="sdg-card-6" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#26bde2] transition flex-shrink-0 bg-white">
+    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-06.jpg" alt="SDG 6" class="w-10 h-10 object-contain rounded-sm">
+    <div class="flex flex-col">
+      <span class="text-[12px] text-gray-500">SDG 6</span>
+      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Nước sạch và vệ sinh</span>
+    </div>
+  </div>
+
+  <!-- SDG 7: Năng lượng sạch và giá cả hợp lý -->
+  <div onclick="filterBySDG(7)" id="sdg-card-7" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#fcc30b] transition flex-shrink-0 bg-white">
+    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-07.jpg" alt="SDG 7" class="w-10 h-10 object-contain rounded-sm">
+    <div class="flex flex-col">
+      <span class="text-[12px] text-gray-500">SDG 7</span>
+      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Năng lượng sạch, giá hợp lý</span>
+    </div>
+  </div>
+
+  <!-- SDG 8: Việc làm bền vững và tăng trưởng kinh tế -->
+  <div onclick="filterBySDG(8)" id="sdg-card-8" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#a21942] transition flex-shrink-0 bg-white">
+    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-08.jpg" alt="SDG 8" class="w-10 h-10 object-contain rounded-sm">
+    <div class="flex flex-col">
+      <span class="text-[12px] text-gray-500">SDG 8</span>
+      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Việc làm và tăng trưởng</span>
+    </div>
+  </div>
+
+  <!-- SDG 9: Công nghiệp, đổi mới và cơ sở hạ tầng -->
+  <div onclick="filterBySDG(9)" id="sdg-card-9" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#fd6925] transition flex-shrink-0 bg-white">
+    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-09.jpg" alt="SDG 9" class="w-10 h-10 object-contain rounded-sm">
+    <div class="flex flex-col">
+      <span class="text-[12px] text-gray-500">SDG 9</span>
+      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Công nghiệp, đổi mới, hạ tầng</span>
+    </div>
+  </div>
+
+  <!-- SDG 10: Giảm bất bình đẳng -->
+  <div onclick="filterBySDG(10)" id="sdg-card-10" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#dd1367] transition flex-shrink-0 bg-white">
+    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-10.jpg" alt="SDG 10" class="w-10 h-10 object-contain rounded-sm">
+    <div class="flex flex-col">
+      <span class="text-[12px] text-gray-500">SDG 10</span>
+      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Giảm bất bình đẳng</span>
+    </div>
+  </div>
+
+  <!-- SDG 11: Các thành phố và cộng đồng bền vững -->
+  <div onclick="filterBySDG(11)" id="sdg-card-11" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#fd9d24] transition flex-shrink-0 bg-white">
+    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-11.jpg" alt="SDG 11" class="w-10 h-10 object-contain rounded-sm">
+    <div class="flex flex-col">
+      <span class="text-[12px] text-gray-500">SDG 11</span>
+      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Đô thị và cộng đồng bền vững</span>
+    </div>
+  </div>
+
+  <!-- SDG 12: Tiêu thụ và sản xuất có trách nhiệm -->
+  <div onclick="filterBySDG(12)" id="sdg-card-12" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#bf8b2e] transition flex-shrink-0 bg-white">
+    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-12.jpg" alt="SDG 12" class="w-10 h-10 object-contain rounded-sm">
+    <div class="flex flex-col">
+      <span class="text-[12px] text-gray-500">SDG 12</span>
+      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Tiêu thụ và sản xuất bền vững</span>
+    </div>
+  </div>
+
+  <!-- SDG 13: Hành động ứng phó với biến đổi khí hậu -->
+  <div onclick="filterBySDG(13)" id="sdg-card-13" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#3f7e44] transition flex-shrink-0 bg-white">
+    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-13.jpg" alt="SDG 13" class="w-10 h-10 object-contain rounded-sm">
+    <div class="flex flex-col">
+      <span class="text-[12px] text-gray-500">SDG 13</span>
+      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Hành động ứng phó BĐKH</span>
+    </div>
+  </div>
+
+  <!-- SDG 14: Tài nguyên và môi trường biển -->
+  <div onclick="filterBySDG(14)" id="sdg-card-14" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#0a97d9] transition flex-shrink-0 bg-white">
+    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-14.jpg" alt="SDG 14" class="w-10 h-10 object-contain rounded-sm">
+    <div class="flex flex-col">
+      <span class="text-[12px] text-gray-500">SDG 14</span>
+      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Tài nguyên và môi trường biển</span>
+    </div>
+  </div>
+
+  <!-- SDG 15: Hệ sinh thái trên cạn -->
+  <div onclick="filterBySDG(15)" id="sdg-card-15" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#56c02b] transition flex-shrink-0 bg-white">
+    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-15.jpg" alt="SDG 15" class="w-10 h-10 object-contain rounded-sm">
+    <div class="flex flex-col">
+      <span class="text-[12px] text-gray-500">SDG 15</span>
+      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Hệ sinh thái trên cạn</span>
+    </div>
+  </div>
+
+  <!-- SDG 16: Hòa bình, công lý và thể chế vững mạnh -->
+  <div onclick="filterBySDG(16)" id="sdg-card-16" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#00689d] transition flex-shrink-0 bg-white">
+    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-16.jpg" alt="SDG 16" class="w-10 h-10 object-contain rounded-sm">
+    <div class="flex flex-col">
+      <span class="text-[12px] text-gray-500">SDG 16</span>
+      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Hòa bình, công lý, thể chế</span>
+                </div>
             </div>
+	<!-- SDG 17: Hệ sinh thái trên cạn -->
+  <div onclick="filterBySDG(17)" id="sdg-card-17" class="flex items-center gap-3 border border-gray-300 rounded px-3 py-2 cursor-pointer hover:border-[#56c02b] transition flex-shrink-0 bg-white">
+    <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-17.jpg" alt="SDG 17" class="w-10 h-10 object-contain rounded-sm">
+    <div class="flex flex-col">
+      <span class="text-[12px] text-gray-500">SDG </span>
+      <span class="text-[14px] font-semibold text-gray-800 leading-tight">Quan hệ đối tác vì các mục tiêu</span>
+    </div>
+  </div>
+				</div>
 
             <p class="text-gray-500 text-[15px] mb-6">
                 Đã tìm thấy <span id="totalResults" class="text-[#F26F33] font-bold text-lg">0</span> kết quả giống với từ khóa của bạn
