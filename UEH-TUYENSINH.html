@@ -378,7 +378,7 @@
 </div>
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-6 gap-4 sm:gap-0">
             <h1 class="heading-1 !mb-0" id="sectionTitle">
-                <span class="text-[#0B7681]">TIN</span> <span class="text-[#F26F33]">TUYỂN SINH</span>
+                <span class="text-[#0B7681]">TIN TUYỂN SINH</span>
             </h1>
             <div class="flex flex-wrap sm:flex-nowrap items-center gap-2 lg:gap-3 pb-1 w-full sm:w-auto">
                 <select id="sortControl" onchange="triggerSearch()" class="appearance-none border border-gray-300 rounded-full pl-4 pr-8 py-1.5 lg:py-2 text-[13px] lg:text-[15px] font-medium text-gray-600 bg-white outline-none cursor-pointer shadow-sm hover:border-gray-400 w-full sm:w-auto" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23666\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><polyline points=\'6 9 12 15 18 9\'></polyline></svg>'); background-repeat: no-repeat; background-position: right 12px center; background-size: 14px;">
@@ -579,7 +579,7 @@
         tabMajors.querySelector('div').classList.remove('text-[#F26F33]');
         tabMajors.querySelector('i').classList.remove('text-[#F26F33]');
         
-        titleEl.innerHTML = `<span class="text-[#0B7681]">TIN</span> <span class="text-[#F26F33]">TUYỂN SINH</span>`;
+        titleEl.innerHTML = `<span class="text-[#0B7681]">TIN TUYỂN SINH</span>`;
     } else {
         tabMajors.className = "flex items-center justify-between border-2 border-[#F26F33] rounded-full px-5 py-2 h-[56px] w-full md:w-[250px] shrink-0 bg-white cursor-pointer tab-active-major";
         tabMajors.querySelector('i').classList.add('text-[#F26F33]');
@@ -588,7 +588,7 @@
         tabNews.querySelector('div').classList.remove('text-[#0B7681]');
         tabNews.querySelector('i').classList.remove('text-[#0B7681]');
         
-        titleEl.innerHTML = `<span class="text-[#0B7681]">NGÀNH</span> <span class="text-[#F26F33]">HỌC</span>`;
+        titleEl.innerHTML = `<span class="text-[#F26F33]">NGÀNH HỌC</span>`;
     }
     
     renderData();
