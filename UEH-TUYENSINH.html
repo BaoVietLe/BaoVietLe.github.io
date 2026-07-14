@@ -109,14 +109,22 @@
 </header>
 
 
-<section class="border-b border-gray-100 py-4 lg:py-6">
-    <div class="container mx-auto px-4 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 w-full">
-        <div class="w-full">
-            <div class="flex w-full border border-gray-300 rounded-sm overflow-hidden h-10 lg:h-12">
+<section class="border-b border-gray-100 py-2 lg:py-3">
+    <!-- Đổi justify-between thành justify-center để căn giữa hoàn toàn nội dung bên trong -->
+    <div class="container mx-auto px-4 lg:px-8 max-w-7xl flex flex-col md:flex-row items-center justify-center gap-4 w-full">
+        
+        <!-- Sửa md:w-1/2 thành md:w-3/4 để chiếm đúng 3/4 chiều rộng trang -->
+        <div class="w-full md:w-3/4">
+            
+            <!-- Sửa h-[31px] thành h-[34px], đổi rounded-sm thành rounded-full để bo góc tròn 2 đầu -->
+            <div class="flex w-full border border-gray-300 rounded-sm overflow-hidden h-[34px] shadow-sm focus-within:ring-1 focus-within:ring-[#003840]">
+                
                 <div class="flex items-center justify-center px-3 lg:px-4 bg-white text-gray-400">
                     <i class="fas fa-user-circle text-base lg:text-lg"></i>
                 </div>
+                
                 <input type="text" id="searchInput" placeholder="Tìm kiếm...." class="flex-grow focus:outline-none text-sm lg:text-base px-2">
+                
                 <button onclick="triggerSearch()" class="bg-[#003840] w-12 lg:w-16 flex items-center justify-center text-white hover:bg-[#0B7681] transition">
                     <i class="fas fa-search"></i>
                 </button>
@@ -374,7 +382,8 @@
             </h1>
             <div class="flex flex-wrap sm:flex-nowrap items-center gap-2 lg:gap-3 pb-1 w-full sm:w-auto">
                 <select id="sortControl" onchange="triggerSearch()" class="appearance-none border border-gray-300 rounded-full pl-4 pr-8 py-1.5 lg:py-2 text-[13px] lg:text-[15px] font-medium text-gray-600 bg-white outline-none cursor-pointer shadow-sm hover:border-gray-400 w-full sm:w-auto" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23666\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><polyline points=\'6 9 12 15 18 9\'></polyline></svg>'); background-repeat: no-repeat; background-position: right 12px center; background-size: 14px;">
-                    <option value="newest">Sắp xếp theo (Mới nhất)</option>
+                    <option value="" disabled selected hidden>Sắp xếp theo</option>
+                    <option value="newest">Mới nhất</option>
                     <option value="oldest">Cũ nhất</option>
                 </select>
                 
