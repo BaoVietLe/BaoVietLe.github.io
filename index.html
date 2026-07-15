@@ -279,9 +279,9 @@
             <!-- Header Tabs -->
             <div class="flex flex-col md:flex-row items-center justify-center relative mb-10 gap-6 md:gap-10">
                 <div class="flex space-x-6 text-lg">
-                    <button onclick="changeTab('tab-tin-tuc', this)" class="tab-btn text-[#0B7681] font-bold pb-1 transition">Tin tuyển sinh</button>
-                    <button onclick="changeTab('tab-huong-nghiep', this)" class="tab-btn text-gray-500 font-medium pb-1 hover:text-[#0B7681] transition">Tin hướng nghiệp</button>
-                    <button onclick="changeTab('tab-su-kien', this)" class="tab-btn text-gray-500 font-medium pb-1 hover:text-[#0B7681] transition">Sự kiện tuyển sinh</button>
+                    <button onclick="changeTab('tab-tin-tuc', this)" class="tab-btn text-sm text-[#0B7681] font-bold pb-1 transition">Tin tuyển sinh</button> 
+                    <button onclick="changeTab('tab-huong-nghiep', this)" class="tab-btn text-sm text-gray-500 font-medium pb-1 hover:text-[#0B7681] transition">Tin hướng nghiệp</button> 
+                    <button onclick="changeTab('tab-su-kien', this)" class="tab-btn text-sm text-gray-500 font-medium pb-1 hover:text-[#0B7681] transition">Sự kiện tuyển sinh</button>
                 </div>
                 <a href="https://tuyensinh.ueh.edu.vn/danh-muc-bai-viet/dang-tuyen-sinh/" class="md:absolute right-0 text-sm text-gray-400 hover:text-[#0B7681]">Xem tất cả tin tức &#x2197;</a>
             </div>
@@ -682,14 +682,14 @@
         
         // Đưa tất cả các nút về trạng thái mặc định (chữ xám mờ)
         document.querySelectorAll('.tab-btn').forEach(function(btn) {
-            btn.className = 'tab-btn text-gray-500 font-medium pb-1 hover:text-[#0B7681] transition';
+            btn.className = 'tab-btn text-sm text-gray-500 font-medium pb-1 hover:text-[#0B7681] transition';
         });
 
         // Hiển thị tab nội dung được chọn
         document.getElementById(tabId).classList.remove('hidden');
         
         // Cập nhật giao diện tab đang active (chữ màu Teal, in đậm)
-        element.className = 'tab-btn text-[#0B7681] font-bold pb-1 transition';
+        element.className = 'tab-btn text-sm text-[#0B7681] font-bold pb-1 transition';
     }
 </script>
 
