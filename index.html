@@ -95,19 +95,23 @@
 <section class="border-b border-gray-100 py-2 bg-white sticky top-14 z-40 shadow-sm">
     <div class="container mx-auto px-4 lg:px-8 max-w-7xl flex flex-col md:flex-row items-center justify-center w-full gap-4">
         <div class="w-full md:w-3/4">
-            <div class="flex w-full border border-gray-300 rounded-sm overflow-hidden h-[34px] shadow-sm focus-within:ring-1 focus-within:ring-[#003840]">
+            <!-- Thêm thẻ form để bắt sự kiện submit -->
+            <form id="searchForm" class="flex w-full border border-gray-300 rounded-sm overflow-hidden h-[34px] shadow-sm focus-within:ring-1 focus-within:ring-[#003840]">
                 <div class="flex items-center justify-center px-3 lg:px-4 bg-white text-gray-400">
                     <i class="fas fa-user-circle text-base lg:text-lg"></i>
                 </div>
-                <input type="text" placeholder="Tìm kiếm...." class="flex-grow focus:outline-none text-sm lg:text-base px-2">
-                <button class="bg-[#003840] w-12 lg:w-16 flex items-center justify-center text-white hover:bg-[#0B7681] transition">
+                
+                <!-- Thêm id="searchInput" để dễ gọi trong JavaScript -->
+                <input type="text" id="searchInput" placeholder="Tìm kiếm...." class="flex-grow focus:outline-none text-sm lg:text-base px-2">
+                
+                <!-- Đổi type thành "submit" cho button -->
+                <button type="submit" class="bg-[#003840] w-12 lg:w-16 flex items-center justify-center text-white hover:bg-[#0B7681] transition">
                     <i class="fas fa-search"></i>
                 </button>
-            </div>
+            </form>
         </div>
     </div>
 </section>
-
 <!-- Nội dung Trang chủ Chính -->
 <main>
     <!-- 1. Hero Banner & Form đăng ký -->
@@ -669,6 +673,21 @@
     // Logic Toggle Hamburger Menu Mobile
     document.getElementById('hamburger-btn').addEventListener('click', function() {
         // Có thể thêm id='mobile-menu' nếu muốn toggle menu mobile
+    });
+    const searchForm = document.getElementById('searchForm');
+    const searchInput = document.getElementById('searchInput');
+
+    searchForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Ngăn form tải lại trang theo cách thông thường
+
+        const keyword = searchInput.value.trim();
+
+        if (keyword !== '') {
+            // Chuyển hướng sang timkiem.html và truyền tham số tìm kiếm
+            window.location.href = `UEH-TUYENSINH.html?tu-khoa=${encodeURIComponent(keyword)}`;
+        } else {
+            alert('Vui lòng nhập nội dung tìm kiếm!');
+        }
     });
 
     // Logic Chuyển đổi Tabs cho khu vực Tin tức - Sự kiện
