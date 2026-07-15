@@ -274,9 +274,9 @@
             <!-- Header Tabs -->
             <div class="flex flex-col md:flex-row items-center justify-center relative mb-10 gap-6 md:gap-10">
                 <div class="flex space-x-6 text-lg">
-                    <button onclick="changeTab('tab-tin-tuc', this)" class="tab-btn text-[#0B7681] font-bold border-b-2 border-transparent border-[#0B7681] pb-1">Tin tuyển sinh</button>
-                    <button onclick="changeTab('tab-huong-nghiep', this)" class="tab-btn text-gray-500 font-medium pb-1 hover:text-[#0B7681]">Tin hướng nghiệp</button>
-                    <button onclick="changeTab('tab-su-kien', this)" class="tab-btn text-gray-500 font-medium pb-1 hover:text-[#0B7681]">Sự kiện tuyển sinh</button>
+                    <button onclick="changeTab('tab-tin-tuc', this)" class="tab-btn text-[#0B7681] font-bold pb-1 transition">Tin tuyển sinh</button>
+                    <button onclick="changeTab('tab-huong-nghiep', this)" class="tab-btn text-gray-500 font-medium pb-1 hover:text-[#0B7681] transition">Tin hướng nghiệp</button>
+                    <button onclick="changeTab('tab-su-kien', this)" class="tab-btn text-gray-500 font-medium pb-1 hover:text-[#0B7681] transition">Sự kiện tuyển sinh</button>
                 </div>
                 <a href="#" class="md:absolute right-0 text-sm text-gray-400 hover:text-[#0B7681]">Xem tất cả tin tức</a>
             </div>
@@ -399,111 +399,118 @@
 					</div>
 				</div>
 		<!-- Tab 3: Sự kiện tuyển sinh (CALENDAR) -->
-            <div id="tab-su-kien" class="tab-content hidden transition-opacity duration-300 max-w-4xl mx-auto">
-                <div class="flex items-center justify-between text-[#0B7681] font-bold mb-6">
-                    <button class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-full"><i class="fas fa-chevron-left text-sm"></i></button>
-                    <span class="tracking-widest uppercase text-gray-700">THÁNG 5 - 2026</span>
-                    <button class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-full"><i class="fas fa-chevron-right text-sm"></i></button>
+            <!-- Tab 3: Sự kiện tuyển sinh (CALENDAR) -->
+            <div id="tab-su-kien" class="tab-content hidden transition-opacity duration-300 max-w-4xl mx-auto mt-4">
+                
+                <!-- Tiêu đề tháng -->
+                <div class="flex items-center justify-center gap-16 text-gray-800 mb-10">
+                    <button class="hover:text-[#0B7681] transition"><i class="fas fa-chevron-left font-light text-sm"></i></button>
+                    <span class="tracking-widest uppercase font-medium text-[15px]">THÁNG 5 - 2026</span>
+                    <button class="hover:text-[#0B7681] transition"><i class="fas fa-chevron-right font-light text-sm"></i></button>
                 </div>
                 
-                <div class="grid grid-cols-7 gap-y-6 text-center text-gray-800 font-medium">
-                    <!-- Weekdays -->
-                    <div class="uppercase text-sm font-bold pb-2">T2</div>
-                    <div class="uppercase text-sm font-bold pb-2">T3</div>
-                    <div class="uppercase text-sm font-bold pb-2">T4</div>
-                    <div class="uppercase text-sm font-bold pb-2">T5</div>
-                    <div class="uppercase text-sm font-bold pb-2">T6</div>
-                    <div class="uppercase text-sm font-bold pb-2">T7</div>
-                    <div class="uppercase text-sm font-bold pb-2">CN</div>
+                <!-- Grid Lịch -->
+                <div class="grid grid-cols-7 gap-y-8 text-center text-gray-800 text-[15px]">
+                    <!-- Ngày trong tuần -->
+                    <div class="uppercase font-bold mb-2">T2</div>
+                    <div class="uppercase font-bold mb-2">T3</div>
+                    <div class="uppercase font-bold mb-2">T4</div>
+                    <div class="uppercase font-bold mb-2">T5</div>
+                    <div class="uppercase font-bold mb-2">T6</div>
+                    <div class="uppercase font-bold mb-2">T7</div>
+                    <div class="uppercase font-bold mb-2">CN</div>
 
-                    <!-- Days Grid -->
-                    <div class="text-gray-400 flex justify-center py-2">26</div>
-                    <div class="text-gray-400 flex justify-center py-2">27</div>
-                    <div class="text-gray-400 flex justify-center py-2">28</div>
-                    <div class="text-gray-400 flex justify-center py-2">29</div>
-                    <div class="text-gray-400 flex justify-center py-2">30</div>
-                    <div class="text-gray-400 flex justify-center py-2">31</div>
-                    <div class="flex justify-center py-2">1</div>
-                    <div class="flex justify-center py-2">2</div>
-                    <div class="flex justify-center py-2">3</div>
-                    <div class="flex justify-center py-2">4</div>
-                    <div class="flex justify-center py-2">5</div>
-                    <div class="flex justify-center py-2">6</div>
-                    <div class="flex justify-center py-2">7</div>
-                    <div class="flex justify-center py-2">8</div>
-                    <div class="flex justify-center py-2">9</div>
-                    <div class="flex justify-center py-2">10</div>
-                    <div class="flex justify-center py-2">11</div>
-                    <div class="flex justify-center py-2">12</div>
-                    <div class="flex justify-center py-2">13</div>
-                    <div class="flex justify-center py-2">14</div>
+                    <!-- Ngày (Dòng 1) -->
+                    <div class="text-gray-400 flex items-center justify-center">26</div>
+                    <div class="text-gray-400 flex items-center justify-center">27</div>
+                    <div class="text-gray-400 flex items-center justify-center">28</div>
+                    <div class="text-gray-400 flex items-center justify-center">29</div>
+                    <div class="text-gray-400 flex items-center justify-center">30</div>
+                    <div class="text-gray-400 flex items-center justify-center">31</div>
+                    <div class="flex items-center justify-center">1</div>
+                    
+                    <!-- Ngày (Dòng 2) -->
+                    <div class="flex items-center justify-center">2</div>
+                    <div class="flex items-center justify-center">3</div>
+                    <div class="flex items-center justify-center">4</div>
+                    <div class="flex items-center justify-center">5</div>
+                    <div class="flex items-center justify-center">6</div>
+                    <div class="flex items-center justify-center">7</div>
+                    <div class="flex items-center justify-center">8</div>
+                    
+                    <!-- Ngày (Dòng 3) -->
+                    <div class="flex items-center justify-center">9</div>
+                    <div class="flex items-center justify-center">10</div>
+                    <div class="flex items-center justify-center">11</div>
+                    <div class="flex items-center justify-center">12</div>
+                    <div class="flex items-center justify-center">13</div>
+                    <div class="flex items-center justify-center">14</div>
                     
                     <!-- Ngày 15 có sự kiện -->
-                    <div class="flex justify-center py-1">
-                        <div class="relative group">
-                            <span class="w-10 h-10 flex items-center justify-center rounded-full bg-[#0B7681] text-white font-bold cursor-pointer shadow-md">15</span>
-                            <!-- Tooltip -->
-                            <div class="event-tooltip absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-56 bg-white border border-gray-200 shadow-xl rounded-lg p-3 z-30 text-left pointer-events-none">
-                                <h4 class="text-[#F26F33] font-bold text-sm mb-1 uppercase">Sự kiện tuyển sinh</h4>
-                                <p class="text-xs text-gray-600">Khởi động mùa tuyển sinh ĐHCQ 2026. Công bố thông tin 2 phương thức xét tuyển.</p>
-                                <!-- Arrow -->
+                    <div class="flex justify-center relative group">
+                        <span class="w-9 h-9 flex items-center justify-center rounded-full bg-[#0B7681] text-white font-bold cursor-pointer">15</span>
+                        <div class="event-tooltip absolute bottom-full left-1/2 -translate-x-1/2 pb-2 z-30">
+                            <div class="w-56 bg-white border border-gray-100 shadow-[0_5px_15px_rgba(0,0,0,0.1)] rounded-lg p-3 text-left relative">
+                                <h4 class="text-[#0B7681] font-bold text-[13px] mb-1 uppercase">Sự kiện tuyển sinh</h4>
+                                <p class="text-[12px] text-gray-600 mb-2 leading-relaxed">Khởi động mùa tuyển sinh ĐHCQ 2026. Công bố thông tin 2 phương thức xét tuyển.</p>
+                                <a href="#" class="text-[#F26F33] text-[11px] hover:underline font-medium italic block">Xem chi tiết sự kiện tại đây -></a>
+                                <!-- Mũi tên trỏ xuống -->
                                 <div class="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-white"></div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="flex justify-center py-2">16</div>
-                    <div class="flex justify-center py-2">17</div>
-                    <div class="flex justify-center py-2">18</div>
-                    <div class="flex justify-center py-2">19</div>
-                    <div class="flex justify-center py-2">20</div>
+                    <!-- Ngày (Dòng 4) -->
+                    <div class="flex items-center justify-center">16</div>
+                    <div class="flex items-center justify-center">17</div>
+                    <div class="flex items-center justify-center">18</div>
+                    <div class="flex items-center justify-center">19</div>
+                    <div class="flex items-center justify-center">20</div>
                     
                     <!-- Ngày 21 có sự kiện -->
-                    <div class="flex justify-center py-1">
-                        <div class="relative group">
-                            <span class="w-10 h-10 flex items-center justify-center rounded-full bg-[#0B7681] text-white font-bold cursor-pointer shadow-md">21</span>
-                            <!-- Tooltip -->
-                            <div class="event-tooltip absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-56 bg-white border border-gray-200 shadow-xl rounded-lg p-3 z-30 text-left pointer-events-none">
-                                <h4 class="text-[#F26F33] font-bold text-sm mb-1 uppercase">Tư vấn trực tuyến</h4>
-                                <p class="text-xs text-gray-600">Webinar: Giải đáp thắc mắc tuyển sinh Khối ngành Công nghệ & Thiết kế.</p>
-                                <!-- Arrow -->
+                    <div class="flex justify-center relative group">
+                        <span class="w-9 h-9 flex items-center justify-center rounded-full bg-[#0B7681] text-white font-bold cursor-pointer">21</span>
+                        <div class="event-tooltip absolute bottom-full left-1/2 -translate-x-1/2 pb-2 z-30">
+                            <div class="w-56 bg-white border border-gray-100 shadow-[0_5px_15px_rgba(0,0,0,0.1)] rounded-lg p-3 text-left relative">
+                                <h4 class="text-[#0B7681] font-bold text-[13px] mb-1 uppercase">Tư vấn trực tuyến</h4>
+                                <p class="text-[12px] text-gray-600 mb-2 leading-relaxed">Webinar: Giải đáp thắc mắc tuyển sinh Khối ngành Công nghệ & Thiết kế.</p>
+                                <a href="#" class="text-[#F26F33] text-[11px] hover:underline font-medium italic block">Xem chi tiết sự kiện tại đây -></a>
                                 <div class="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-white"></div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="flex justify-center py-2">22</div>
-                    <div class="flex justify-center py-2">23</div>
-                    <div class="flex justify-center py-2">24</div>
-                    <div class="flex justify-center py-2">25</div>
-                    <div class="flex justify-center py-2">26</div>
-                    <div class="flex justify-center py-2">27</div>
-                    <div class="flex justify-center py-2">28</div>
+                    <div class="flex items-center justify-center">22</div>
+                    
+                    <!-- Ngày (Dòng 5) -->
+                    <div class="flex items-center justify-center">23</div>
+                    <div class="flex items-center justify-center">24</div>
+                    <div class="flex items-center justify-center">25</div>
+                    <div class="flex items-center justify-center">26</div>
+                    <div class="flex items-center justify-center">27</div>
+                    <div class="flex items-center justify-center">28</div>
                     
                     <!-- Ngày 29 có sự kiện -->
-                    <div class="flex justify-center py-1">
-                        <div class="relative group">
-                            <span class="w-10 h-10 flex items-center justify-center rounded-full bg-[#0B7681] text-white font-bold cursor-pointer shadow-md">29</span>
-                            <!-- Tooltip -->
-                            <div class="event-tooltip absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-56 bg-white border border-gray-200 shadow-xl rounded-lg p-3 z-30 text-left pointer-events-none">
-                                <h4 class="text-[#F26F33] font-bold text-sm mb-1 uppercase">Hạn chót nộp hồ sơ</h4>
-                                <p class="text-xs text-gray-600">Ngày cuối cùng tiếp nhận hồ sơ xét tuyển Phương thức xét học bạ.</p>
-                                <!-- Arrow -->
+                    <div class="flex justify-center relative group">
+                        <span class="w-9 h-9 flex items-center justify-center rounded-full bg-[#0B7681] text-white font-bold cursor-pointer">29</span>
+                        <div class="event-tooltip absolute bottom-full left-1/2 -translate-x-1/2 pb-2 z-30">
+                            <div class="w-56 bg-white border border-gray-100 shadow-[0_5px_15px_rgba(0,0,0,0.1)] rounded-lg p-3 text-left relative">
+                                <h4 class="text-[#0B7681] font-bold text-[13px] mb-1 uppercase">Hạn chót nộp hồ sơ</h4>
+                                <p class="text-[12px] text-gray-600 mb-2 leading-relaxed">Ngày cuối cùng tiếp nhận hồ sơ xét tuyển Phương thức xét học bạ.</p>
+                                <a href="#" class="text-[#F26F33] text-[11px] hover:underline font-medium italic block">Xem chi tiết sự kiện tại đây -></a>
                                 <div class="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-white"></div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="flex justify-center py-2">30</div>
-                    <div class="flex justify-center py-2">31</div>
-                    <div class="text-gray-400 flex justify-center py-2">1</div>
-                    <div class="text-gray-400 flex justify-center py-2">2</div>
-                    <div class="text-gray-400 flex justify-center py-2">3</div>
-                    <div class="text-gray-400 flex justify-center py-2">4</div>
-                    <div class="text-gray-400 flex justify-center py-2">5</div>
-                </div>
-            </div>
-                    </div>
+                    <!-- Ngày (Dòng 6) -->
+                    <div class="flex items-center justify-center">30</div>
+                    <div class="flex items-center justify-center">31</div>
+                    <div class="text-gray-400 flex items-center justify-center">1</div>
+                    <div class="text-gray-400 flex items-center justify-center">2</div>
+                    <div class="text-gray-400 flex items-center justify-center">3</div>
+                    <div class="text-gray-400 flex items-center justify-center">4</div>
+                    <div class="text-gray-400 flex items-center justify-center">5</div>
                 </div>
             </div>
     </section>
@@ -665,18 +672,16 @@
             content.classList.add('hidden');
         });
         
-        // Bỏ active style ở tất cả các nút
+        // Đưa tất cả các nút về trạng thái mặc định (chữ xám mờ)
         document.querySelectorAll('.tab-btn').forEach(function(btn) {
-            btn.classList.remove('text-[#0B7681]', 'font-bold', 'border-[#0B7681]');
-            btn.classList.add('text-gray-500', 'font-medium', 'border-transparent');
+            btn.className = 'tab-btn text-gray-500 font-medium pb-1 hover:text-[#0B7681] transition';
         });
 
-        // Kích hoạt tab nội dung được chọn
+        // Hiển thị tab nội dung được chọn
         document.getElementById(tabId).classList.remove('hidden');
         
-        // Thêm style active vào nút được nhấn
-        element.classList.remove('text-gray-500', 'font-medium', 'border-transparent');
-        element.classList.add('text-[#0B7681]', 'font-bold', 'border-transparent');
+        // Cập nhật giao diện tab đang active (chữ màu Teal, in đậm)
+        element.className = 'tab-btn text-[#0B7681] font-bold pb-1 transition';
     }
 </script>
 
