@@ -281,25 +281,122 @@
                 <a href="#" class="md:absolute right-0 text-sm text-gray-400 hover:text-[#0B7681]">Xem tất cả tin tức</a>
             </div>
 
-            <!-- Tab 1: Tin tuyển sinh -->
+           <!-- Tab 1: Tin tuyển sinh -->
             <div id="tab-tin-tuc" class="tab-content transition-opacity duration-300">
-                <div class="relative w-full max-w-3xl rounded overflow-hidden group cursor-pointer shadow-lg mx-auto">
-                    <!-- Ảnh bài báo nổi bật -->
-                    <img src="https://tuyensinh.ueh.edu.vn/wp-content/uploads/2021/03/UEH-Top-501-THE-01-1-1536x423.png" alt="News Image" class="w-full h-80 object-cover object-left-top bg-gray-100 group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-black/20"></div>
-                    <!-- Khung Nội dung tin tức -->
-                    <div class="absolute bottom-0 left-0 w-full lg:w-4/5 bg-gray-100/95 backdrop-blur p-6 rounded-tr-xl">
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-xs font-bold text-gray-500 uppercase tracking-widest">TIN MỚI NHẤT | 15/5/2026</span>
-                            <span class="text-xs text-gray-400 group-hover:text-[#0B7681] transition">Đọc tiếp &rarr;</span>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-6xl mx-auto">
+                    
+                    <!-- Cột trái: Tin nổi bật -->
+                    <div class="lg:col-span-7 relative w-full rounded-xl overflow-hidden group cursor-pointer shadow-sm h-[320px] md:h-[360px]">
+                        <img src="https://tuyensinh.ueh.edu.vn/wp-content/uploads/2021/03/UEH-Top-501-THE-01-1-1536x423.png" alt="News Image" class="w-full h-full object-cover object-left-top bg-gray-100 group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-black/10"></div>
+                        
+                        <!-- Box nội dung nằm đè góc dưới trái -->
+                        <div class="absolute bottom-0 left-0 w-11/12 bg-white/95 backdrop-blur p-4 md:p-6 rounded-tr-2xl">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-widest">TIN MỚI NHẤT | 15/5/2026</span>
+                                <span class="text-[10px] md:text-xs text-gray-400 group-hover:text-[#0B7681] transition">Đọc tiếp &rarr;</span>
+                            </div>
+                            <h3 class="text-[#0B7681] text-base md:text-lg font-bold mb-2 leading-snug group-hover:underline line-clamp-2">UEH khởi động mùa Tuyển sinh 2026 với 2 phương thức cùng 52 ngành học</h3>
+                            <p class="text-[11px] md:text-xs text-gray-500 line-clamp-2">Vừa qua, UEH vừa ban hành công văn tuyển sinh Đại học Chính quy 2026 với 52 ngành học trải đều trên các lĩnh vực Kinh doanh, Kinh tế, Luật, Công nghệ...</p>
                         </div>
-                        <h3 class="text-[#0B7681] text-xl font-bold mb-3 leading-snug group-hover:underline">UEH khởi động mùa Tuyển sinh 2026 với 2 phương thức cùng 52 ngành học</h3>
-                        <p class="text-sm text-gray-600 line-clamp-2">Vừa qua, UEH vừa ban hành công văn tuyển sinh Đại học Chính quy 2026 với 52 ngành học trải đều trên các lĩnh vực Kinh doanh, Kinh tế, Luật, Công nghệ...</p>
+                    </div>
+
+                    <!-- Cột phải: Danh sách tin tức -->
+                    <div class="lg:col-span-5 flex flex-col justify-between space-y-4 h-full">
+                        
+                        <!-- Tin nhỏ 1 -->
+                        <div class="flex gap-4 group cursor-pointer pb-3 border-b border-gray-100 last:border-0">
+                            <div class="w-[120px] md:w-[140px] h-[80px] md:h-[90px] shrink-0 rounded-lg overflow-hidden relative bg-gray-100">
+                                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80" alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="flex-1 flex flex-col justify-center">
+                                <h4 class="text-[13px] md:text-sm font-bold text-gray-800 leading-snug group-hover:text-[#0B7681] transition line-clamp-2 mb-1.5">UEH thông báo nộp phiếu điểm thi môn Vẽ mỹ thuật đối với thí sinh sử dụng tổ hợp V00 đăng ký xét tuyển Khóa 52</h4>
+                                <p class="text-[11px] text-gray-500 line-clamp-2">Đại học Kinh tế Thành phố Hồ Chí Minh thông báo thí sinh sử dụng tổ hợp V00 (Toán, Vật lý, Vẽ mỹ thuật) đăng ký Phương thức 2: Phương thức xét tuyển tích...</p>
+                            </div>
+                        </div>
+
+                        <!-- Tin nhỏ 2 -->
+                        <div class="flex gap-4 group cursor-pointer pb-3 border-b border-gray-100 last:border-0">
+                            <div class="w-[120px] md:w-[140px] h-[80px] md:h-[90px] shrink-0 rounded-lg overflow-hidden relative bg-gray-100">
+                                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=400&q=80" alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="flex-1 flex flex-col justify-center">
+                                <h4 class="text-[13px] md:text-sm font-bold text-gray-800 leading-snug group-hover:text-[#0B7681] transition line-clamp-2 mb-1.5">Thông báo gia hạn thời gian đăng ký xét tuyển Khóa 52 Đại học chính quy năm 2026</h4>
+                                <p class="text-[11px] text-gray-500 line-clamp-2">Nhằm tạo điều kiện thuận lợi nhất cho quý phụ huynh và các bạn học sinh trong việc hoàn thiện hồ sơ đăng ký xét tuyển vào UEH năm 2026...</p>
+                            </div>
+                        </div>
+
+                        <!-- Tin nhỏ 3 -->
+                        <div class="flex gap-4 group cursor-pointer pb-3 border-b border-gray-100 last:border-0">
+                            <div class="w-[120px] md:w-[140px] h-[80px] md:h-[90px] shrink-0 rounded-lg overflow-hidden relative bg-gray-100">
+                                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=400&q=80" alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="flex-1 flex flex-col justify-center">
+                                <h4 class="text-[13px] md:text-sm font-bold text-gray-800 leading-snug group-hover:text-[#0B7681] transition line-clamp-2 mb-1.5">Hướng dẫn chi tiết các bước nộp hồ sơ xét tuyển trực tuyến vào UEH năm 2026</h4>
+                                <p class="text-[11px] text-gray-500 line-clamp-2">Cổng thông tin xét tuyển trực tuyến của UEH đã chính thức mở. Bài viết này sẽ hướng dẫn thí sinh từng bước để đăng ký hồ sơ nhanh chóng và chính xác...</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
 
-            <!-- Tab 3: Sự kiện tuyển sinh (CALENDAR) -->
+            <!-- Tab 2: Tin hướng nghiệp -->
+            <div id="tab-huong-nghiep" class="tab-content hidden transition-opacity duration-300">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-6xl mx-auto">
+                    
+                    <!-- Cột trái: Tin nổi bật (Hướng nghiệp) -->
+                    <div class="lg:col-span-7 relative w-full rounded-xl overflow-hidden group cursor-pointer shadow-sm h-[320px] md:h-[360px]">
+                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1000&q=80" alt="Career Image" class="w-full h-full object-cover object-center bg-gray-100 group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-black/10"></div>
+                        
+                        <!-- Box nội dung -->
+                        <div class="absolute bottom-0 left-0 w-11/12 bg-white/95 backdrop-blur p-4 md:p-6 rounded-tr-2xl">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-[10px] md:text-xs font-bold text-[#F26F33] uppercase tracking-widest">GÓC HƯỚNG NGHIỆP | 12/5/2026</span>
+                                <span class="text-[10px] md:text-xs text-gray-400 group-hover:text-[#F26F33] transition">Đọc tiếp &rarr;</span>
+                            </div>
+                            <h3 class="text-[#0B7681] text-base md:text-lg font-bold mb-2 leading-snug group-hover:underline line-clamp-2">Đón đầu xu hướng nhân lực ngành Công nghệ & Thiết kế giai đoạn 2026 - 2030</h3>
+                            <p class="text-[11px] md:text-xs text-gray-500 line-clamp-2">Với sự phát triển mạnh mẽ của AI và chuyển đổi số, sinh viên theo học nhóm ngành Công nghệ & Thiết kế tại UEH sẽ có những lợi thế cạnh tranh nào trong thị trường lao động tương lai...</p>
+                        </div>
+                    </div>
+
+                    <!-- Cột phải: Danh sách tin tức (Hướng nghiệp) -->
+                    <div class="lg:col-span-5 flex flex-col justify-between space-y-4 h-full">
+                        
+                        <!-- Tin nhỏ 1 -->
+                        <div class="flex gap-4 group cursor-pointer pb-3 border-b border-gray-100 last:border-0">
+                            <div class="w-[120px] md:w-[140px] h-[80px] md:h-[90px] shrink-0 rounded-lg overflow-hidden relative bg-gray-100">
+                                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="flex-1 flex flex-col justify-center">
+                                <h4 class="text-[13px] md:text-sm font-bold text-gray-800 leading-snug group-hover:text-[#F26F33] transition line-clamp-2 mb-1.5">Kỹ năng sinh tồn nơi công sở: Những điều sinh viên mới ra trường cần trang bị</h4>
+                                <p class="text-[11px] text-gray-500 line-clamp-2">Bên cạnh kiến thức chuyên môn, Gen Z cần chuẩn bị bộ kỹ năng mềm vững chắc để thích nghi nhanh chóng với môi trường làm việc chuyên nghiệp...</p>
+                            </div>
+                        </div>
+
+                        <!-- Tin nhỏ 2 -->
+                        <div class="flex gap-4 group cursor-pointer pb-3 border-b border-gray-100 last:border-0">
+                            <div class="w-[120px] md:w-[140px] h-[80px] md:h-[90px] shrink-0 rounded-lg overflow-hidden relative bg-gray-100">
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80" alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="flex-1 flex flex-col justify-center">
+                                <h4 class="text-[13px] md:text-sm font-bold text-gray-800 leading-snug group-hover:text-[#F26F33] transition line-clamp-2 mb-1.5">Sinh viên nhóm ngành Kinh doanh khởi nghiệp: Cơ hội và Thách thức</h4>
+                                <p class="text-[11px] text-gray-500 line-clamp-2">Chia sẻ từ các cựu sinh viên UEH đã khởi nghiệp thành công, những bài học đắt giá về gọi vốn, quản lý dòng tiền và xây dựng thương hiệu cá nhân...</p>
+                            </div>
+                        </div>
+
+                        <!-- Tin nhỏ 3 -->
+                        <div class="flex gap-4 group cursor-pointer pb-3 border-b border-gray-100 last:border-0">
+                            <div class="w-[120px] md:w-[140px] h-[80px] md:h-[90px] shrink-0 rounded-lg overflow-hidden relative bg-gray-100">
+                                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80" alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            </div>
+                            <div class="flex-1 flex flex-col justify-center">
+                                <h4 class="text-[13px] md:text-sm font-bold text-gray-800 leading-snug group-hover:text-[#F26F33] transition line-clamp-2 mb-1.5">UEH Career Fair 2026: Kết nối hơn 100 doanh nghiệp hàng đầu trong nước và quốc tế</h4>
+                                <p class="text-[11px] text-gray-500 line-clamp-2">Ngày hội việc làm lớn nhất năm của UEH chuẩn bị diễn ra. Cơ hội nộp CV trực tiếp, phỏng vấn ngay tại chỗ và nhận những lời khuyên hữu ích từ các HR Manager...</p>
+                            </div>
+                        </div>
+		<!-- Tab 3: Sự kiện tuyển sinh (CALENDAR) -->
             <div id="tab-su-kien" class="tab-content hidden transition-opacity duration-300 max-w-4xl mx-auto">
                 <div class="flex items-center justify-between text-[#0B7681] font-bold mb-6">
                     <button class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-full"><i class="fas fa-chevron-left text-sm"></i></button>
@@ -404,14 +501,9 @@
                     <div class="text-gray-400 flex justify-center py-2">5</div>
                 </div>
             </div>
-
-            <!-- Tab 2: Tin hướng nghiệp (Empty Placeholder for demo) -->
-            <div id="tab-huong-nghiep" class="tab-content hidden transition-opacity duration-300">
-                <div class="text-center text-gray-500 py-10">
-                    Nội dung Tin hướng nghiệp đang cập nhật...
+                    </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- 5. Cơ hội Học bổng -->
@@ -582,7 +674,7 @@
         
         // Thêm style active vào nút được nhấn
         element.classList.remove('text-gray-500', 'font-medium', 'border-transparent');
-        element.classList.add('text-[#0B7681]', 'font-bold', 'border-[#0B7681]');
+        element.classList.add('text-[#0B7681]', 'font-bold', 'border-transparent');
     }
 </script>
 
