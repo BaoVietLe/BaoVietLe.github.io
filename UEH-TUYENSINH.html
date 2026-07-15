@@ -513,19 +513,19 @@
         // Kích hoạt scroll event lúc ban đầu để xử lý ẩn hiện mũi tên
         sdgContainer.dispatchEvent(new Event('scroll'));
     });
-function triggerSearch() {
-    // Lấy giá trị từ ô input và xóa khoảng trắng thừa
-    const keyword = document.getElementById('searchInput').value.trim();
+window.onload = function() {
+    // Đọc các tham số trên URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const keyword = urlParams.get('keyword'); // Lấy từ khóa sau dấu ?keyword=
     
     if (keyword) {
-        // Thay 'trang-tim-kiem.html' bằng đường dẫn file/trang tìm kiếm thực tế của bạn
-        // Chuyển hướng kèm theo tham số URL (ví dụ: trang-tim-kiem.html?tukhoa=apple)
-        window.location.href = `trang-tim-kiem.html?keyword=${encodeURIComponent(keyword)}`;
-    } else {
-        alert('Vui lòng nhập từ khóa tìm kiếm!');
+        // Hiển thị lại từ khóa vào ô tìm kiếm ở trang kết quả
+        document.getElementById('searchInput').value = decodeURIComponent(keyword);
+        
+        // Gọi hàm tìm kiếm hoặc render dữ liệu ở đây
+        // fetchSearchResults(keyword); 
     }
-}
-
+};
 // Bắt sự kiện người dùng bấm phím Enter để tìm kiếm
 document.getElementById('searchInput').addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
