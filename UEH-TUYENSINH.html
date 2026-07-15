@@ -513,7 +513,25 @@
         // Kích hoạt scroll event lúc ban đầu để xử lý ẩn hiện mũi tên
         sdgContainer.dispatchEvent(new Event('scroll'));
     });
+function triggerSearch() {
+    // Lấy giá trị từ ô input và xóa khoảng trắng thừa
+    const keyword = document.getElementById('searchInput').value.trim();
+    
+    if (keyword) {
+        // Thay 'trang-tim-kiem.html' bằng đường dẫn file/trang tìm kiếm thực tế của bạn
+        // Chuyển hướng kèm theo tham số URL (ví dụ: trang-tim-kiem.html?tukhoa=apple)
+        window.location.href = `trang-tim-kiem.html?keyword=${encodeURIComponent(keyword)}`;
+    } else {
+        alert('Vui lòng nhập từ khóa tìm kiếm!');
+    }
+}
 
+// Bắt sự kiện người dùng bấm phím Enter để tìm kiếm
+document.getElementById('searchInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        triggerSearch();
+    }
+});
     function clickKeyword(keyword) {
         document.getElementById('searchInput').value = keyword;
         triggerSearch();
