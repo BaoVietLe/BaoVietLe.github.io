@@ -3,413 +3,627 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alex Chen — Product Designer</title>
+<title>Le Viet Bao — Portfolio</title>
 <style>
   :root{
-    --bg: #ffffff;
-    --bg-alt: #f5f5f7;
-    --bg-dark: #000000;
-    --ink: #1d1d1f;
-    --ink-soft: #86868b;
-    --line: #d2d2d7;
-    --white: #ffffff;
+    --bg:#ffffff; --bg-alt:#f5f5f7; --bg-dark:#000000;
+    --ink:#1d1d1f; --ink-soft:#86868b; --line:#d2d2d7; --white:#ffffff;
   }
-
   *{margin:0;padding:0;box-sizing:border-box;}
-
   html{scroll-behavior:smooth;}
-
-  body{
-    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background:var(--bg);
-    color:var(--ink);
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-
+  body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
   a{color:inherit;text-decoration:none;}
   img{max-width:100%;display:block;}
-
   ::selection{background:var(--ink);color:var(--white);}
+  button{font:inherit;background:none;border:none;cursor:pointer;color:inherit;}
 
-  /* ---------- Nav ---------- */
-  .nav{
-    position:fixed;top:0;left:0;right:0;z-index:100;
-    height:52px;
-    display:flex;align-items:center;justify-content:space-between;
-    padding:0 24px;
-    background:rgba(255,255,255,0.72);
-    backdrop-filter:saturate(180%) blur(20px);
-    -webkit-backdrop-filter:saturate(180%) blur(20px);
-    border-bottom:1px solid transparent;
-    transition:border-color .3s ease;
-  }
+  /* ---- Nav ---- */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:200;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:rgba(255,255,255,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid transparent;transition:border-color .3s ease;}
   .nav.scrolled{border-bottom-color:var(--line);}
-  .nav-mark{font-size:14px;font-weight:600;letter-spacing:-0.01em;}
-  .nav-links{display:flex;gap:28px;list-style:none;}
-  .nav-links a{
-    font-size:12px;font-weight:400;color:var(--ink);
-    opacity:.8;transition:opacity .2s ease;
-  }
+  .nav-mark{font-size:14px;font-weight:600;letter-spacing:-0.01em;display:flex;align-items:center;gap:8px;}
+  .nav-links{display:flex;gap:26px;list-style:none;}
+  .nav-links a{font-size:12px;color:var(--ink);opacity:.75;transition:opacity .2s ease;}
   .nav-links a:hover{opacity:1;}
-  .nav-cta{
-    font-size:12px;padding:6px 14px;border-radius:980px;
-    background:var(--ink);color:var(--white);
-    transition:transform .2s ease, background .2s ease;
-  }
+  .nav-cta{font-size:12px;padding:6px 14px;border-radius:980px;background:var(--ink);color:var(--white);transition:background .2s ease;}
   .nav-cta:hover{background:#434344;}
 
-  /* ---------- Hero ---------- */
-  .hero{
-    position:relative;
-    min-height:100svh;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;
-    padding:120px 24px 80px;
-    overflow:hidden;
-  }
-  .hero-spot{
-    position:absolute;inset:0;
-    pointer-events:none;
-    background:radial-gradient(600px circle at var(--x,50%) var(--y,30%), rgba(0,0,0,0.05), transparent 60%);
-    transition:background .1s ease;
-  }
-  .eyebrow{
-    font-size:13px;font-weight:600;color:var(--ink-soft);
-    letter-spacing:.02em;margin-bottom:20px;
-    opacity:0;animation:rise .8s ease forwards .1s;
-  }
-  .hero h1{
-    font-size:clamp(40px,8vw,104px);
-    font-weight:600;
-    letter-spacing:-0.045em;
-    line-height:1.02;
-    max-width:1100px;
-    opacity:0;animation:rise .9s ease forwards .25s;
-  }
+  /* ---- Hero ---- */
+  .hero{position:relative;min-height:96svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:130px 24px 70px;overflow:hidden;}
+  .hero-spot{position:absolute;inset:0;pointer-events:none;background:radial-gradient(600px circle at var(--x,50%) var(--y,30%),rgba(0,0,0,.05),transparent 60%);}
+  .avatar{width:88px;height:88px;border-radius:50%;overflow:hidden;margin-bottom:24px;border:1px solid var(--line);opacity:0;animation:rise .8s ease forwards;}
+  .avatar img{width:100%;height:100%;object-fit:cover;}
+  .eyebrow{font-size:13px;font-weight:600;color:var(--ink-soft);letter-spacing:.02em;margin-bottom:18px;opacity:0;animation:rise .8s ease forwards .1s;}
+  .hero h1{font-size:clamp(34px,7vw,88px);font-weight:600;letter-spacing:-0.04em;line-height:1.04;max-width:1000px;opacity:0;animation:rise .9s ease forwards .25s;}
   .hero h1 em{font-style:normal;color:var(--ink-soft);}
-  .hero p{
-    margin-top:24px;
-    font-size:clamp(17px,2vw,21px);
-    color:var(--ink-soft);
-    max-width:600px;
-    line-height:1.5;
-    opacity:0;animation:rise .9s ease forwards .4s;
-  }
-  .hero-actions{
-    margin-top:36px;display:flex;gap:14px;
-    opacity:0;animation:rise .9s ease forwards .55s;
-  }
-  .btn{
-    font-size:15px;font-weight:500;
-    padding:12px 24px;border-radius:980px;
-    border:1px solid var(--ink);
-    transition:all .2s ease;
-  }
+  .hero p{margin-top:22px;font-size:clamp(16px,2vw,19px);color:var(--ink-soft);max-width:600px;line-height:1.55;opacity:0;animation:rise .9s ease forwards .4s;}
+  .hero-actions{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;opacity:0;animation:rise .9s ease forwards .55s;}
+  .btn{font-size:14px;font-weight:500;padding:11px 22px;border-radius:980px;border:1px solid var(--ink);transition:all .2s ease;display:inline-block;}
   .btn.primary{background:var(--ink);color:var(--white);}
   .btn.primary:hover{background:#434344;border-color:#434344;}
   .btn.ghost:hover{background:var(--ink);color:var(--white);}
+  @keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
 
-  @keyframes rise{
-    from{opacity:0;transform:translateY(14px);}
-    to{opacity:1;transform:translateY(0);}
-  }
+  /* ---- Contact bar ---- */
+  .contact-bar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 24px;}
+  .contact-wrap{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:14px 34px;justify-content:center;align-items:center;}
+  .contact-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-soft);}
+  .contact-item a{color:var(--ink);font-weight:500;transition:opacity .2s ease;}
+  .contact-item a:hover{opacity:.6;}
+  .contact-item svg{flex-shrink:0;opacity:.55;}
 
-  .scroll-cue{
-    position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
-    width:1px;height:44px;background:var(--line);
-    overflow:hidden;
-  }
-  .scroll-cue::after{
-    content:"";position:absolute;top:-100%;left:0;width:100%;height:100%;
-    background:var(--ink);
-    animation:cue 1.8s ease-in-out infinite;
-  }
-  @keyframes cue{
-    0%{top:-100%;} 60%{top:100%;} 100%{top:100%;}
-  }
-
-  /* ---------- Section shell ---------- */
-  section{padding:140px 24px;}
+  /* ---- Section shell ---- */
+  section{padding:120px 24px;}
   .section-alt{background:var(--bg-alt);}
   .wrap{max-width:1100px;margin:0 auto;}
-
-  .kicker{
-    font-size:13px;font-weight:600;color:var(--ink-soft);
-    letter-spacing:.02em;text-transform:none;margin-bottom:14px;
-  }
-  .headline{
-    font-size:clamp(30px,4.2vw,52px);
-    font-weight:600;letter-spacing:-0.03em;line-height:1.08;
-    max-width:820px;
-  }
-  .lede{
-    margin-top:22px;font-size:19px;line-height:1.65;color:var(--ink-soft);
-    max-width:640px;
-  }
-
-  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .kicker{font-size:13px;font-weight:600;color:var(--ink-soft);letter-spacing:.02em;margin-bottom:14px;}
+  .headline{font-size:clamp(28px,4vw,48px);font-weight:600;letter-spacing:-0.03em;line-height:1.1;max-width:800px;}
+  .lede{margin-top:20px;font-size:18px;line-height:1.65;color:var(--ink-soft);max-width:680px;}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
   .reveal.in{opacity:1;transform:translateY(0);}
 
-  /* ---------- About ---------- */
-  .about-grid{
-    display:grid;grid-template-columns:1.1fr .9fr;gap:80px;margin-top:64px;
-  }
-  .facts{display:grid;grid-template-columns:1fr 1fr;gap:32px 24px;}
-  .fact dt{font-size:13px;color:var(--ink-soft);margin-bottom:6px;}
-  .fact dd{font-size:17px;font-weight:500;letter-spacing:-0.01em;}
+  /* ---- Personal Summary ---- */
+  .summary-box{margin-top:52px;display:grid;grid-template-columns:1fr 1px 1fr;gap:48px;}
+  .summary-text{font-size:17px;line-height:1.75;color:var(--ink);}
+  .summary-divider{background:var(--line);}
+  .pull-quote{font-size:22px;font-weight:600;letter-spacing:-0.015em;line-height:1.4;color:var(--ink);}
+  .pull-quote span{color:var(--ink-soft);font-weight:400;font-size:13px;display:block;margin-top:16px;letter-spacing:0;}
+  .edu-strip{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .edu-cell{background:var(--bg);padding:24px;}
+  .edu-cell dt{font-size:12px;color:var(--ink-soft);margin-bottom:8px;}
+  .edu-cell dd{font-size:16px;font-weight:600;letter-spacing:-0.01em;}
 
-  /* ---------- Work ---------- */
-  .work-list{margin-top:64px;display:flex;flex-direction:column;}
-  .work-item{
-    display:grid;grid-template-columns:1fr 1.3fr;gap:56px;
-    align-items:center;
-    padding:56px 0;
-    border-top:1px solid var(--line);
-    cursor:pointer;
-  }
-  .work-item:last-child{border-bottom:1px solid var(--line);}
-  .work-meta .work-tag{font-size:13px;color:var(--ink-soft);margin-bottom:10px;}
-  .work-meta h3{
-    font-size:clamp(24px,3vw,34px);font-weight:600;letter-spacing:-0.02em;
-    transition:opacity .2s ease;
-  }
-  .work-meta p{margin-top:14px;color:var(--ink-soft);font-size:16px;line-height:1.6;max-width:420px;}
-  .work-link{
-    display:inline-flex;align-items:center;gap:6px;margin-top:20px;
-    font-size:15px;font-weight:500;
-  }
-  .work-link svg{transition:transform .2s ease;}
-  .work-item:hover .work-link svg{transform:translateX(4px);}
+  /* ---- Personal Story accordion ---- */
+  .story-list{margin-top:56px;}
+  .story-item{border-top:1px solid var(--line);}
+  .story-item:last-child{border-bottom:1px solid var(--line);}
+  .story-trigger{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:30px 4px;text-align:left;}
+  .story-trigger-left{display:flex;align-items:baseline;gap:20px;}
+  .story-num{font-size:13px;color:var(--ink-soft);min-width:24px;}
+  .story-title{font-size:clamp(19px,2.4vw,26px);font-weight:600;letter-spacing:-0.02em;}
+  .story-teaser{font-size:14px;color:var(--ink-soft);margin-top:6px;font-weight:400;}
+  .story-icon{font-size:22px;font-weight:400;color:var(--ink-soft);flex-shrink:0;width:28px;text-align:center;transition:transform .2s ease;}
+  .story-panel{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.16,1,.3,1);}
+  .story-panel-inner{padding:0 4px 34px;max-width:760px;}
+  .story-panel-inner p{font-size:16px;line-height:1.75;color:var(--ink);margin-bottom:16px;}
+  .story-panel-inner p:last-child{margin-bottom:0;}
+  .story-item.open .story-icon{transform:rotate(180deg);}
 
-  .work-visual{
-    aspect-ratio:16/10;border-radius:18px;
-    background:linear-gradient(155deg,#efeff1,#dcdce0);
-    display:flex;align-items:center;justify-content:center;
-    overflow:hidden;position:relative;
-    transition:transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s ease;
-  }
-  .work-item:hover .work-visual{
-    transform:scale(1.015) translateY(-4px);
-    box-shadow:0 30px 60px -20px rgba(0,0,0,0.25);
-  }
-  .work-visual span{
-    font-size:13px;color:#9a9a9e;letter-spacing:.04em;
-  }
+  /* ---- Projects ---- */
+  .project-grid{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
+  .project-card{background:var(--bg);padding:40px 36px;cursor:pointer;transition:background .25s ease;display:flex;flex-direction:column;min-height:260px;}
+  .project-card:hover{background:var(--bg-alt);}
+  .project-tag{font-size:12px;color:var(--ink-soft);margin-bottom:16px;}
+  .project-card h3{font-size:22px;font-weight:600;letter-spacing:-0.015em;line-height:1.3;}
+  .project-card p{margin-top:14px;font-size:14.5px;color:var(--ink-soft);line-height:1.6;flex-grow:1;}
+  .project-open{margin-top:20px;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;}
+  .project-open svg{transition:transform .2s ease;}
+  .project-card:hover .project-open svg{transform:translateX(4px);}
 
-  /* ---------- Process ---------- */
-  .process-row{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
-    background:var(--line);margin-top:64px;border:1px solid var(--line);
-  }
-  .process-cell{background:var(--bg);padding:36px 28px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;}
-  .process-cell .num{font-size:13px;color:var(--ink-soft);}
-  .process-cell h4{margin-top:60px;font-size:19px;font-weight:600;letter-spacing:-0.01em;}
-  .process-cell p{margin-top:10px;font-size:14px;color:var(--ink-soft);line-height:1.55;}
+  /* ---- Project modal ---- */
+  .modal-overlay{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,0.4);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .3s ease;display:flex;justify-content:center;padding:40px 20px;overflow-y:auto;}
+  .modal-overlay.open{opacity:1;pointer-events:auto;}
+  .modal-card{background:var(--bg);border-radius:20px;max-width:760px;width:100%;padding:52px;margin:auto;position:relative;transform:translateY(24px);transition:transform .35s cubic-bezier(.16,1,.3,1);box-shadow:0 40px 90px -30px rgba(0,0,0,0.35);}
+  .modal-overlay.open .modal-card{transform:translateY(0);}
+  .modal-close{position:absolute;top:22px;right:22px;width:34px;height:34px;border-radius:50%;background:var(--bg-alt);display:flex;align-items:center;justify-content:center;font-size:18px;transition:background .2s ease;}
+  .modal-close:hover{background:var(--line);}
+  .modal-tag{font-size:12px;color:var(--ink-soft);margin-bottom:12px;}
+  .modal-card h2{font-size:clamp(24px,3.4vw,34px);font-weight:600;letter-spacing:-0.02em;line-height:1.2;max-width:560px;}
+  .modal-section{margin-top:32px;}
+  .modal-section h4{font-size:13px;font-weight:600;color:var(--ink-soft);letter-spacing:.02em;margin-bottom:10px;}
+  .modal-section p{font-size:15.5px;line-height:1.7;color:var(--ink);}
+  .modal-gallery{margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+  .modal-gallery div{aspect-ratio:4/3;border-radius:10px;background:linear-gradient(155deg,#efeff1,#dcdce0);display:flex;align-items:center;justify-content:center;font-size:11.5px;color:#9a9a9e;text-align:center;padding:8px;}
+  body.modal-lock{overflow:hidden;}
 
-  /* ---------- Dark CTA ---------- */
-  .cta-dark{
-    background:var(--bg-dark);color:var(--white);
-    text-align:center;
-  }
+  /* ---- Timeline (Experience & Leadership) ---- */
+  .timeline{margin-top:56px;}
+  .tl-item{display:grid;grid-template-columns:160px 1fr;gap:32px;padding:32px 0;border-top:1px solid var(--line);}
+  .tl-item:last-child{border-bottom:1px solid var(--line);}
+  .tl-date{font-size:13px;color:var(--ink-soft);}
+  .tl-role{font-size:19px;font-weight:600;letter-spacing:-0.015em;}
+  .tl-org{font-size:14px;color:var(--ink-soft);margin-top:2px;}
+  .tl-desc{margin-top:12px;font-size:15px;line-height:1.65;color:var(--ink);max-width:640px;}
+  .tl-badge{display:inline-block;font-size:11px;padding:3px 9px;border-radius:980px;background:var(--bg-alt);color:var(--ink-soft);margin-top:12px;}
+
+  /* ---- Skills ---- */
+  .skills-grid{margin-top:56px;display:grid;grid-template-columns:repeat(2,1fr);gap:36px 56px;}
+  .skill-group h4{font-size:15px;font-weight:600;margin-bottom:14px;}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:8px;}
+  .skill-tag{font-size:13px;padding:7px 13px;border:1px solid var(--line);border-radius:980px;color:var(--ink);}
+  .interest-block{margin-top:64px;padding-top:48px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+  .interest-block h4{font-size:15px;font-weight:600;margin-bottom:12px;}
+  .interest-block p{font-size:15px;line-height:1.7;color:var(--ink-soft);}
+
+  /* ---- Dark CTA ---- */
+  .cta-dark{background:var(--bg-dark);color:var(--white);text-align:center;}
   .cta-dark .headline{color:var(--white);margin:0 auto;}
   .cta-dark .lede{color:#a1a1a6;margin-left:auto;margin-right:auto;}
   .cta-dark .btn.primary{background:var(--white);color:var(--bg-dark);border-color:var(--white);}
   .cta-dark .btn.primary:hover{background:#e5e5e5;}
-  .cta-dark .hero-actions{justify-content:center;margin-top:32px;opacity:1;animation:none;}
+  .cta-dark .btn.ghost{border-color:#434344;}
+  .cta-dark .hero-actions{justify-content:center;margin-top:30px;opacity:1;animation:none;}
 
-  /* ---------- Footer ---------- */
-  footer{
-    padding:48px 24px;border-top:1px solid var(--line);
-    display:flex;flex-wrap:wrap;gap:16px;
-    align-items:center;justify-content:space-between;
-    font-size:13px;color:var(--ink-soft);
-  }
-  footer .foot-links{display:flex;gap:20px;}
-  footer a:hover{color:var(--ink);}
+  /* ---- Footer ---- */
+  footer{padding:56px 24px 40px;border-top:1px solid var(--line);}
+  .foot-wrap{max-width:1100px;margin:0 auto;}
+  .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;padding-bottom:36px;border-bottom:1px solid var(--line);}
+  .foot-name{font-size:20px;font-weight:600;letter-spacing:-0.02em;}
+  .foot-role{font-size:13px;color:var(--ink-soft);margin-top:6px;max-width:260px;line-height:1.5;}
+  .foot-cols{display:flex;gap:64px;}
+  .foot-col h5{font-size:12px;color:var(--ink-soft);margin-bottom:12px;letter-spacing:.02em;}
+  .foot-col a{display:block;font-size:14px;margin-bottom:9px;color:var(--ink);}
+  .foot-col a:hover{opacity:.6;}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:24px;font-size:12.5px;color:var(--ink-soft);}
 
   @media (max-width:860px){
-    section{padding:96px 20px;}
-    .about-grid{grid-template-columns:1fr;gap:40px;}
-    .work-item{grid-template-columns:1fr;gap:24px;}
-    .work-visual{order:-1;}
-    .process-row{grid-template-columns:1fr 1fr;}
+    section{padding:88px 20px;}
+    .summary-box{grid-template-columns:1fr;}
+    .summary-divider{display:none;}
+    .edu-strip{grid-template-columns:1fr 1fr;}
+    .project-grid{grid-template-columns:1fr;}
+    .skills-grid{grid-template-columns:1fr;}
+    .interest-block{grid-template-columns:1fr;}
+    .tl-item{grid-template-columns:1fr;gap:8px;}
     .nav-links{display:none;}
+    .modal-card{padding:32px 24px;}
+    .modal-gallery{grid-template-columns:repeat(2,1fr);}
+    .foot-top{flex-direction:column;}
+    .foot-cols{gap:40px;}
   }
 
   @media (prefers-reduced-motion: reduce){
-    *{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important;scroll-behavior:auto !important;}
+    *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
   }
-
   :focus-visible{outline:2px solid var(--ink);outline-offset:3px;}
 </style>
 </head>
 <body>
 
   <nav class="nav" id="nav">
-    <a href="#" class="nav-mark">Alex Chen</a>
+    <a href="#hero" class="nav-mark">
+      <span style="width:22px;height:22px;border-radius:50%;overflow:hidden;display:inline-block;"><img src="data:image/jpeg;base64,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" alt="" style="width:100%;height:100%;object-fit:cover;"></span>
+      Le Viet Bao
+    </a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Get in touch</a>
+    <a href="#contact" class="nav-cta">Contact</a>
   </nav>
 
   <header class="hero" id="hero">
     <div class="hero-spot" id="spot"></div>
-    <p class="eyebrow">Product Designer — iOS &amp; Systems</p>
-    <h1>Design that gets out of<br><em>the way of the work.</em></h1>
-    <p>I'm Alex Chen. I design interfaces where restraint is the feature — for teams who care as much about the pixel that isn't there as the one that is.</p>
+    <div class="avatar"><img src="data:image/jpeg;base64,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" alt="Portrait of Le Viet Bao"></div>
+    <p class="eyebrow">Aspiring Technical Project Manager · Business Information Systems, UEH</p>
+    <h1>Engineering luck<br><em>out of the equation.</em></h1>
+    <p>I'm Le Viet Bao — a senior in Vietnam who builds the invisible systems that make sure the right information reaches the right person, reliably, without depending on chance.</p>
     <div class="hero-actions">
-      <a href="#work" class="btn primary">View selected work</a>
-      <a href="#contact" class="btn ghost">Download résumé</a>
+      <a href="#projects" class="btn primary">See on-campus projects</a>
+      <a href="#story" class="btn ghost">Read my story</a>
     </div>
-    <div class="scroll-cue"></div>
   </header>
 
-  <section id="about">
+  <div class="contact-bar" id="contact">
+    <div class="contact-wrap">
+      <div class="contact-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4V4z" stroke="currentColor" stroke-width="1.5"/><path d="M4 6l8 7 8-7" stroke="currentColor" stroke-width="1.5"/></svg>
+        <a href="mailto:lebao062005@gmail.com">lebao062005@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.3 2.6 3 4.3 5.6 5.6l1.9-1.9c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V19c0 .6-.4 1-1 1C10.4 20 4 13.6 4 5.9c0-.6.4-1 1-1h3.1c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1.1L6.6 10.8z" stroke="currentColor" stroke-width="1.3"/></svg>
+        <a href="tel:+84853504617">(+84) 853 504 617</a>
+      </div>
+      <div class="contact-item">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.4"/><path d="M12 3a15 15 0 000 18M12 3a15 15 0 010 18M3 12h18" stroke="currentColor" stroke-width="1.2"/></svg>
+        <a href="https://baoleviet.github.io" target="_blank" rel="noopener">baoleviet.github.io</a>
+      </div>
+      <div class="contact-item">GitHub <a href="https://github.com/BaoVietLe" target="_blank" rel="noopener">BaoVietLe</a></div>
+      <div class="contact-item">LinkedIn <a href="https://linkedin.com/in/baovietle1606" target="_blank" rel="noopener">baovietle1606</a></div>
+      <div class="contact-item">LeetCode <a href="https://leetcode.com/u/BaoVietLe" target="_blank" rel="noopener">BaoVietLe</a></div>
+    </div>
+  </div>
+
+  <!-- ===================== PERSONAL SUMMARY ===================== -->
+  <section id="summary">
     <div class="wrap">
-      <div class="kicker reveal">About</div>
-      <h2 class="headline reveal">Six years making software feel inevitable, not designed.</h2>
-      <div class="about-grid">
-        <p class="lede reveal">I work at the intersection of interaction design and systems thinking — mapping how a hundred small decisions add up to something that feels obvious in hindsight. Most recently I led design for a health-tracking platform used by 2M+ people, and before that, spent three years building the design system for a fintech product from zero to scale.</p>
-        <dl class="facts reveal">
-          <div class="fact"><dt>Based in</dt><dd>San Francisco, CA</dd></div>
-          <div class="fact"><dt>Focus</dt><dd>Product &amp; Systems Design</dd></div>
-          <div class="fact"><dt>Tools</dt><dd>Figma, Swift UI, Framer</dd></div>
-          <div class="fact"><dt>Currently</dt><dd>Open to new roles</dd></div>
-        </dl>
+      <div class="kicker reveal">Personal Summary</div>
+      <h2 class="headline reveal">Systems thinking, applied to how people are treated.</h2>
+      <div class="summary-box">
+        <p class="summary-text reveal">Aspiring Technical Project Manager and senior Business Information Systems student at UEH, drawn to the intersection of Business Analytics, Governance &amp; Planning, and User Experience through systems thinking and a results-oriented, growth-driven mindset. Over three years of academic projects and Youth Union–Student Association leadership, I grew a technical initiative from the ground up — sharpening my ability to elicit business requirements, track KPIs, coordinate cross-functionally, and turn data into insights with code-based analysis.</p>
+        <div class="summary-divider"></div>
+        <div class="pull-quote reveal">"Solutions stay reliable when someone owns it, not merely designs it."
+          <span>The instinct behind every project below — and the reason I want to grow into technical project management at Apple's scale.</span>
+        </div>
+      </div>
+      <div class="edu-strip reveal">
+        <div class="edu-cell"><dt>Education</dt><dd>B.A. Management Information Systems, UEH</dd></div>
+        <div class="edu-cell"><dt>GPA</dt><dd>3.39 / 4.0</dd></div>
+        <div class="edu-cell"><dt>Awarded coursework (4.0)</dt><dd>Business Analysis, ERP, CRM, Design Thinking</dd></div>
+        <div class="edu-cell"><dt>Recognition</dt><dd>Outstanding Youth Union Member, 2023 &amp; 2025</dd></div>
       </div>
     </div>
   </section>
 
-  <section id="work" class="section-alt">
+  <!-- ===================== PERSONAL STORY ===================== -->
+  <section id="story" class="section-alt">
     <div class="wrap">
-      <div class="kicker reveal">Selected work</div>
-      <h2 class="headline reveal">Three problems worth the time it took to solve them.</h2>
+      <div class="kicker reveal">Personal Story</div>
+      <h2 class="headline reveal">The search bar that taught me what teaching could become.</h2>
+      <p class="lede reveal">Five chapters of the same instinct, from a paper wall in my house to the backstage of a search bar.</p>
 
-      <div class="work-list">
-        <div class="work-item reveal">
-          <div class="work-meta">
-            <div class="work-tag">Health &amp; Fitness · iOS App</div>
-            <h3>Rebuilding onboarding to cut drop-off by 38%</h3>
-            <p>A ground-up redesign of first-run experience, reducing steps from eleven to four without losing the data the product needed to work.</p>
-            <a href="#" class="work-link">Read the case study
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
+      <div class="story-list reveal" id="storyList"></div>
+    </div>
+  </section>
+
+  <!-- ===================== ON-CAMPUS PROJECTS ===================== -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="kicker reveal">On-Campus Projects</div>
+      <h2 class="headline reveal">Four problems I chose to practice on before the market handed me real ones.</h2>
+      <p class="lede reveal">Click any project to open the full breakdown — context, approach, results, and what I took away from it.</p>
+      <div class="project-grid" id="projectGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE & LEADERSHIP ===================== -->
+  <section id="experience" class="section-alt">
+    <div class="wrap">
+      <div class="kicker reveal">Experience &amp; Leadership</div>
+      <h2 class="headline reveal">Where the theory met people who didn't read the plan.</h2>
+      <div class="timeline reveal">
+
+        <div class="tl-item">
+          <div><div class="tl-date">Sep – Nov 2025</div></div>
+          <div>
+            <div class="tl-role">Business Analyst Intern</div>
+            <div class="tl-org">TNI Tech</div>
+            <p class="tl-desc">Coordinated across AI developers, software engineers, and business stakeholders to execute 3 system integration projects within an Agile framework, improving project delivery time by 30%. Owned end-to-end technical documentation and led UAT and user training, delivering 100% reliable launches with zero critical post-launch defects.</p>
+            <span class="tl-badge">Agile · UAT · Documentation</span>
           </div>
-          <div class="work-visual"><span>Project visual — onboarding flow</span></div>
         </div>
 
-        <div class="work-item reveal">
-          <div class="work-meta">
-            <div class="work-tag">Fintech · Design System</div>
-            <h3>A design system for a team that didn't have time for one</h3>
-            <p>Built and shipped incrementally alongside live product work — 40+ components, adopted across five squads in one quarter.</p>
-            <a href="#" class="work-link">Read the case study
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
+        <div class="tl-item">
+          <div><div class="tl-date">Mar 2026 – now</div></div>
+          <div>
+            <div class="tl-role">Front-end Development Intern</div>
+            <div class="tl-org">Department of Communications and Partners, UEH</div>
+            <p class="tl-desc">Engineered and deployed responsive UI layouts on a single education platform serving 5 distinct learner segments, from prospective high schoolers to master's and PhD candidates, using Figma, HTML, CSS, and JavaScript. Applied OOP principles to restructure the front-end architecture and close the gap between stakeholder requests and each segment's real needs.</p>
+            <span class="tl-badge">Figma · JavaScript · OOP</span>
           </div>
-          <div class="work-visual"><span>Project visual — component library</span></div>
         </div>
 
-        <div class="work-item reveal">
-          <div class="work-meta">
-            <div class="work-tag">Personal · Interaction Study</div>
-            <h3>Rethinking notifications as a spatial, not a stacked, problem</h3>
-            <p>An exploratory prototype questioning whether alerts need a list at all — presented at a local design meetup, since built into a shipped feature.</p>
-            <a href="#" class="work-link">Read the case study
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
+        <div class="tl-item">
+          <div><div class="tl-date">Feb – Aug 2026</div></div>
+          <div>
+            <div class="tl-role">Google Student Ambassador &amp; GSA Trainer</div>
+            <div class="tl-org">Gemini Academy for Students, Vietnam</div>
+            <p class="tl-desc">Planned and delivered a workshop series on Gemini AI, Google Cloud Vision, and multimodal AI tools to 200+ students — owning content scope, session scheduling, and cross-functional coordination with student organizers.</p>
+            <span class="tl-badge">AI Literacy · Program Ownership</span>
           </div>
-          <div class="work-visual"><span>Project visual — prototype</span></div>
+        </div>
+
+        <div class="tl-item">
+          <div><div class="tl-date">Nov 2023 – now</div></div>
+          <div>
+            <div class="tl-role">Head of Technology Sub-department · Vice-head of Communications</div>
+            <div class="tl-org">School of Business Information Technology, Youth Union – Student Association</div>
+            <p class="tl-desc">Co-founded the Technology Sub-department and owned end-to-end delivery of the Youth Union–Student Association website — requirement gathering, stakeholder alignment, scope, timeline, and launch — growing engagement among 5,000+ members. Concurrently led a cross-functional team spanning content, design, and internal tooling.</p>
+            <span class="tl-badge">Founding · Stakeholder Alignment</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS AND INTERESTS ===================== -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="kicker reveal">Skills and Interests</div>
+      <h2 class="headline reveal">The toolkit behind every project on this page.</h2>
+
+      <div class="skills-grid reveal">
+        <div class="skill-group">
+          <h4>Project Management &amp; Business Analysis</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Agile / Scrum</span><span class="skill-tag">SDLC</span><span class="skill-tag">A/B Testing</span><span class="skill-tag">UAT Planning</span><span class="skill-tag">Risk Management</span><span class="skill-tag">Jira</span><span class="skill-tag">Confluence</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Requirements &amp; Process Analysis</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">User Stories</span><span class="skill-tag">BPMN (As-Is / To-Be)</span><span class="skill-tag">Requirement Elicitation</span><span class="skill-tag">PRD / BRD / URD</span><span class="skill-tag">Use Case Specification</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Design &amp; Development Collaboration</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">UML</span><span class="skill-tag">Design Thinking</span><span class="skill-tag">Figma (Prototyping)</span><span class="skill-tag">Draw.io</span><span class="skill-tag">MS Visio</span><span class="skill-tag">OOP</span><span class="skill-tag">Git</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Data &amp; Quantitative Analysis</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Excel (VBA / Advanced Charts)</span><span class="skill-tag">SQL</span><span class="skill-tag">MySQL</span><span class="skill-tag">Power BI</span><span class="skill-tag">Power Query</span><span class="skill-tag">Data Visualization</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Programming Foundation</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML</span><span class="skill-tag">CSS</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Python</span><span class="skill-tag">C#</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="interest-block">
+        <div>
+          <h4>Professional strengths</h4>
+          <p>Holistic systems thinking to identify process risks, assess business impact, and solve complex operational problems through structured analysis. A strong commitment to data accuracy and rigorous documentation, with a result-oriented ability to prioritize under tight deadlines — and communication skills that serve as a coordination bridge across engineering, design, business, and external partners.</p>
+        </div>
+        <div>
+          <h4>What pulls me in</h4>
+          <p>How personalization and intelligence come together to power enterprise-customer technology at massive scale. I'm curious about the innovation it takes to handle global complexity across new business initiatives, and committed to applying data-driven thinking to technical delivery and cross-functional collaboration.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="process">
-    <div class="wrap">
-      <div class="kicker reveal">How I work</div>
-      <h2 class="headline reveal">Four habits that show up in everything I ship.</h2>
-      <div class="process-row reveal">
-        <div class="process-cell">
-          <div class="num">Frame</div>
-          <h4>Start from the constraint</h4>
-          <p>The real brief is usually hiding under the stated one. I look for it before opening Figma.</p>
-        </div>
-        <div class="process-cell">
-          <div class="num">Cut</div>
-          <h4>Remove before adding</h4>
-          <p>Every screen gets a pass just to ask what can leave without anyone noticing.</p>
-        </div>
-        <div class="process-cell">
-          <div class="num">Prototype</div>
-          <h4>Feel it before it's real</h4>
-          <p>Static comps hide timing problems. I build interactions early, even roughly.</p>
-        </div>
-        <div class="process-cell">
-          <div class="num">Ship</div>
-          <h4>Stay in it past handoff</h4>
-          <p>Design isn't done at delivery — I sit with engineering through the edge cases.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-dark" id="contact">
+  <!-- ===================== CTA ===================== -->
+  <section class="cta-dark">
     <div class="wrap">
       <div class="kicker reveal" style="color:#a1a1a6;">Let's talk</div>
-      <h2 class="headline reveal">Currently looking for my next team.</h2>
-      <p class="lede reveal">I'd love to talk about what you're building — and whether it's a fit.</p>
+      <h2 class="headline reveal">Ready to bring this thinking into Apple's Information Systems &amp; Technology team.</h2>
+      <p class="lede reveal">Applying for the 2027 Apple ISt Internship in Technical Project Management. Happy to share the full resume and cover letter on request.</p>
       <div class="hero-actions">
-        <a href="mailto:hello@alexchen.design" class="btn primary">hello@alexchen.design</a>
-        <a href="#" class="btn ghost" style="border-color:#434344;">LinkedIn ↗</a>
+        <a href="mailto:lebao062005@gmail.com" class="btn primary">lebao062005@gmail.com</a>
+        <a href="https://linkedin.com/in/baovietle1606" target="_blank" rel="noopener" class="btn ghost">Connect on LinkedIn ↗</a>
       </div>
     </div>
   </section>
 
+  <!-- ===================== FOOTER ===================== -->
   <footer>
-    <span>© 2026 Alex Chen. Designed &amp; built by hand.</span>
-    <div class="foot-links">
-      <a href="#">Résumé</a>
-      <a href="#">LinkedIn</a>
-      <a href="#">Email</a>
+    <div class="foot-wrap">
+      <div class="foot-top">
+        <div>
+          <div class="foot-name">Le Viet Bao</div>
+          <p class="foot-role">Business Information Systems student, UEH. Building the systems that keep personalization honest.</p>
+        </div>
+        <div class="foot-cols">
+          <div class="foot-col">
+            <h5>Site</h5>
+            <a href="#summary">Summary</a>
+            <a href="#story">Story</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+          </div>
+          <div class="foot-col">
+            <h5>Contact</h5>
+            <a href="mailto:lebao062005@gmail.com">Email</a>
+            <a href="tel:+84853504617">Phone</a>
+            <a href="https://github.com/BaoVietLe" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://linkedin.com/in/baovietle1606" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://leetcode.com/u/BaoVietLe" target="_blank" rel="noopener">LeetCode</a>
+          </div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Le Viet Bao. Built by hand for the 2027 Apple ISt Internship application.</span>
+        <span>Ho Chi Minh City, Vietnam</span>
+      </div>
     </div>
   </footer>
 
-  <script>
-    // Nav border on scroll
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 8);
-    }, { passive:true });
+  <!-- ===================== PROJECT MODAL ===================== -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-card" id="modalCard">
+      <button class="modal-close" id="modalClose" aria-label="Đóng">&times;</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
 
-    // Hero cursor spotlight (desktop only, respects reduced motion)
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const hero = document.getElementById('hero');
-    const spot = document.getElementById('spot');
-    if (!reduceMotion && window.matchMedia('(hover:hover)').matches) {
-      hero.addEventListener('mousemove', (e) => {
-        const r = hero.getBoundingClientRect();
-        spot.style.setProperty('--x', ((e.clientX - r.left) / r.width * 100) + '%');
-        spot.style.setProperty('--y', ((e.clientY - r.top) / r.height * 100) + '%');
-      });
+<script>
+  /* ---------------- Nav scroll border ---------------- */
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 8), { passive:true });
+
+  /* ---------------- Hero spotlight ---------------- */
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hero = document.getElementById('hero');
+  const spot = document.getElementById('spot');
+  if (!reduceMotion && window.matchMedia('(hover:hover)').matches) {
+    hero.addEventListener('mousemove', (e) => {
+      const r = hero.getBoundingClientRect();
+      spot.style.setProperty('--x', ((e.clientX - r.left) / r.width * 100) + '%');
+      spot.style.setProperty('--y', ((e.clientY - r.top) / r.height * 100) + '%');
+    });
+  }
+
+  /* ---------------- Scroll reveal ---------------- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* ---------------- Personal Story data ---------------- */
+  const stories = [
+    {
+      title: "The Wall Was My First Classroom",
+      teaser: "Age seven, a giant sheet of paper, and the instinct that access shouldn't depend on luck.",
+      body: [
+        "At seven years old, I taped a giant sheet of paper up in my house and turned my family and the neighborhood kids into my students. I didn't do it just for fun — I did it because I already sensed something worth building a life around: knowledge only means something once it reaches someone in a form they can actually receive.",
+        "That same refusal to let access to knowledge be dictated by luck pulled me toward mastering English, after noticing how inefficient some Vietnamese-translation tools were and how hard it was to find the exact information I needed. I used that newfound access to teach my sister, then my friends, eventually earning a seat in an English-specialized high school.",
+        "But language was only the first layer. Disoriented by my family's move from a rural town to the city, I was a shy student who struggled to speak up. Hoping to communicate better, I picked up a book on psychology to understand my own mind and the minds of those around me — and stumbled onto my first true sense of personalization: to actually reach someone, you have to adapt your words to fit their internal world."
+      ]
+    },
+    {
+      title: "Rooms Where I Wasn't Teaching Grammar",
+      teaser: "Volunteering with youth mental-health platforms and a reading bookclub — same instinct, different rooms.",
+      body: [
+        "That accidental fascination with applied psychology pushed me to go deeper. It drove me to volunteer with youth mental-health platforms like SocioHub Youth Vietnam and Xe Bus Tuổi Thanh Xuân, and to sustain a reading bookclub called Duende: Readerversity.",
+        "In those spaces, I wasn't teaching grammar — I was helping others find the psychological vocabulary to process their own struggles. They were different rooms, but the instinct was identical: finding the person who is missing something, whether it's a foreign word or the courage to understand their own mind, and teaching them in a way that actually reaches them without relying on chance."
+      ]
+    },
+    {
+      title: "The Backstage of a Search Bar",
+      teaser: "Age sixteen, F12 DevTools, and the moment personalization stopped being a classroom problem.",
+      body: [
+        "I was sixteen when I first caught a glimpse of backstage machinery by opening F12 DevTools, half out of boredom, wanting to see what was underneath the page I was browsing. What I found stopped me cold — API responses full of fields and functions, clearly doing far more than just fetching a page. There was a dedicated function handling my specific intent; the results weren't generic facts anymore, they were answers shaped like me.",
+        "I went looking for the 'why' behind that machinery and found it in a YouTube walkthrough of ranking and relevance logic, watched three times, because what was being described struck at the core of my deepest frustration: I knew exactly how much exhausting, patient observation it took to truly understand just one human being's context. Yet here was an algorithm weighing variables to calculate that same context — intent, history, state of mind — instantly, for millions of users at once.",
+        "That was the earthquake. The system wasn't just sorting data; it was mimicking the exact empathy I had practiced in my reading club, but without the bottleneck of human exhaustion. The classroom hadn't disappeared — it had simply evolved into a search bar. I no longer wanted to be the single teacher relying on a physical podium. I wanted to be the engineer building the invisible, global machinery that eliminates the need for luck entirely."
+      ]
+    },
+    {
+      title: "Trading the Marker for the Keyboard",
+      teaser: "University, early internships, and choosing friction over a hypothesis proven only on paper.",
+      body: [
+        "University was where I traded the marker for the keyboard, and demanded to forge that machinery in code rather than in hypothesis alone. I chose a reality forged from the friction between extracurricular work and classroom knowledge meeting the market, rather than padding a transcript with credentials proven only on paper. That's why I started interning as early as September 2025 — ideas must hold up outside a hypothesis, keeping coursework as a foundation rather than a destination.",
+        "Within this journey, my passion for teaching leveled up into my first real education in search and personalization as I organized sharing sessions inside our Student Organization and built its website, earning recognition as an Outstanding Youth Union Member in 2023 — the only student from my incoming cohort that year."
+      ]
+    },
+    {
+      title: "Building So a Hundred People Don't Have to Rely on Luck",
+      teaser: "Volunteer campaigns, a folk-lottery ticket system, and the philosophy behind why I want to join Apple.",
+      body: [
+        "That conviction translated into action through volunteer campaigns like Xuân Tình Nguyện, Mùa Hè Xanh, and Vui Hội Trăng Rằm, where I ran small digital-skills classes and sat beside elderly residents to walk them through newly digitized administrative procedures — so a neighbor no longer had to travel across town just to file a form.",
+        "I brought that same instinct to scale by building Lô Tô, a digitized Vietnamese folk lottery for a freshman camp of roughly 100 students — hosted for free on GitHub Pages to generate a unique, non-repeating ticket for every participant, eliminating printing costs and the risk of running out mid-event. It was a small thing, a lottery ticket, not a search bar, but the instinct was the same one from that giant sheet of paper on my wall: build the system once, so a hundred people don't have to rely on luck.",
+        "That is the exact philosophy driving my ambition toward Technical Project Management. I don't want to design the front door where a person meets a personalized moment — I want to operate the engine room that keeps every door in a global system opening on time, for everyone, at once. My long-term ambition is to help build the Apple Intelligence ecosystem: the layer that helps people fall back in love with being curious."
+      ]
     }
+  ];
 
-    // Scroll reveal
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-  </script>
+  const storyList = document.getElementById('storyList');
+  stories.forEach((s, i) => {
+    const item = document.createElement('div');
+    item.className = 'story-item';
+    item.innerHTML = `
+      <button class="story-trigger" aria-expanded="false">
+        <span class="story-trigger-left">
+          <span class="story-num">0${i+1}</span>
+          <span>
+            <span class="story-title">${s.title}</span>
+            <span class="story-teaser">${s.teaser}</span>
+          </span>
+        </span>
+        <span class="story-icon">+</span>
+      </button>
+      <div class="story-panel">
+        <div class="story-panel-inner">${s.body.map(p => `<p>${p}</p>`).join('')}</div>
+      </div>`;
+    storyList.appendChild(item);
+
+    const trigger = item.querySelector('.story-trigger');
+    const panel = item.querySelector('.story-panel');
+    const icon = item.querySelector('.story-icon');
+    trigger.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      if (isOpen) {
+        panel.style.maxHeight = null;
+        item.classList.remove('open');
+        icon.textContent = '+';
+        trigger.setAttribute('aria-expanded','false');
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+        item.classList.add('open');
+        icon.textContent = '−';
+        trigger.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  /* ---------------- Projects data ---------------- */
+  const projects = [
+    {
+      tag: "Distribution Management System · Tinh Cúc Co., Ltd.",
+      title: "System analysis & enhancement proposal for a Distribution Management System",
+      teaser: "Mapping As-Is/To-Be workflows to cut order-processing errors by 15%.",
+      context: "Tinh Cúc Co., Ltd. runs distribution operations where inconsistent workflows were driving order-processing errors and warehouse inefficiency, without clear documentation of how the process actually worked end to end.",
+      approach: "Led requirement elicitation with operational stakeholders and mapped As-Is / To-Be workflows across the full distribution process, producing PRD and SRS documentation to make the proposed system behavior explicit and testable.",
+      results: "The As-Is/To-Be documentation cut order-processing errors by 15% and improved delivery and warehouse efficiency, giving the team a shared reference for how the process should run.",
+      learnings: "Hands-on practice tracking operational KPIs and coordinating cross-functional execution inside a real supply-chain context — where the plan has to survive contact with a warehouse floor, not just a slide deck."
+    },
+    {
+      tag: "Training Management Information System · Nam Chau English Center",
+      title: "Analysis and design of a Training Management Information System",
+      teaser: "From stakeholder interviews to a working prototype of the training workflow.",
+      context: "Nam Chau English Center needed a structured way to manage its training operations, but no formal model existed for how students, courses, and schedules actually related to one another.",
+      approach: "Conducted requirement analysis through document review and stakeholder interviews, then modeled system behavior and structure using Activity Diagrams, Sequence Diagrams, Class Diagrams, and an ERD, before building a prototype to visualize the proposed workflow.",
+      results: "Delivered a validated, visualized model of the proposed training management workflow that stakeholders could react to before any code was written.",
+      learnings: "Direct practice translating loosely stated business requirements into structured technical design — the exact translation layer a technical project manager has to sit inside."
+    },
+    {
+      tag: "Data Science · Airbnb Platform",
+      title: "Identifying key determinants and predicting Superhost status",
+      teaser: "5.6M+ records, SparkSQL and K-Means, and a 0.8252 ROC-AUC early-warning model.",
+      context: "Airbnb's Superhost status is a strong signal of host quality and platform revenue, but the underlying drivers behind who earns and keeps that status weren't clearly isolated.",
+      approach: "Analyzed and segmented 5.6M+ records using SparkSQL and K-Means clustering to isolate key performance drivers, then built a classification model to flag hosts at risk of losing Superhost status.",
+      results: "Delivered an early-warning classification model with 0.8252 ROC-AUC, translating large-scale behavioral data into actionable signals for host-side revenue strategy.",
+      learnings: "Practice turning a very large, messy dataset into a decision-ready signal — the same discipline needed to keep a data-heavy product roadmap honest."
+    },
+    {
+      tag: "ERP Case Study · MISA AMIS",
+      title: "ERP procurement process analysis: a MISA AMIS case study",
+      teaser: "Modeling two end-to-end procurement workflows via BPMN to expose hidden bottlenecks.",
+      context: "Procurement workflows inside ERP platforms often hide risk and inefficiency behind steps that look fine individually but create friction across departments.",
+      approach: "Modeled two end-to-end procurement workflows via BPMN on the MISA AMIS ERP platform, self-directed, to identify process risks and bottlenecks across the procurement cycle.",
+      results: "Proposed concrete fixes to streamline cross-functional efficiency, backed by a clear BPMN trace of where the process broke down.",
+      learnings: "Hands-on familiarity with how ERP systems actually structure a business process, and practice reading a workflow diagram the way an operations stakeholder would."
+    }
+  ];
+
+  const projectGrid = document.getElementById('projectGrid');
+  const modalOverlay = document.getElementById('modalOverlay');
+  const modalContent = document.getElementById('modalContent');
+  const modalClose = document.getElementById('modalClose');
+
+  projects.forEach((p, i) => {
+    const card = document.createElement('div');
+    card.className = 'project-card reveal';
+    card.innerHTML = `
+      <div class="project-tag">${p.tag}</div>
+      <h3>${p.title}</h3>
+      <p>${p.teaser}</p>
+      <span class="project-open">Xem chi tiết
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>`;
+    card.addEventListener('click', () => openProject(i));
+    projectGrid.appendChild(card);
+    io.observe(card);
+  });
+
+  function openProject(i) {
+    const p = projects[i];
+    modalContent.innerHTML = `
+      <div class="modal-tag">${p.tag}</div>
+      <h2>${p.title}</h2>
+      <div class="modal-section"><h4>Bối cảnh</h4><p>${p.context}</p></div>
+      <div class="modal-section"><h4>Cách thực hiện</h4><p>${p.approach}</p></div>
+      <div class="modal-section"><h4>Kết quả</h4><p>${p.results}</p></div>
+      <div class="modal-section"><h4>Kinh nghiệm tổng quan</h4><p>${p.learnings}</p></div>
+      <div class="modal-section">
+        <h4>Một số hình ảnh</h4>
+        <div class="modal-gallery">
+          <div>Process diagram</div>
+          <div>Documentation excerpt</div>
+          <div>Prototype / output</div>
+        </div>
+      </div>`;
+    modalOverlay.classList.add('open');
+    document.body.classList.add('modal-lock');
+  }
+  function closeProject() {
+    modalOverlay.classList.remove('open');
+    document.body.classList.remove('modal-lock');
+  }
+  modalClose.addEventListener('click', closeProject);
+  modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) closeProject(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeProject(); });
+</script>
 
 </body>
 </html>
