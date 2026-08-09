@@ -1,716 +1,415 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="profile" href="http://gmpg.org/xfn/11">
-    <title>Trang chủ – CỔNG TUYỂN SINH UEH</title>
-    <meta name="robots" content="max-image-preview:large">
-    <link rel="alternate" type="application/rss+xml" title="Dòng thông tin CỔNG TUYỂN SINH UEH »" href="https://tuyensinh.ueh.edu.vn/feed/">
-    <link rel="alternate" type="application/rss+xml" title="CỔNG TUYỂN SINH UEH » Dòng bình luận" href="https://tuyensinh.ueh.edu.vn/comments/feed/">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://jsdelivr.net"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alex Chen — Product Designer</title>
+<style>
+  :root{
+    --bg: #ffffff;
+    --bg-alt: #f5f5f7;
+    --bg-dark: #000000;
+    --ink: #1d1d1f;
+    --ink-soft: #86868b;
+    --line: #d2d2d7;
+    --white: #ffffff;
+  }
 
-    <style id="elementor-pro-custom-fonts-inline-css">
-        @font-face { font-family: 'UEH'; font-style: normal; font-weight: normal; font-display: auto; src: url('https://tuyensinh.ueh.edu.vn/wp-content/uploads/2022/03/SVN-Poppins.ttf') format('truetype'); }
-        @font-face { font-family: 'UEH'; font-style: normal; font-weight: 900; font-display: auto; src: url('https://tuyensinh.ueh.edu.vn/wp-content/uploads/2022/03/SVN-PoppinsBlack.ttf') format('truetype'); }
-        @font-face { font-family: 'UEH'; font-style: normal; font-weight: bold; font-display: auto; src: url('https://tuyensinh.ueh.edu.vn/wp-content/uploads/2022/03/SVN-PoppinsBold.ttf') format('truetype'); }
-        @font-face { font-family: 'UEH'; font-style: normal; font-weight: 500; font-display: auto; src: url('https://tuyensinh.ueh.edu.vn/wp-content/uploads/2022/03/SVN-PoppinsMedium.ttf') format('truetype'); }
-    </style>
+  *{margin:0;padding:0;box-sizing:border-box;}
 
-    <style>
-        :root {
-            --ueh-teal: #0B7681;
-            --ueh-teal-light: #0B7681;
-            --ueh-orange: #F26F33;
-            --ueh-gray: #5F646F;
-            --ueh-red: #0B7681;
-            --ueh-dark: #005b64;
-        }
-        body { font-family: 'UEH', sans-serif; background-color: #ffffff; }
+  html{scroll-behavior:smooth;}
 
-        .heading-1 { font-family: 'UEH', sans-serif; font-size: 32px; font-weight: bold; text-transform: uppercase; line-height: 1.2; margin-bottom: 15px;}
-        .heading-2 { font-family: 'UEH', sans-serif; font-size: 20px; font-weight: bold; color: var(--ueh-gray); margin-bottom: 12px;}
-        .heading-3 { font-family: 'UEH', sans-serif; font-size: 18px; font-weight: 500; color: var(--ueh-teal-light); }
-        .heading-4 { font-family: 'UEH', sans-serif; font-size: 16px; font-weight: normal; color: var(--ueh-gray); }
-        
-        .hero-bg {
-            background: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            position: relative;
-        }
-        .hero-bg::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(90deg, rgba(11, 118, 129, 0.9) 0%, rgba(11, 118, 129, 0.6) 50%, rgba(0,0,0,0.4) 100%);
-        }
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
 
-        .tab-btn { transition: all 0.3s ease; }
-        .tab-active { color: var(--ueh-teal-light) !important; font-weight: bold !important; border-bottom: 2px solid var(--ueh-teal-light); }
-        
-        /* Hiệu ứng trỏ chuột lịch sự kiện */
-        .event-tooltip {
-            visibility: hidden;
-            opacity: 0;
-            transition: visibility 0s, opacity 0.2s linear;
-        }
-        .group:hover .event-tooltip {
-            visibility: visible;
-            opacity: 1;
-        }
-    </style>
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  ::selection{background:var(--ink);color:var(--white);}
+
+  /* ---------- Nav ---------- */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    height:52px;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 24px;
+    background:rgba(255,255,255,0.72);
+    backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease;
+  }
+  .nav.scrolled{border-bottom-color:var(--line);}
+  .nav-mark{font-size:14px;font-weight:600;letter-spacing:-0.01em;}
+  .nav-links{display:flex;gap:28px;list-style:none;}
+  .nav-links a{
+    font-size:12px;font-weight:400;color:var(--ink);
+    opacity:.8;transition:opacity .2s ease;
+  }
+  .nav-links a:hover{opacity:1;}
+  .nav-cta{
+    font-size:12px;padding:6px 14px;border-radius:980px;
+    background:var(--ink);color:var(--white);
+    transition:transform .2s ease, background .2s ease;
+  }
+  .nav-cta:hover{background:#434344;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;
+    padding:120px 24px 80px;
+    overflow:hidden;
+  }
+  .hero-spot{
+    position:absolute;inset:0;
+    pointer-events:none;
+    background:radial-gradient(600px circle at var(--x,50%) var(--y,30%), rgba(0,0,0,0.05), transparent 60%);
+    transition:background .1s ease;
+  }
+  .eyebrow{
+    font-size:13px;font-weight:600;color:var(--ink-soft);
+    letter-spacing:.02em;margin-bottom:20px;
+    opacity:0;animation:rise .8s ease forwards .1s;
+  }
+  .hero h1{
+    font-size:clamp(40px,8vw,104px);
+    font-weight:600;
+    letter-spacing:-0.045em;
+    line-height:1.02;
+    max-width:1100px;
+    opacity:0;animation:rise .9s ease forwards .25s;
+  }
+  .hero h1 em{font-style:normal;color:var(--ink-soft);}
+  .hero p{
+    margin-top:24px;
+    font-size:clamp(17px,2vw,21px);
+    color:var(--ink-soft);
+    max-width:600px;
+    line-height:1.5;
+    opacity:0;animation:rise .9s ease forwards .4s;
+  }
+  .hero-actions{
+    margin-top:36px;display:flex;gap:14px;
+    opacity:0;animation:rise .9s ease forwards .55s;
+  }
+  .btn{
+    font-size:15px;font-weight:500;
+    padding:12px 24px;border-radius:980px;
+    border:1px solid var(--ink);
+    transition:all .2s ease;
+  }
+  .btn.primary{background:var(--ink);color:var(--white);}
+  .btn.primary:hover{background:#434344;border-color:#434344;}
+  .btn.ghost:hover{background:var(--ink);color:var(--white);}
+
+  @keyframes rise{
+    from{opacity:0;transform:translateY(14px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+
+  .scroll-cue{
+    position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+    width:1px;height:44px;background:var(--line);
+    overflow:hidden;
+  }
+  .scroll-cue::after{
+    content:"";position:absolute;top:-100%;left:0;width:100%;height:100%;
+    background:var(--ink);
+    animation:cue 1.8s ease-in-out infinite;
+  }
+  @keyframes cue{
+    0%{top:-100%;} 60%{top:100%;} 100%{top:100%;}
+  }
+
+  /* ---------- Section shell ---------- */
+  section{padding:140px 24px;}
+  .section-alt{background:var(--bg-alt);}
+  .wrap{max-width:1100px;margin:0 auto;}
+
+  .kicker{
+    font-size:13px;font-weight:600;color:var(--ink-soft);
+    letter-spacing:.02em;text-transform:none;margin-bottom:14px;
+  }
+  .headline{
+    font-size:clamp(30px,4.2vw,52px);
+    font-weight:600;letter-spacing:-0.03em;line-height:1.08;
+    max-width:820px;
+  }
+  .lede{
+    margin-top:22px;font-size:19px;line-height:1.65;color:var(--ink-soft);
+    max-width:640px;
+  }
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- About ---------- */
+  .about-grid{
+    display:grid;grid-template-columns:1.1fr .9fr;gap:80px;margin-top:64px;
+  }
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:32px 24px;}
+  .fact dt{font-size:13px;color:var(--ink-soft);margin-bottom:6px;}
+  .fact dd{font-size:17px;font-weight:500;letter-spacing:-0.01em;}
+
+  /* ---------- Work ---------- */
+  .work-list{margin-top:64px;display:flex;flex-direction:column;}
+  .work-item{
+    display:grid;grid-template-columns:1fr 1.3fr;gap:56px;
+    align-items:center;
+    padding:56px 0;
+    border-top:1px solid var(--line);
+    cursor:pointer;
+  }
+  .work-item:last-child{border-bottom:1px solid var(--line);}
+  .work-meta .work-tag{font-size:13px;color:var(--ink-soft);margin-bottom:10px;}
+  .work-meta h3{
+    font-size:clamp(24px,3vw,34px);font-weight:600;letter-spacing:-0.02em;
+    transition:opacity .2s ease;
+  }
+  .work-meta p{margin-top:14px;color:var(--ink-soft);font-size:16px;line-height:1.6;max-width:420px;}
+  .work-link{
+    display:inline-flex;align-items:center;gap:6px;margin-top:20px;
+    font-size:15px;font-weight:500;
+  }
+  .work-link svg{transition:transform .2s ease;}
+  .work-item:hover .work-link svg{transform:translateX(4px);}
+
+  .work-visual{
+    aspect-ratio:16/10;border-radius:18px;
+    background:linear-gradient(155deg,#efeff1,#dcdce0);
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;position:relative;
+    transition:transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s ease;
+  }
+  .work-item:hover .work-visual{
+    transform:scale(1.015) translateY(-4px);
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.25);
+  }
+  .work-visual span{
+    font-size:13px;color:#9a9a9e;letter-spacing:.04em;
+  }
+
+  /* ---------- Process ---------- */
+  .process-row{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);margin-top:64px;border:1px solid var(--line);
+  }
+  .process-cell{background:var(--bg);padding:36px 28px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;}
+  .process-cell .num{font-size:13px;color:var(--ink-soft);}
+  .process-cell h4{margin-top:60px;font-size:19px;font-weight:600;letter-spacing:-0.01em;}
+  .process-cell p{margin-top:10px;font-size:14px;color:var(--ink-soft);line-height:1.55;}
+
+  /* ---------- Dark CTA ---------- */
+  .cta-dark{
+    background:var(--bg-dark);color:var(--white);
+    text-align:center;
+  }
+  .cta-dark .headline{color:var(--white);margin:0 auto;}
+  .cta-dark .lede{color:#a1a1a6;margin-left:auto;margin-right:auto;}
+  .cta-dark .btn.primary{background:var(--white);color:var(--bg-dark);border-color:var(--white);}
+  .cta-dark .btn.primary:hover{background:#e5e5e5;}
+  .cta-dark .hero-actions{justify-content:center;margin-top:32px;opacity:1;animation:none;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:48px 24px;border-top:1px solid var(--line);
+    display:flex;flex-wrap:wrap;gap:16px;
+    align-items:center;justify-content:space-between;
+    font-size:13px;color:var(--ink-soft);
+  }
+  footer .foot-links{display:flex;gap:20px;}
+  footer a:hover{color:var(--ink);}
+
+  @media (max-width:860px){
+    section{padding:96px 20px;}
+    .about-grid{grid-template-columns:1fr;gap:40px;}
+    .work-item{grid-template-columns:1fr;gap:24px;}
+    .work-visual{order:-1;}
+    .process-row{grid-template-columns:1fr 1fr;}
+    .nav-links{display:none;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important;scroll-behavior:auto !important;}
+  }
+
+  :focus-visible{outline:2px solid var(--ink);outline-offset:3px;}
+</style>
 </head>
-<body class="antialiased text-gray-800">
+<body>
 
-<!-- Header (Giữ nguyên như source) -->
-<header class="bg-[#005b64] text-white fixed top-0 left-0 w-full z-50 shadow-md">
-    <div class="container mx-auto px-4 lg:px-8 max-w-7xl h-14 flex items-center justify-between">
-        <div class="flex items-center">
-    <a href="index.html" target="_blank" rel="noopener noreferrer">
-            <img src="https://tuyensinh.ueh.edu.vn/wp-content/uploads/2021/03/UEH-Top-501-THE-01-1-1536x423.png" alt="UEH" class="h-10 object-contain">
-        </a>
-</div>
-        <nav class="flex items-center space-x-4 lg:space-x-6 text-sm font-semibold">
-            <a href="#" class="hover:text-gray-300 hidden lg:flex items-center">Chương trình đào tạo <i class="fas fa-chevron-down ml-1 text-[10px]"></i></a>
-            <a href="#" class="hover:text-gray-300 hidden lg:flex items-center">Có thể bạn quan tâm <i class="fas fa-chevron-down ml-1 text-[10px]"></i></a>
-            <a href="#" class="hover:text-gray-300 hidden lg:flex">Xét tuyển trực tuyến</a>
-            <a href="#" class="hover:text-gray-300 hidden lg:flex">UEH Shop</a>
-            <a href="#" class="hover:text-gray-300 hidden lg:flex">Đăng ký tư vấn</a>
-            <div class="flex space-x-2 mr-2 lg:mr-4">
-                <img src="https://flagcdn.com/w20/vn.png" alt="VN" class="cursor-pointer border border-white h-4 w-6 object-cover">
-                <img src="https://flagcdn.com/w20/gb.png" alt="EN" class="cursor-pointer opacity-50 hover:opacity-100 h-4 w-6 object-cover">
-            </div>
-            <div class="flex items-center text-lg">
-                <button id="hamburger-btn" class="hover:text-gray-300 lg:hidden focus:outline-none">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <a href="UEH-TUYENSINH.html" title="Tìm kiếm">
-  <i class="fas fa-search hidden lg:inline-block hover:text-gray-300 cursor-pointer"></i>
-</a>
-            </div>
-        </nav>
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-mark">Alex Chen</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get in touch</a>
+  </nav>
+
+  <header class="hero" id="hero">
+    <div class="hero-spot" id="spot"></div>
+    <p class="eyebrow">Product Designer — iOS &amp; Systems</p>
+    <h1>Design that gets out of<br><em>the way of the work.</em></h1>
+    <p>I'm Alex Chen. I design interfaces where restraint is the feature — for teams who care as much about the pixel that isn't there as the one that is.</p>
+    <div class="hero-actions">
+      <a href="#work" class="btn primary">View selected work</a>
+      <a href="#contact" class="btn ghost">Download résumé</a>
     </div>
-</header>
-<section class="border-b border-gray-100 py-2 bg-white sticky top-14 z-40 shadow-sm">
-    <div class="container mx-auto px-4 lg:px-8 max-w-7xl flex flex-col md:flex-row items-center justify-center w-full gap-4">
-        <div class="w-full md:w-3/4">
-            <!-- Thêm thẻ form để bắt sự kiện submit -->
-            <form id="searchForm" class="flex w-full border border-gray-300 rounded-sm overflow-hidden h-[34px] shadow-sm focus-within:ring-1 focus-within:ring-[#003840]">
-                <div class="flex items-center justify-center px-3 lg:px-4 bg-white text-gray-400">
-                    <i class="fas fa-user-circle text-base lg:text-lg"></i>
-                </div>
-                
-                <!-- Thêm id="searchInput" để dễ gọi trong JavaScript -->
-                <input type="text" id="searchInput" placeholder="Tìm kiếm...." class="flex-grow focus:outline-none text-sm lg:text-base px-2">
-                
-                <!-- Đổi type thành "submit" cho button -->
-                <button type="submit" class="bg-[#003840] w-12 lg:w-16 flex items-center justify-center text-white hover:bg-[#0B7681] transition">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
-        </div>
+    <div class="scroll-cue"></div>
+  </header>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="kicker reveal">About</div>
+      <h2 class="headline reveal">Six years making software feel inevitable, not designed.</h2>
+      <div class="about-grid">
+        <p class="lede reveal">I work at the intersection of interaction design and systems thinking — mapping how a hundred small decisions add up to something that feels obvious in hindsight. Most recently I led design for a health-tracking platform used by 2M+ people, and before that, spent three years building the design system for a fintech product from zero to scale.</p>
+        <dl class="facts reveal">
+          <div class="fact"><dt>Based in</dt><dd>San Francisco, CA</dd></div>
+          <div class="fact"><dt>Focus</dt><dd>Product &amp; Systems Design</dd></div>
+          <div class="fact"><dt>Tools</dt><dd>Figma, Swift UI, Framer</dd></div>
+          <div class="fact"><dt>Currently</dt><dd>Open to new roles</dd></div>
+        </dl>
+      </div>
     </div>
-</section>
-    <!-- Khoảng trống giả (Spacer) để phần nội dung bên dưới không bị Header đè lên -->
-<div class="h-14"></div>
-<!-- Nội dung Trang chủ Chính -->
-<main>
-    <!-- 1. Hero Banner & Form đăng ký -->
-    <section class="hero-bg py-16 lg:py-20 relative">
-        <div class="container mx-auto px-4 lg:px-8 max-w-7xl relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
-            <!-- Text Left -->
-            <div class="text-white lg:w-1/2">
-                <!-- Vòng tròn sáng tạo (mô phỏng placeholder) -->
-                <div class="w-48 h-48 lg:w-64 lg:h-64 rounded-full border-2 border-dashed border-white/50 mb-8 flex items-center justify-center relative mx-auto lg:mx-0">
-                    <div class="absolute w-full h-full animate-spin-slow">
-                        <i class="fas fa-sun absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl text-yellow-300"></i>
-                        <i class="fas fa-leaf absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 text-2xl text-green-300"></i>
-                    </div>
-                    <i class="fas fa-lightbulb text-6xl text-yellow-400"></i>
-                </div>
-                <h1 class="text-4xl lg:text-5xl font-bold mb-3">Cổng tuyển sinh UEH</h1>
-                <p class="text-lg lg:text-xl font-medium">Thỏa sức sáng tạo - Chủ động tương lai - Toàn diện giá trị</p>
-            </div>
+  </section>
 
-            <!-- Form Right -->
-            <div class="bg-white rounded-lg p-6 lg:p-8 w-full max-w-md shadow-2xl">
-                <h3 class="text-2xl font-bold text-gray-800 text-center mb-6">Đăng ký Tư vấn Tuyển sinh</h3>
-                <form class="space-y-4">
-                    <div class="flex gap-4">
-                        <input type="text" placeholder="Họ và tên lót" class="w-1/2 border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-[#0B7681]">
-                        <input type="text" placeholder="Tên" class="w-1/2 border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-[#0B7681]">
-                    </div>
-                    <div class="flex gap-4">
-                        <input type="email" placeholder="Email" class="w-1/2 border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-[#0B7681]">
-                        <input type="tel" placeholder="Điện thoại" class="w-1/2 border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:border-[#0B7681]">
-                    </div>
-                    <div>
-                        <select class="w-full border border-gray-300 rounded px-3 py-2 text-sm text-gray-500 focus:outline-none focus:border-[#0B7681]">
-                            <option value="">- Hệ -</option>
-                            <option value="dhcq">Đại học Chính quy</option>
-                            <option value="vlvh">Vừa làm Vừa học</option>
-                        </select>
-                    </div>
-                    <div class="flex gap-6 text-sm text-gray-600 my-2">
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="checkbox" class="accent-[#0B7681]"> Thông tin tuyển sinh
-                        </label>
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="checkbox" class="accent-[#0B7681]"> Đăng ký tư vấn
-                        </label>
-                    </div>
-                    <p class="text-[11px] text-gray-500 leading-tight">
-                        UEH cam kết tuân thủ đúng và đầy đủ quy định pháp luật về bảo vệ dữ liệu cá nhân; thực hiện biện pháp bảo vệ phù hợp và cần thiết nhằm bảo đảm an toàn dữ liệu cá nhân trong toàn bộ vòng đời xử lý dữ liệu tại UEH. Xem chi tiết <a href="#" class="text-[#0B7681] hover:underline">Chính sách Bảo vệ dữ liệu cá nhân tại UEH</a>.
-                    </p>
-                    <button type="button" class="w-full bg-[#0B7681] text-white font-bold py-2.5 rounded hover:bg-[#005b64] transition">Gửi</button>
-                </form>
-            </div>
+  <section id="work" class="section-alt">
+    <div class="wrap">
+      <div class="kicker reveal">Selected work</div>
+      <h2 class="headline reveal">Three problems worth the time it took to solve them.</h2>
+
+      <div class="work-list">
+        <div class="work-item reveal">
+          <div class="work-meta">
+            <div class="work-tag">Health &amp; Fitness · iOS App</div>
+            <h3>Rebuilding onboarding to cut drop-off by 38%</h3>
+            <p>A ground-up redesign of first-run experience, reducing steps from eleven to four without losing the data the product needed to work.</p>
+            <a href="#" class="work-link">Read the case study
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="work-visual"><span>Project visual — onboarding flow</span></div>
         </div>
-    </section>
 
-    <!-- 2. Thống kê Rankings -->
-    <section class="py-10 border-b border-gray-100">
-        <div class="container mx-auto px-4 max-w-5xl flex flex-col md:flex-row justify-between text-center gap-8 md:gap-0">
-            <div class="flex-1 md:border-r md:border-gray-200">
-                <h3 class="text-[#0B7681] text-3xl font-bold mb-1">Top 501+</h3>
-                <p class="font-bold text-gray-800">Đại học hàng đầu Thế giới</p>
-                <p class="text-sm text-gray-400 mt-1">THE Rankings 2025, 2026</p>
-            </div>
-            <div class="flex-1 md:border-r md:border-gray-200">
-                <h3 class="text-[#0B7681] text-3xl font-bold mb-1">Top 301+</h3>
-                <p class="font-bold text-gray-800">Lĩnh vực Kinh tế, Kinh doanh</p>
-                <p class="text-sm text-gray-400 mt-1">THE Rankings 2025</p>
-            </div>
-            <div class="flex-1">
-                <h3 class="text-[#0B7681] text-3xl font-bold mb-1">Top 136</h3>
-                <p class="font-bold text-gray-800">Đại học hàng đầu Châu Á</p>
-                <p class="text-sm text-gray-400 mt-1">THE Rankings 2025</p>
-            </div>
+        <div class="work-item reveal">
+          <div class="work-meta">
+            <div class="work-tag">Fintech · Design System</div>
+            <h3>A design system for a team that didn't have time for one</h3>
+            <p>Built and shipped incrementally alongside live product work — 40+ components, adopted across five squads in one quarter.</p>
+            <a href="#" class="work-link">Read the case study
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="work-visual"><span>Project visual — component library</span></div>
         </div>
-    </section>
-    <!-- 3. Chương trình đang tuyển sinh -->
-    <section class="py-12">
-        <div class="container mx-auto px-4 max-w-6xl">
-            <h2 class="text-center font-bold text-2xl lg:text-3xl mb-8">
-                <span class="text-gray-600">CHƯƠNG TRÌNH</span> <span class="text-[#F26F33]">ĐANG TUYỂN SINH</span>
-            </h2>
-            
-            <!-- Ticker -->
-            <div class="bg-[#F5F5F5] rounded text-gray-600 text-sm py-2.5 px-4 mb-8 overflow-hidden whitespace-nowrap">
-                <marquee scrollamount="5">Ngày 07/7/2026, tại Hội trường A.103, Đại học Kinh tế Thành phố Hồ Chí Minh (UEH) hân hoan chào đón gần 140 cựu sinh viên Khóa 7 trở về hội ngộ nhân dịp đến kỷ niệm 50 năm thành lập UEH. Chương trình chính là dịp để các anh chị gặp lại thầy cô, bạn bè và ôn lại những ký ức đẹp dưới mái trường thân yêu, có cơ hội nhìn lại hành trình gần nửa thế kỷ phát triển của UEH, cùng lan tỏa các giá trị Gratitude, Connection và Co-creation của cộng đồng UEH Alumni. Trong không khí ấm áp của ngày trở về, những tình bạn, tình thầy trò tiếp tục được vun đắp, khẳng định sự gắn kết bền chặt giữa các thế hệ cựu sinh viên và Nhà trường.  &nbsp;&nbsp;*&nbsp;&nbsp; Trong hai ngày 04-05/7/2026, Ngày hội UEH Family Fair 2026: Embracing Wellbeing Home đã diễn ra tại Cơ sở UEH Nguyễn Văn Linh. Đây là 1 trong 22 hoạt động trọng điểm hướng đến kỷ niệm 50 năm thành lập UEH, đồng thời khởi động chuỗi nhận diện UEH Wellbeing - Flourishing University - Đại học có môi trường hạnh phúc toàn diện. Sự kiện thu hút sự tham dự của gần 1000 viên chức, người lao động và người thân UEH, cùng lan tỏa thông điệp hạnh phúc nhỏ từ mỗi gia đình là giá trị cốt lõi xây đắp nên ONE UEH phát triển bền vững. </marquee>
-            </div>
 
-            <!-- Grid Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div class="border border-[#0B7681] rounded-lg p-3 flex items-start gap-3 hover:shadow-md transition cursor-pointer">
-                    <div class="w-10 h-10 shrink-0 rounded-full bg-[#E5F1F2] border border-[#0B7681] flex items-center justify-center">
-                        <i class="fas fa-graduation-cap text-[#0B7681] text-2xl"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <h4 class="text-[#0B7681] font-bold text-lg leading-tight mb-1">Đại học Chính quy</h4>
-                        <p class="text-xs text-gray-500 mb-2">Chương trình đào tạo chính quy toàn thời gian</p>
-                        <div class="text-right"><a href="#" class="text-[10px] text-gray-400 hover:text-[#0B7681]">Xem thêm &rarr;</a></div>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="border border-[#0B7681] rounded-lg p-3 flex items-start gap-3 hover:shadow-md transition cursor-pointer">
-                    <div class="w-10 h-10 shrink-0 rounded-full bg-[#E5F1F2] border border-[#0B7681] flex items-center justify-center">
-                        <i class="fas fa-graduation-cap text-[#0B7681] text-2xl"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <h4 class="text-[#0B7681] font-bold text-lg leading-tight mb-1">Đại học Quốc tế</h4>
-                        <p class="text-xs text-gray-500 mb-2">Chương trình giảng dạy tiêu chuẩn quốc tế</p>
-                        <div class="text-right"><a href="#" class="text-[10px] text-gray-400 hover:text-[#0B7681]">Xem thêm &rarr;</a></div>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="border border-[#0B7681] rounded-lg p-3 flex items-start gap-3 hover:shadow-md transition cursor-pointer">
-                    <div class="w-10 h-10 shrink-0 rounded-full bg-[#E5F1F2] border border-[#0B7681] flex items-center justify-center">
-                        <i class="fas fa-graduation-cap text-[#0B7681] text-2xl"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <h4 class="text-[#0B7681] font-bold text-lg leading-tight mb-1">Đại học Tiên tiến</h4>
-                        <p class="text-xs text-gray-500 mb-2">Chương trình chất lượng cao tiên tiến, hiện đại</p>
-                        <div class="text-right"><a href="#" class="text-[10px] text-gray-400 hover:text-[#0B7681]">Xem thêm &rarr;</a></div>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="border border-[#0B7681] rounded-lg p-3 flex items-start gap-3 hover:border-[#0B7681] hover:shadow-md transition cursor-pointer">
-                    <div class="w-10 h-10 shrink-0 rounded-full bg-white border border-[#0B7681] flex items-center justify-center">
-                        <i class="fas fa-graduation-cap text-[#0B7681] text-2xl"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <h4 class="text-[#0B7681] font-bold text-lg leading-tight mb-1">Liên kết Quốc tế</h4>
-                        <p class="text-xs text-gray-500 mb-2">Chương trình liên kết với đại học tân tiến trên phạm vi toàn cầu</p>
-                        <div class="text-right"><a href="#" class="text-[10px] text-gray-400 hover:text-[#0B7681]">Xem thêm &rarr;</a></div>
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div class="border border-[#0B7681] rounded-lg p-3 flex items-start gap-3 hover:border-[#0B7681] hover:shadow-md transition cursor-pointer">
-                    <div class="w-10 h-10 shrink-0 rounded-full bg-white border border-[#0B7681] flex items-center justify-center">
-                        <i class="fas fa-graduation-cap text-[#0B7681] text-2xl"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <h4 class="text-[#0B7681] font-bold text-lg leading-tight mb-1">Đại học Vừa làm vừa học</h4>
-                        <p class="text-xs text-gray-500 mb-2">Linh hoạt cân bằng giữa công việc và học tập, phù hợp với người đi làm</p>
-                        <div class="text-right"><a href="#" class="text-[10px] text-gray-400 hover:text-[#0B7681]">Xem thêm &rarr;</a></div>
-                    </div>
-                </div>
-                <!-- Card 6 -->
-                <div class="border border-[#0B7681] rounded-lg p-3 flex items-start gap-3 hover:border-[#0B7681] hover:shadow-md transition cursor-pointer">
-                    <div class="w-10 h-10 shrink-0 rounded-full bg-white border border-[#0B7681] flex items-center justify-center">
-                        <i class="fas fa-graduation-cap text-[#0B7681] text-2xl"></i>
-                    </div>
-                    <div class="flex-grow">
-                        <h4 class="text-[#0B7681] font-bold text-lg leading-tight mb-1">Khóa học ngắn hạn</h4>
-                        <p class="text-xs text-gray-500 mb-2">Nâng cao kỹ năng, cập nhật xu hướng thị trường lao động</p>
-                        <div class="text-right"><a href="#" class="text-[10px] text-gray-400 hover:text-[#0B7681]">Xem thêm &rarr;</a></div>
-                    </div>
-                </div>
-            </div>
+        <div class="work-item reveal">
+          <div class="work-meta">
+            <div class="work-tag">Personal · Interaction Study</div>
+            <h3>Rethinking notifications as a spatial, not a stacked, problem</h3>
+            <p>An exploratory prototype questioning whether alerts need a list at all — presented at a local design meetup, since built into a shipped feature.</p>
+            <a href="#" class="work-link">Read the case study
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="work-visual"><span>Project visual — prototype</span></div>
         </div>
-    </section>
-
-    <!-- 4. Tin tức & Sự kiện (TABS) -->
-    <!-- 4. Tin tức & Sự kiện (TABS) -->
-    <section class="py-12 bg-white">
-        <div class="container mx-auto px-4 max-w-6xl">
-            <h2 class="text-center font-bold text-2xl lg:text-3xl mb-8">
-                <span class="text-gray-600">TIN TỨC</span> <span class="text-[#F26F33]">- SỰ KIỆN</span>
-            </h2>
-
-            <!-- Header Tabs -->
-            <div class="flex flex-col md:flex-row items-center justify-center relative mb-10 gap-6 md:gap-10">
-                <div class="flex space-x-6 text-lg">
-                    <button onclick="changeTab('tab-tin-tuc', this)" class="tab-btn text-sm text-[#0B7681] font-bold pb-1 transition">Tin tuyển sinh</button> 
-                    <button onclick="changeTab('tab-huong-nghiep', this)" class="tab-btn text-sm text-gray-500 font-medium pb-1 hover:text-[#0B7681] transition">Tin hướng nghiệp</button> 
-                    <button onclick="changeTab('tab-su-kien', this)" class="tab-btn text-sm text-gray-500 font-medium pb-1 hover:text-[#0B7681] transition">Sự kiện tuyển sinh</button>
-                </div>
-                <a href="https://tuyensinh.ueh.edu.vn/danh-muc-bai-viet/dang-tuyen-sinh/" class="md:absolute right-0 text-sm text-gray-400 hover:text-[#0B7681]">Xem tất cả tin tức &#x2197;</a>
-            </div>
-
-           <!-- Tab 1: Tin tuyển sinh -->
-            <div id="tab-tin-tuc" class="tab-content transition-opacity duration-300">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-6xl mx-auto">
-                    
-                    <!-- Cột trái: Tin nổi bật -->
-                    <div class="lg:col-span-7 relative w-full rounded-xl overflow-hidden group cursor-pointer shadow-sm h-[320px] md:h-[360px]">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRwvndEnU3JOe-9OfAkgpvo7RGDHyJp5ha1zCvXfLumcC5eQECde1J92-k&s=10" alt="News Image" class="w-full h-full object-cover object-left-top bg-gray-100 group-hover:scale-105 transition duration-500">
-    <div class="absolute inset-0 bg-black/10"></div>
-    
-    <!-- Box nội dung nằm đè góc dưới trái -->
-    <div class="absolute bottom-0 left-0 w-11/12 bg-white/95 backdrop-blur p-4 md:p-6 rounded-tr-2xl">
-        <h3 class="text-[#0B7681] text-base md:text-lg font-bold mb-2 leading-snug group-hover:underline line-clamp-2 text-justify">
-            UEH khởi động mùa Tuyển sinh 2026 với 2 phương thức cùng 52 ngành học
-        </h3>
-        <p class="text-[11px] md:text-xs text-gray-500 line-clamp-2 text-justify">
-            Vừa qua, UEH vừa ban hành công văn tuyển sinh Đại học Chính quy 2026 với 52 ngành học trải đều trên các lĩnh vực Kinh doanh, Kinh tế, Luật, Công nghệ...
-        </p>
+      </div>
     </div>
-</div>
+  </section>
 
-                    <!-- Cột phải: Danh sách tin tức -->
-                    <div class="lg:col-span-5 flex flex-col justify-between space-y-4 h-full">
-                        
-                        <!-- Tin nhỏ 1 -->
-                        <div class="flex gap-4 group cursor-pointer pb-3 border-b border-gray-100 last:border-0">
-                            <div class="w-[120px] md:w-[140px] h-[80px] md:h-[90px] shrink-0 rounded-lg overflow-hidden relative bg-gray-100">
-                                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80" alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            </div>
-                            <div class="flex-1 flex flex-col justify-center">
-                                <h4 class="text-[13px] md:text-sm font-bold text-gray-800 leading-snug group-hover:text-[#0B7681] transition line-clamp-2 mb-1.5">UEH thông báo nộp phiếu điểm thi môn Vẽ mỹ thuật đối với thí sinh sử dụng tổ hợp V00 đăng ký xét tuyển Khóa 52</h4>
-                                <p class="text-[11px] text-gray-500 line-clamp-2">Đại học Kinh tế Thành phố Hồ Chí Minh thông báo thí sinh sử dụng tổ hợp V00 (Toán, Vật lý, Vẽ mỹ thuật) đăng ký Phương thức 2: Phương thức xét tuyển tích...</p>
-                            </div>
-                        </div>
-
-                        <!-- Tin nhỏ 2 -->
-                        <div class="flex gap-4 group cursor-pointer pb-3 border-b border-gray-100 last:border-0">
-                            <div class="w-[120px] md:w-[140px] h-[80px] md:h-[90px] shrink-0 rounded-lg overflow-hidden relative bg-gray-100">
-                                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=400&q=80" alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            </div>
-                            <div class="flex-1 flex flex-col justify-center">
-                                <h4 class="text-[13px] md:text-sm font-bold text-gray-800 leading-snug group-hover:text-[#0B7681] transition line-clamp-2 mb-1.5">Thông báo gia hạn thời gian đăng ký xét tuyển Khóa 52 Đại học chính quy năm 2026</h4>
-                                <p class="text-[11px] text-gray-500 line-clamp-2">Nhằm tạo điều kiện thuận lợi nhất cho quý phụ huynh và các bạn học sinh trong việc hoàn thiện hồ sơ đăng ký xét tuyển vào UEH năm 2026...</p>
-                            </div>
-                        </div>
-
-                        <!-- Tin nhỏ 3 -->
-                        <div class="flex gap-4 group cursor-pointer pb-3 border-b border-gray-100 last:border-0">
-                            <div class="w-[120px] md:w-[140px] h-[80px] md:h-[90px] shrink-0 rounded-lg overflow-hidden relative bg-gray-100">
-                                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=400&q=80" alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            </div>
-                            <div class="flex-1 flex flex-col justify-center">
-                                <h4 class="text-[13px] md:text-sm font-bold text-gray-800 leading-snug group-hover:text-[#0B7681] transition line-clamp-2 mb-1.5">Hướng dẫn chi tiết các bước nộp hồ sơ xét tuyển trực tuyến vào UEH năm 2026</h4>
-                                <p class="text-[11px] text-gray-500 line-clamp-2">Cổng thông tin xét tuyển trực tuyến của UEH đã chính thức mở. Bài viết này sẽ hướng dẫn thí sinh từng bước để đăng ký hồ sơ nhanh chóng và chính xác...</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tab 2: Tin hướng nghiệp -->
-            <div id="tab-huong-nghiep" class="tab-content hidden transition-opacity duration-300">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-6xl mx-auto">
-                    
-                    <!-- Cột trái: Tin nổi bật (Hướng nghiệp) -->
-                    <div class="lg:col-span-7 relative w-full rounded-xl overflow-hidden group cursor-pointer shadow-sm h-[320px] md:h-[360px]">
-    <img src="https://dsa.ueh.edu.vn/wp-content/uploads/2025/12/4-1-scaled.jpg" alt="News Image" class="w-full h-full object-cover object-left-top bg-gray-100 group-hover:scale-105 transition duration-500">
-    <div class="absolute inset-0 bg-black/10"></div>
-    
-    <!-- Box nội dung nằm đè góc dưới trái -->
-    <div class="absolute bottom-0 left-0 w-11/12 bg-white/95 backdrop-blur p-4 md:p-6 rounded-tr-2xl">
-        <h3 class="text-[#0B7681] text-base md:text-lg font-bold mb-2 leading-snug group-hover:underline line-clamp-2 text-justify">
-           Gen Z và bài toán chọn ngành: Những công việc không lo bị AI soán ngôi trong thập kỷ tới
-        </h3>
-        <p class="text-[11px] md:text-xs text-gray-500 line-clamp-2 text-justify">
-            Sự bùng nổ của Trí tuệ nhân tạo đang định hình lại thị trường lao động. Cùng khám phá những khối ngành đòi hỏi tư duy sáng tạo, phản biện và trí tuệ cảm xúc mà máy móc khó có thể thay thế...
-        </p>
+  <section id="process">
+    <div class="wrap">
+      <div class="kicker reveal">How I work</div>
+      <h2 class="headline reveal">Four habits that show up in everything I ship.</h2>
+      <div class="process-row reveal">
+        <div class="process-cell">
+          <div class="num">Frame</div>
+          <h4>Start from the constraint</h4>
+          <p>The real brief is usually hiding under the stated one. I look for it before opening Figma.</p>
+        </div>
+        <div class="process-cell">
+          <div class="num">Cut</div>
+          <h4>Remove before adding</h4>
+          <p>Every screen gets a pass just to ask what can leave without anyone noticing.</p>
+        </div>
+        <div class="process-cell">
+          <div class="num">Prototype</div>
+          <h4>Feel it before it's real</h4>
+          <p>Static comps hide timing problems. I build interactions early, even roughly.</p>
+        </div>
+        <div class="process-cell">
+          <div class="num">Ship</div>
+          <h4>Stay in it past handoff</h4>
+          <p>Design isn't done at delivery — I sit with engineering through the edge cases.</p>
+        </div>
+      </div>
     </div>
-</div>
-                    <!-- Cột phải: Danh sách tin tức (Hướng nghiệp) -->
-                    <div class="lg:col-span-5 flex flex-col justify-between space-y-4 h-full">
-                        
-                        <!-- Tin nhỏ 1 -->
-                        <div class="flex gap-4 group cursor-pointer pb-3 border-b border-gray-100 last:border-0">
-                            <div class="w-[120px] md:w-[140px] h-[80px] md:h-[90px] shrink-0 rounded-lg overflow-hidden relative bg-gray-100">
-                                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            </div>
-                            <div class="flex-1 flex flex-col justify-center">
-                                <h4 class="text-[13px] md:text-sm font-bold text-gray-800 leading-snug group-hover:text-[#F26F33] transition line-clamp-2 mb-1.5">Kỹ năng sinh tồn nơi công sở: Những điều sinh viên mới ra trường cần trang bị</h4>
-                                <p class="text-[11px] text-gray-500 line-clamp-2">Bên cạnh kiến thức chuyên môn, Gen Z cần chuẩn bị bộ kỹ năng mềm vững chắc để thích nghi nhanh chóng với môi trường làm việc chuyên nghiệp...</p>
-                            </div>
-                        </div>
+  </section>
 
-                        <!-- Tin nhỏ 2 -->
-                        <div class="flex gap-4 group cursor-pointer pb-3 border-b border-gray-100 last:border-0">
-                            <div class="w-[120px] md:w-[140px] h-[80px] md:h-[90px] shrink-0 rounded-lg overflow-hidden relative bg-gray-100">
-                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80" alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            </div>
-                            <div class="flex-1 flex flex-col justify-center">
-                                <h4 class="text-[13px] md:text-sm font-bold text-gray-800 leading-snug group-hover:text-[#F26F33] transition line-clamp-2 mb-1.5">Sinh viên nhóm ngành Kinh doanh khởi nghiệp: Cơ hội và Thách thức</h4>
-                                <p class="text-[11px] text-gray-500 line-clamp-2">Chia sẻ từ các cựu sinh viên UEH đã khởi nghiệp thành công, những bài học đắt giá về gọi vốn, quản lý dòng tiền và xây dựng thương hiệu cá nhân...</p>
-                            </div>
-                        </div>
-
-                        <!-- Tin nhỏ 3 -->
-                        <div class="flex gap-4 group cursor-pointer pb-3 border-b border-gray-100 last:border-0">
-                            <div class="w-[120px] md:w-[140px] h-[80px] md:h-[90px] shrink-0 rounded-lg overflow-hidden relative bg-gray-100">
-                                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80" alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            </div>
-                            <div class="flex-1 flex flex-col justify-center">
-                                <h4 class="text-[13px] md:text-sm font-bold text-gray-800 leading-snug group-hover:text-[#F26F33] transition line-clamp-2 mb-1.5">UEH Career Fair 2026: Kết nối hơn 100 doanh nghiệp hàng đầu trong nước và quốc tế</h4>
-                                <p class="text-[11px] text-gray-500 line-clamp-2">Ngày hội việc làm lớn nhất năm của UEH chuẩn bị diễn ra. Cơ hội nộp CV trực tiếp, phỏng vấn ngay tại chỗ và nhận những lời khuyên hữu ích từ các HR Manager...</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tab 3: Sự kiện tuyển sinh (CALENDAR) -->
-            <div id="tab-su-kien" class="tab-content hidden transition-opacity duration-300 max-w-4xl mx-auto mt-4">
-                
-                <!-- Tiêu đề tháng -->
-                <div class="flex items-center justify-between text-[#0B7681] font-bold mb-6 px-4 md:px-12">
-                    <button class="hover:text-gray-500 transition"><i class="fas fa-chevron-left text-sm"></i></button>
-                    <span class="tracking-widest uppercase text-gray-700">THÁNG 5 - 2026</span>
-                    <button class="hover:text-gray-500 transition"><i class="fas fa-chevron-right text-sm"></i></button>
-                </div>
-                
-                <!-- Grid Lịch -->
-                <div class="grid grid-cols-7 gap-y-2 text-center text-gray-800 font-medium">
-                    <!-- Ngày trong tuần -->
-                    <div class="uppercase text-sm font-bold pb-1">T2</div>
-                    <div class="uppercase text-sm font-bold pb-1">T3</div>
-                    <div class="uppercase text-sm font-bold pb-1">T4</div>
-                    <div class="uppercase text-sm font-bold pb-1">T5</div>
-                    <div class="uppercase text-sm font-bold pb-1">T6</div>
-                    <div class="uppercase text-sm font-bold pb-1">T7</div>
-                    <div class="uppercase text-sm font-bold pb-1">CN</div>
-
-                    <!-- Ngày (Dòng 1) -->
-                    <div class="text-gray-400 flex justify-center py-1">26</div>
-                    <div class="text-gray-400 flex justify-center py-1">27</div>
-                    <div class="text-gray-400 flex justify-center py-1">28</div>
-                    <div class="text-gray-400 flex justify-center py-1">29</div>
-                    <div class="text-gray-400 flex justify-center py-1">30</div>
-                    <div class="text-gray-400 flex justify-center py-1">31</div>
-                    <div class="flex justify-center py-1">1</div>
-                    
-                    <!-- Ngày (Dòng 2) -->
-                    <div class="flex justify-center py-1">2</div>
-                    <div class="flex justify-center py-1">3</div>
-                    <div class="flex justify-center py-1">4</div>
-                    <div class="flex justify-center py-1">5</div>
-                    <div class="flex justify-center py-1">6</div>
-                    <div class="flex justify-center py-1">7</div>
-                    <div class="flex justify-center py-1">8</div>
-                    
-                    <!-- Ngày (Dòng 3) -->
-                    <div class="flex justify-center py-1">9</div>
-                    <div class="flex justify-center py-1">10</div>
-                    <div class="flex justify-center py-1">11</div>
-                    <div class="flex justify-center py-1">12</div>
-                    <div class="flex justify-center py-1">13</div>
-                    <div class="flex justify-center py-1">14</div>
-                    
-                    <!-- Ngày 15 có sự kiện -->
-                    <div class="flex justify-center py-1 relative group">
-                        <span class="w-6 h-6 flex items-center justify-center rounded-full bg-[#0B7681] text-white cursor-pointer">15</span>
-                        <div class="event-tooltip absolute bottom-full left-1/2 -translate-x-1/2 pb-2 z-30">
-                            <div class="w-56 bg-white border border-gray-100 shadow-[0_5px_15px_rgba(0,0,0,0.1)] rounded-lg p-3 text-left relative">
-                                <h4 class="text-[#0B7681] font-bold text-[13px] mb-1 uppercase">Sự kiện tuyển sinh</h4>
-                                <p class="text-[12px] text-gray-600 mb-2 leading-relaxed">Khởi động mùa tuyển sinh ĐHCQ 2026. Công bố thông tin 2 phương thức xét tuyển.</p>
-                                <a href="#" class="text-gray-600 text-[11px] hover:underline font-medium italic block">Xem chi tiết sự kiện tại đây -&gt;</a>
-                                <!-- Mũi tên trỏ xuống -->
-                                <div class="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-white"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Ngày (Dòng 4) -->
-                    <div class="flex justify-center py-1">16</div>
-                    <div class="flex justify-center py-1">17</div>
-                    <div class="flex justify-center py-1">18</div>
-                    <div class="flex justify-center py-1">19</div>
-                    <div class="flex justify-center py-1">20</div>
-                    
-                    <!-- Ngày 21 có sự kiện -->
-                    <div class="flex justify-center py-1 relative group">
-                         <span class="w-6 h-6 flex items-center justify-center rounded-full bg-[#0B7681] text-white cursor-pointer">21</span>
-                        <div class="event-tooltip absolute bottom-full left-1/2 -translate-x-1/2 pb-2 z-30">
-                            <div class="w-56 bg-white border border-gray-100 shadow-[0_5px_15px_rgba(0,0,0,0.1)] rounded-lg p-3 text-left relative">
-                                <h4 class="text-[#0B7681] font-bold text-[13px] mb-1 uppercase">Tư vấn trực tuyến</h4>
-                                <p class="text-[12px] text-gray-600 mb-2 leading-relaxed">Webinar: Giải đáp thắc mắc tuyển sinh Khối ngành Công nghệ & Thiết kế.</p>
-                                <a href="#" class="text-gray-600 text-[11px] hover:underline font-medium italic block">Xem chi tiết sự kiện tại đây -&gt;</a>
-                                <div class="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-white"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-center py-1">22</div>
-                    
-                    <!-- Ngày (Dòng 5) -->
-                    <div class="flex justify-center py-1">23</div>
-                    <div class="flex justify-center py-1">24</div>
-                    <div class="flex justify-center py-1">25</div>
-                    <div class="flex justify-center py-1">26</div>
-                    <div class="flex justify-center py-1">27</div>
-                    <div class="flex justify-center py-1">28</div>
-                    
-                    <!-- Ngày 29 có sự kiện -->
-                    <div class="flex justify-center py-1 relative group">
-                         <span class="w-6 h-6 flex items-center justify-center rounded-full bg-[#0B7681] text-white cursor-pointer">29</span>
-                        <div class="event-tooltip absolute bottom-full left-1/2 -translate-x-1/2 pb-2 z-30">
-                            <div class="w-56 bg-white border border-gray-100 shadow-[0_5px_15px_rgba(0,0,0,0.1)] rounded-lg p-3 text-left relative">
-                                <h4 class="text-[#0B7681] font-bold text-[13px] mb-1 uppercase">Hạn chót nộp hồ sơ</h4>
-                                <p class="text-[12px] text-gray-600 mb-2 leading-relaxed">Ngày cuối cùng tiếp nhận hồ sơ xét tuyển Phương thức xét học bạ.</p>
-                                <a href="#" class="text-gray-600 text-[11px] hover:underline font-medium italic block">Xem chi tiết sự kiện tại đây -&gt;</a>
-                                <div class="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-white"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Ngày (Dòng 6) -->
-                    <div class="flex justify-center py-1">30</div>
-                    <div class="flex justify-center py-1">31</div>
-                    <div class="text-gray-400 flex justify-center py-1">1</div>
-                    <div class="text-gray-400 flex justify-center py-1">2</div>
-                    <div class="text-gray-400 flex justify-center py-1">3</div>
-                    <div class="text-gray-400 flex justify-center py-1">4</div>
-                    <div class="text-gray-400 flex justify-center py-1">5</div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 5. Cơ hội Học bổng -->
-    <section class="py-12">
-        <div class="container mx-auto px-4 max-w-5xl">
-            <h2 class="text-center font-bold text-2xl lg:text-3xl mb-8">
-                <span class="text-gray-600">CƠ HỘI</span> <span class="text-[#F26F33]">HỌC BỔNG</span>
-            </h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <!-- Card 1 -->
-                <div class="border border-gray-300 rounded-lg p-8 hover:shadow-lg transition flex flex-col justify-between h-full bg-white">
-                    <div>
-                        <div class="text-[#0B7681] text-3xl mb-4"><i class="fas fa-graduation-cap"></i></div>
-                        <h4 class="text-[#0B7681] font-bold text-lg mb-3">Đại học Chính quy</h4>
-                        <p class="text-sm text-gray-600 mb-8">Hỗ trợ tài chính dành cho sinh viên có thành tích xuất sắc hoặc hoàn cảnh khó khăn.</p>
-                    </div>
-                    <button class="mx-auto border border-[#0B7681] text-[#0B7681] hover:bg-[#0B7681] hover:text-white transition rounded-full px-5 py-1.5 text-sm font-semibold flex items-center gap-2">
-                        Xem thêm <i class="fas fa-arrow-up right-0 transform rotate-45"></i>
-                    </button>
-                </div>
-                <!-- Card 2 -->
-                <div class="border border-gray-300 rounded-lg p-8 hover:shadow-lg transition flex flex-col justify-between h-full bg-white">
-                    <div>
-                        <div class="text-[#0B7681] text-3xl mb-4"><i class="fas fa-briefcase"></i></div>
-                        <h4 class="text-[#0B7681] font-bold text-lg mb-3">Đại học Vừa làm Vừa học</h4>
-                        <p class="text-sm text-gray-600 mb-8">Hỗ trợ người học nâng cao trình độ chuyên môn song song với công việc hiện tại.</p>
-                    </div>
-                    <button class="mx-auto border border-[#0B7681] text-[#0B7681] hover:bg-[#0B7681] hover:text-white transition rounded-full px-5 py-1.5 text-sm font-semibold flex items-center gap-2">
-                        Xem thêm <i class="fas fa-arrow-up right-0 transform rotate-45"></i>
-                    </button>
-                </div>
-                <!-- Card 3 -->
-                <div class="border border-gray-300 rounded-lg p-8 hover:shadow-lg transition flex flex-col justify-between h-full bg-white">
-                    <div>
-                        <div class="text-[#0B7681] text-3xl mb-4"><i class="fas fa-user-graduate"></i></div>
-                        <h4 class="text-[#0B7681] font-bold text-lg mb-3">Sau Đại học</h4>
-                        <p class="text-sm text-gray-600 mb-8">Hỗ trợ tài chính và tài trợ nghiên cứu giúp học viên nâng cao kiến thức chuyên sâu trong lĩnh vực.</p>
-                    </div>
-                    <button class="mx-auto border border-[#0B7681] text-[#0B7681] hover:bg-[#0B7681] hover:text-white transition rounded-full px-5 py-1.5 text-sm font-semibold flex items-center gap-2">
-                        Xem thêm <i class="fas fa-arrow-up right-0 transform rotate-45"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. Khám phá UEH -->
-    <section class="py-12 mb-10">
-        <div class="container mx-auto px-4 max-w-5xl">
-            <h2 class="text-center font-bold text-2xl lg:text-3xl mb-8">
-                <span class="text-gray-600">KHÁM PHÁ</span> <span class="text-[#F26F33]">UEH</span>
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div class="bg-gray-50 rounded-lg p-6 relative hover:shadow-md transition cursor-pointer min-h-[220px] flex flex-col">
-                    <h4 class="text-[#0B7681] font-bold text-lg mb-2">Trắc nghiệm<br>Nghề nghiệp</h4>
-                    <p class="text-sm text-gray-600 mb-10">Khám phá tiềm năng - Sở thích nghề nghiệp - Chọn ngành phù hợp cùng UEH.</p>
-                    <div class="mt-auto flex justify-between items-end">
-                        <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-sm"><i class="fas fa-arrow-up transform rotate-45"></i></div>
-                        <div class="text-[#0B7681] text-4xl opacity-80"><i class="fas fa-toolbox"></i></div>
-                    </div>
-                </div>
-                <!-- Card 2 (Teal) -->
-                <div class="bg-[#005b64] rounded-lg p-6 relative hover:shadow-md transition cursor-pointer min-h-[220px] flex flex-col justify-end text-white">
-                    <div class="absolute top-6 left-6 w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-sm"><i class="fas fa-arrow-up transform rotate-45"></i></div>
-                    <div class="absolute top-6 right-6 text-4xl"><i class="fas fa-user-graduate"></i></div>
-                    
-                    <h4 class="font-bold text-lg mb-2 mt-10">Nhập học UEH</h4>
-                    <p class="text-sm text-gray-200">Giúp người học nắm rõ thông tin về quy trình: Trước nhập học, Đăng ký nhập học và Sau nhập học</p>
-                </div>
-                <!-- Card 3 -->
-                <div class="bg-gray-50 rounded-lg p-6 relative hover:shadow-md transition cursor-pointer min-h-[220px] flex flex-col">
-                    <h4 class="text-[#0B7681] font-bold text-lg mb-2">UEH Virtual Tour</h4>
-                    <p class="text-sm text-gray-600 mb-10">Cùng tham quan và trải nghiệm không gian thực tế ảo sống động tại các cơ sở nổi bật, cổ điển và hiện đại của UEH.</p>
-                    <div class="mt-auto flex justify-between items-end">
-                        <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-sm"><i class="fas fa-arrow-up transform rotate-45"></i></div>
-                        <div class="text-gray-400 text-4xl"><i class="far fa-compass"></i></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
-<!-- Footer (Giữ nguyên như source) -->
-<footer class="bg-[#005b64] text-white pt-10 pb-6 mt-10">
-    <div class="container mx-auto px-4 lg:px-8 max-w-7xl">
-        <h2 class="text-xl font-bold mb-6">Liên hệ bộ phận tuyển sinh</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8 text-[13px] lg:text-sm leading-loose">
-            <div>
-                <ul class="space-y-1">
-                    <li><a href="#" class="hover:text-gray-300 flex items-center"><i class="fas fa-globe mr-3 w-4"></i> Đại học Chính quy</a></li>
-                    <li><a href="#" class="hover:text-gray-300 flex items-center"><i class="fas fa-globe mr-3 w-4"></i> Đại học Vừa làm vừa học</a></li>
-                    <li><a href="#" class="hover:text-gray-300 flex items-center"><i class="fas fa-globe mr-3 w-4"></i> Sau Đại học</a></li>
-                    <li><a href="#" class="hover:text-gray-300 flex items-center"><i class="fab fa-facebook-f mr-3 w-4"></i> UEH Mekong</a></li>
-                    <li><a href="#" class="hover:text-gray-300 flex items-center"><i class="fas fa-leaf mr-3 w-4"></i> UEH Green Campus</a></li>
-                    <li><a href="#" class="hover:text-gray-300 flex items-center"><i class="fas fa-vr-cardboard mr-3 w-4"></i> UEH Virtual Tour</a></li>
-                </ul>
-            </div>
-            <div>
-                <div class="flex items-start mb-2">
-                    <i class="fas fa-home mt-1.5 mr-3 w-4"></i>
-                    <p><span class="font-bold">Tại TP.HCM:</span> 59C Nguyễn Đình Chiểu, P.<br>Xuân Hòa, TP.HCM</p>
-                </div>
-                <div class="flex items-start">
-                    <i class="fas fa-phone-alt mt-1.5 mr-3 w-4"></i>
-                    <div>
-                        <p><span class="font-bold">ĐHCQ:</span> 0902.230.082 và 0941.230.082</p>
-                        <p><span class="font-bold">ĐHVLH:</span> 0938.527.438</p>
-                        <p><span class="font-bold">Thạc sĩ:</span> (028) 7306.1976 ext 3001</p>
-                        <p><span class="font-bold">Tiến sĩ:</span> (028) 7306.1976 ext 3008, 3010</p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="flex items-start mb-4">
-                    <i class="fas fa-home mt-1.5 mr-3 w-4"></i>
-                    <p><span class="font-bold">Tại UEH Mekong (PHVL):</span> 01B Nguyễn<br>Trung Trực, phường Tân Hạnh, tỉnh Vĩnh<br>Long</p>
-                </div>
-                <div class="flex items-center mb-6">
-                    <i class="fas fa-phone-alt mr-3 w-4"></i>
-                    <p class="font-bold">(027) 03.823.443 - 0899.002.939</p>
-                </div>
-                
-                <div class="flex space-x-4 ml-7 text-lg">
-                    <a href="#" class="hover:text-gray-300 transition"><i class="fas fa-globe"></i></a>
-                    <a href="#" class="hover:text-gray-300 transition"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="hover:text-gray-300 transition"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="hover:text-gray-300 transition"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="hover:text-gray-300 transition"><i class="fab fa-tiktok"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="flex justify-end -mt-6 mb-4">
-            <div class="w-8 h-8 rounded-full bg-black bg-opacity-20 flex items-center justify-center cursor-pointer hover:bg-opacity-40 transition" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                <i class="fas fa-arrow-up"></i>
-            </div>
-        </div>
+  <section class="cta-dark" id="contact">
+    <div class="wrap">
+      <div class="kicker reveal" style="color:#a1a1a6;">Let's talk</div>
+      <h2 class="headline reveal">Currently looking for my next team.</h2>
+      <p class="lede reveal">I'd love to talk about what you're building — and whether it's a fit.</p>
+      <div class="hero-actions">
+        <a href="mailto:hello@alexchen.design" class="btn primary">hello@alexchen.design</a>
+        <a href="#" class="btn ghost" style="border-color:#434344;">LinkedIn ↗</a>
+      </div>
     </div>
-    <div class="bg-[#004a52] text-center py-3 text-xs">
-        <p>Đại học Kinh tế Thành phố Hồ Chí Minh © 2025. All Rights Reserved.</p>
+  </section>
+
+  <footer>
+    <span>© 2026 Alex Chen. Designed &amp; built by hand.</span>
+    <div class="foot-links">
+      <a href="#">Résumé</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Email</a>
     </div>
-</footer>
+  </footer>
 
-<script>
-    // Logic Toggle Hamburger Menu Mobile
-    document.getElementById('hamburger-btn').addEventListener('click', function() {
-        // Có thể thêm id='mobile-menu' nếu muốn toggle menu mobile
-    });
-    const searchForm = document.getElementById('searchForm');
-    const searchInput = document.getElementById('searchInput');
+  <script>
+    // Nav border on scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive:true });
 
-    searchForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Ngăn form tải lại trang theo cách thông thường
-
-        const keyword = searchInput.value.trim();
-
-        if (keyword !== '') {
-            // Chuyển hướng sang timkiem.html và truyền tham số tìm kiếm
-            window.location.href = `UEH-TUYENSINH.html?tu-khoa=${encodeURIComponent(keyword)}`;
-        } else {
-            alert('Vui lòng nhập nội dung tìm kiếm!');
-        }
-    });
-
-    // Logic Chuyển đổi Tabs cho khu vực Tin tức - Sự kiện
-    function changeTab(tabId, element) {
-        // Ẩn tất cả tab nội dung
-        document.querySelectorAll('.tab-content').forEach(function(content) {
-            content.classList.add('hidden');
-        });
-        
-        // Đưa tất cả các nút về trạng thái mặc định (chữ xám mờ)
-        document.querySelectorAll('.tab-btn').forEach(function(btn) {
-            btn.className = 'tab-btn text-sm text-gray-500 font-medium pb-1 hover:text-[#0B7681] transition';
-        });
-
-        // Hiển thị tab nội dung được chọn
-        document.getElementById(tabId).classList.remove('hidden');
-        
-        // Cập nhật giao diện tab đang active (chữ màu Teal, in đậm)
-        element.className = 'tab-btn text-sm text-[#0B7681] font-bold pb-1 transition';
+    // Hero cursor spotlight (desktop only, respects reduced motion)
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hero = document.getElementById('hero');
+    const spot = document.getElementById('spot');
+    if (!reduceMotion && window.matchMedia('(hover:hover)').matches) {
+      hero.addEventListener('mousemove', (e) => {
+        const r = hero.getBoundingClientRect();
+        spot.style.setProperty('--x', ((e.clientX - r.left) / r.width * 100) + '%');
+        spot.style.setProperty('--y', ((e.clientY - r.top) / r.height * 100) + '%');
+      });
     }
-</script>
+
+    // Scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
 
 </body>
 </html>
