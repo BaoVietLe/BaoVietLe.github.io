@@ -125,6 +125,14 @@
   .tl-desc{margin-top:12px;font-size:15px;line-height:1.65;color:var(--ink);max-width:640px;}
   .tl-badge{display:inline-block;font-size:11px;padding:3px 9px;border-radius:980px;background:var(--bg-alt);color:var(--ink-soft);margin-top:12px;}
 
+  /* ---- Certificates ---- */
+  .cert-grid{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .cert-card{background:var(--bg);padding:36px 30px;display:flex;flex-direction:column;min-height:220px;}
+  .cert-icon{width:34px;height:34px;flex-shrink:0;}
+  .cert-year{margin-top:auto;padding-top:22px;font-size:12px;color:var(--ink-soft);}
+  .cert-title{margin-top:18px;font-size:17px;font-weight:600;letter-spacing:-0.01em;line-height:1.35;}
+  .cert-issuer{margin-top:8px;font-size:13.5px;color:var(--ink-soft);line-height:1.5;}
+
   /* ---- Skills ---- */
   .skills-grid{margin-top:56px;display:grid;grid-template-columns:repeat(2,1fr);gap:36px 56px;}
   .skill-group h4{font-size:15px;font-weight:600;margin-bottom:14px;}
@@ -161,6 +169,7 @@
     .summary-divider{display:none;}
     .edu-strip{grid-template-columns:1fr 1fr;}
     .project-grid{grid-template-columns:1fr;}
+    .cert-grid{grid-template-columns:1fr;}
     .skills-grid{grid-template-columns:1fr;}
     .interest-block{grid-template-columns:1fr;}
     .tl-item{grid-template-columns:1fr;gap:8px;}
@@ -189,6 +198,7 @@
       <li><a href="#story">Story</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#certificates">Certificates</a></li>
       <li><a href="#skills">Skills</a></li>
     </ul>
     <a href="#contact" class="nav-cta">Contact</a>
@@ -313,6 +323,38 @@
             <p class="tl-desc">Co-founded the Technology Sub-department and owned end-to-end delivery of the Youth Union–Student Association website — requirement gathering, stakeholder alignment, scope, timeline, and launch — growing engagement among 5,000+ members. Concurrently led a cross-functional team spanning content, design, and internal tooling.</p>
             <span class="tl-badge">Founding · Stakeholder Alignment</span>
           </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CERTIFICATES & AWARDS ===================== -->
+  <section id="certificates">
+    <div class="wrap">
+      <div class="kicker reveal">Certificates &amp; Awards</div>
+      <h2 class="headline reveal">Recognition earned alongside the work, not instead of it.</h2>
+      <div class="cert-grid reveal">
+
+        <div class="cert-card">
+          <svg class="cert-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="5.5" stroke="currentColor" stroke-width="1.4"/><path d="M8.5 12.8L7 21l5-2.6 5 2.6-1.5-8.2" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          <div class="cert-title">Certificate of Excellence — Outstanding Youth Union Member</div>
+          <div class="cert-issuer">School of Business Information Technology, UEH</div>
+          <div class="cert-year">2023</div>
+        </div>
+
+        <div class="cert-card">
+          <svg class="cert-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="5.5" stroke="currentColor" stroke-width="1.4"/><path d="M8.5 12.8L7 21l5-2.6 5 2.6-1.5-8.2" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          <div class="cert-title">Certificate of Outstanding Performance — Youth Union &amp; Student Association Activities</div>
+          <div class="cert-issuer">UEH Youth</div>
+          <div class="cert-year">2025</div>
+        </div>
+
+        <div class="cert-card">
+          <svg class="cert-icon" viewBox="0 0 24 24" fill="none"><path d="M4 19.5V6a2 2 0 012-2h9l5 5v10.5a2 2 0 01-2 2H6a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M14 4v4a1 1 0 001 1h4" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M8 13.5l2.5 2.5L16 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="cert-title">Academic Excellence — 4.0/4.0 in Business Analysis, ERP, CRM, Big Data &amp; Applications, Global SCM, Design Thinking</div>
+          <div class="cert-issuer">Ho Chi Minh City University of Economics (UEH)</div>
+          <div class="cert-year">Coursework GPA</div>
         </div>
 
       </div>
