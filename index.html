@@ -229,8 +229,10 @@
     <ul class="nav-links">
       <li><a href="#summary">Summary</a></li>
       <li><a href="#story">Story</a></li>
+      <li><a href="#how-i-learn">How I Think</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#doan-hoi">Đoàn – Hội</a></li>
       <li><a href="#skills">Skills</a></li>
     </ul>
     <a href="#contact" class="nav-cta">Contact</a>
@@ -354,6 +356,17 @@
     </div>
   </section>
 
+  <!-- ===================== HOW I THINK / HOW I LEARN ===================== -->
+  <section id="how-i-learn">
+    <div class="wrap">
+      <div class="kicker reveal">How I Think</div>
+      <h2 class="headline reveal">Learning isn't a collecting habit — it's gearing up to solve a real problem.</h2>
+      <p class="lede reveal">The difference is a Growth Mindset: I only go looking for a tool once I've actually defined the problem I need it to solve.</p>
+
+      <div class="story-list reveal" id="learnList"></div>
+    </div>
+  </section>
+
   <!-- ===================== ON-CAMPUS PROJECTS ===================== -->
   <section id="projects" class="section-alt">
     <div class="wrap">
@@ -412,6 +425,17 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ===================== YOUTH UNION - STUDENT ASSOCIATION JOURNEY ===================== -->
+  <section id="doan-hoi">
+    <div class="wrap">
+      <div class="kicker reveal">Youth Union – Student Association Journey</div>
+      <h2 class="headline reveal">Six traits a long extracurricular run built into how I work.</h2>
+      <p class="lede reveal">Alongside coursework, years inside UEH's Youth Union and Student Association became a second training ground — for project ownership, initiative, and staying steady under pressure.</p>
+
+      <div class="story-list reveal" id="doanhoiList"></div>
     </div>
   </section>
 
@@ -669,6 +693,171 @@
         <div class="story-panel-inner">${s.body.map(p => `<p>${p}</p>`).join('')}</div>
       </div>`;
     storyList.appendChild(item);
+
+    const trigger = item.querySelector('.story-trigger');
+    const panel = item.querySelector('.story-panel');
+    const icon = item.querySelector('.story-icon');
+    trigger.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      if (isOpen) {
+        panel.style.maxHeight = null;
+        item.classList.remove('open');
+        icon.textContent = '+';
+        trigger.setAttribute('aria-expanded','false');
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+        item.classList.add('open');
+        icon.textContent = '−';
+        trigger.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  /* ---------------- How I Think data ---------------- */
+  const learnStories = [
+    {
+      title: "The Lecture Hall That Shaped How I See a Problem",
+      teaser: "A UEH group project on Business Analysis — and the moment I stopped a UI debate to redraw the ERD instead.",
+      body: [
+        "In a group project on Business Analysis at UEH, while the whole team was deep in a debate over what the interface should look like, my BI instinct spoke up first. I realized that if the underlying query logic and data structure aren't airtight, a good-looking interface means nothing once real-world data starts moving through it. I asked the team to pause, went back to sit with the full interview transcript, and redrew the entire ERD and every workflow the data has to pass through before it can be trusted to be logically sound. That decision wasn't just about finishing the assignment — it was proof of the Ownership and Systems Thinking mindset UEH trained into me: real product strength doesn't live in a pretty surface, it lives in the stability and scalability of the structure underneath.",
+        "Systems-related courses at UEH taught me to empathize with a business need well enough to translate it into a feasible technical solution. It trained me to think broad and deep, tracing growth patterns out of messy, moving data.",
+        "From UEH, I learned that for any problem, what matters most is thinking wide, thinking deep, and thinking far — wide enough to see the whole picture, deep enough to clarify what's actually being asked, and far enough to design solutions that can keep scaling. With a spirit of Strong Ownership and Detail-oriented execution, the career goal has to stay the same: every output has to deliver real impact toward the business objective."
+      ]
+    },
+    {
+      title: "How I Learn",
+      teaser: "Growth Mindset over collecting: I only go looking for a tool once I've actually defined the problem.",
+      body: [
+        "Every course I take starts for a different reason — sometimes I'm stuck between a problem and having no tool to solve it, sometimes I'm curious about a field that's drifting closer to my future work, sometimes I can already sense where I want to head and need to prepare ahead of time. But one thing stays constant across all of them: I never finish a course and just leave it there.",
+        "There's a saying every graduating student at Luong Van Chanh High School (LVC) knows: a Luong Van Chanh student should carry a sharp mind on a resilient frame, alongside a rich soul. In my first year I thought it was just a slogan — I only understood it after three years in the English-major track, where English became the language I could think directly in from source material, not something translated secondhand for me. The resilient frame wasn't only about sports either: LVC trained me through a dense class schedule, nonstop activity, exam pressure running parallel with Youth Union – Student Association work, and taught me that a strong foundation isn't handed to you — it's built by refusing to quit at the hardest moment. And a rich soul is exactly what now lets me stand between Business and Tech, between users who aren't fluent in technology and the team operating it, finding a way to make both sides understand each other so no one gets left behind."
+      ]
+    },
+    {
+      title: "How I Learn — the Method",
+      teaser: "Before any new topic: what am I missing, what's it blocking, and what will I be able to do once I finish?",
+      body: [
+        "Before every new topic, I make myself answer three questions: what am I actually missing right now? What exactly is that gap blocking me from doing? And concretely, what will I be able to do once I finish learning it? If I can't answer, I don't start — and I also decide upfront how much studying counts as enough, so I don't under-learn or over-learn.",
+        "I read the original English documentation first — never a summary, never someone else's explainer video before I've read the source myself — because the original is always more accurate than any interpretation of it, and it forces me to actively think rather than passively absorb. After finishing a section, I go straight to real-world edge cases to check where the concept might break down, since that's exactly where learning gets deepest.",
+        "With technologies I've never worked with hands-on, I've never once been thrown by not knowing them, because I know precisely what to do on day one: not opening a laptop to study immediately, but researching what problem that technology is actually meant to solve, whether it's genuinely needed, and where it fits.",
+        "On Google Colab I test small logic fragments before assembling the full solution. When something breaks, I don't ask AI why it's wrong — I ask why this approach might fail, and where. After finishing each part, I go back to the material and interrogate myself with the reverse question: if I removed this step, would the whole system fall apart? Does this output actually answer the original question? If I can't answer that, I go back and reread everything from the start. I call this a personalized Feynman technique, and no — it doesn't just make me a better learner, it directly makes me faster and more effective for everyone I end up working with."
+      ]
+    },
+    {
+      title: "The Course I'm Proudest Of — Google Advanced Data Analytics",
+      teaser: "SQL at real scale showed me the gap wasn't the tool — it was the thinking. Now 20/20 courses deep into Google Student Ambassador Vietnam 2026.",
+      body: [
+        "After the Big Data module at university, my first real encounter with SQL at real scale exposed a gap that wasn't about the tool — it was about the thinking. Knowing how to run code is one thing; looking at a dataset and asking 'what question does this actually answer, and who's asking it' is a completely different skill.",
+        "I signed up for Google Advanced Data Analytics because the course name alone told me it wasn't just tool training — it was thinking training. I spent 2 months on English-only, no-subtitle videos, took handwritten notes, opened Colab and typed out every step myself, occasionally inventing my own toy problems just to keep the motivation alive, sometimes using AI to check my logic rather than copy-paste an answer. Slow learning — but learning that actually sticks.",
+        "The biggest shift wasn't the technical skill itself — it was the first time I could look at raw data on my own and surface an insight that plain Excel or Power BI wouldn't hand me outright: understanding why data needs to be processed before it can be analyzed, and genuinely feeling the difference between having data and understanding data.",
+        "I'm currently in the Google Student Ambassador Vietnam 2026 program, with free access to 20 Google courses, and I'm working through all of them — not to collect certificates, but because each one compounds the one before it, on a path I can already see clearly: Google DA with Python to automate data processing, UI to understand users before a system gets designed, and Ecom to understand the business logic sitting underneath the data. Each course lands exactly when I need it, not just when I happen to have free time."
+      ]
+    }
+  ];
+
+  const learnList = document.getElementById('learnList');
+  learnStories.forEach((s, i) => {
+    const item = document.createElement('div');
+    item.className = 'story-item';
+    item.innerHTML = `
+      <button class="story-trigger" aria-expanded="false">
+        <span class="story-trigger-left">
+          <span class="story-num">0${i+1}</span>
+          <span>
+            <span class="story-title">${s.title}</span>
+            <span class="story-teaser">${s.teaser}</span>
+          </span>
+        </span>
+        <span class="story-icon">+</span>
+      </button>
+      <div class="story-panel">
+        <div class="story-panel-inner">${s.body.map(p => `<p>${p}</p>`).join('')}</div>
+      </div>`;
+    learnList.appendChild(item);
+
+    const trigger = item.querySelector('.story-trigger');
+    const panel = item.querySelector('.story-panel');
+    const icon = item.querySelector('.story-icon');
+    trigger.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      if (isOpen) {
+        panel.style.maxHeight = null;
+        item.classList.remove('open');
+        icon.textContent = '+';
+        trigger.setAttribute('aria-expanded','false');
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+        item.classList.add('open');
+        icon.textContent = '−';
+        trigger.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  /* ---------------- Youth Union - Student Association Journey data ---------------- */
+  const doanhoiStories = [
+    {
+      title: "Project Management",
+      teaser: "Adopted modern work-tracking tools to cut 80% of the dead time out of every task-assignment meeting.",
+      body: [
+        "Throughout my time in Youth Union – Student Association activities, I regularly took on work that behaved like a real project — coordinating multiple members against a fixed timeline. To keep momentum from stalling, I proactively adopted modern work-management tools to track every task's status in real time instead of managing it manually, where mistakes creep in easily. As a result, activities ran on a clear plan, transparently and on schedule, cutting 80% of the dead time typically lost in task-assignment and review meetings."
+      ]
+    },
+    {
+      title: "Initiative",
+      teaser: "I don't wait for a role to be handed to me — I go find it, and prepare for it before I start.",
+      body: [
+        "Instead of waiting for opportunities to be handed to me, I actively sought out voluntary roles within Youth Union – Student Association work to keep growing. Before taking on any new task, I'd spend time researching and building the knowledge needed to actually do it well — contributing to the team while building new skills for myself at the same time. That same initiative meant never treating my original job description as a ceiling: I kept looking for ways to contribute more, taking on new areas of responsibility even when they weren't officially mine, which meaningfully expanded my capabilities over each stage of activity."
+      ]
+    },
+    {
+      title: "Persistence and Determination",
+      teaser: "A long-running commitment alongside a full course load, never leaving a task half-finished.",
+      body: [
+        "I stayed with Youth Union – Student Association activities over a long stretch, running in parallel with coursework the entire time. Even when both sides of that workload were heavy, I kept priorities clear and scheduled my time to fully deliver on every responsibility, never leaving a task half-done. In periods when the team was short-handed, I didn't hesitate to roll up my sleeves and do the specific work myself to keep the overall timeline on track. That determination to follow through, regardless of people or time constraints, is what kept every product and activity landing on time at the quality it needed."
+      ]
+    },
+    {
+      title: "Resilience and Tenacity",
+      teaser: "Not every stretch of this journey was smooth — staying calm under stacked pressure is what carried it through.",
+      body: [
+        "Not every stretch of this journey went smoothly. There were periods where I had to balance academic pressure, work deadlines, and team responsibilities all at once, with the workload piling up enough to make anyone want to give up. Instead of backing off, I chose to calmly re-prioritize, proactively talk it through with the people around me to find a way forward, and stay with it until the work was genuinely finished. Those exact stretches are what built the composure to hold steady under pressure — something I expect to keep leaning on in a real working environment."
+      ]
+    },
+    {
+      title: "Adaptability and Creativity",
+      teaser: "Different roles demand different thinking — I never applied one fixed formula to every situation.",
+      body: [
+        "Taking on multiple roles with fundamentally different natures inside Youth Union – Student Association work meant constantly adjusting how I thought and how I worked to fit each specific context, rather than applying one fixed formula everywhere. That adaptability is what let me consistently deliver on whatever role I was given, even as the nature of the work kept shifting. Alongside that, I actively looked for new ideas and approaches instead of repeating familiar patterns, especially in creative work — keeping every product and activity I touched feeling fresh and genuinely fitted to its audience and context."
+      ]
+    },
+    {
+      title: "Sharpening Professional Skills",
+      teaser: "From project-management tools to design and problem analysis — skills I built from zero, stage by stage.",
+      body: [
+        "Across every stage of these activities, I kept teaching myself the tools and skills I hadn't had before — from project-management tools to design skills, to analysis and problem-solving. That drive to keep improving is what let me handle an increasingly varied set of job demands. In particular, my communication and presentation ability improved sharply through activities that demanded standing in front of a room, presenting, and structured writing — a foundation that now lets me build clear documentation and work effectively with a wide range of stakeholders."
+      ]
+    }
+  ];
+
+  const doanhoiList = document.getElementById('doanhoiList');
+  doanhoiStories.forEach((s, i) => {
+    const item = document.createElement('div');
+    item.className = 'story-item';
+    item.innerHTML = `
+      <button class="story-trigger" aria-expanded="false">
+        <span class="story-trigger-left">
+          <span class="story-num">0${i+1}</span>
+          <span>
+            <span class="story-title">${s.title}</span>
+            <span class="story-teaser">${s.teaser}</span>
+          </span>
+        </span>
+        <span class="story-icon">+</span>
+      </button>
+      <div class="story-panel">
+        <div class="story-panel-inner">${s.body.map(p => `<p>${p}</p>`).join('')}</div>
+      </div>`;
+    doanhoiList.appendChild(item);
 
     const trigger = item.querySelector('.story-trigger');
     const panel = item.querySelector('.story-panel');
