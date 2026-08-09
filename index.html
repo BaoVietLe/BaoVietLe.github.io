@@ -756,12 +756,13 @@
     },
     {
       tag: "Full-Stack Build · Local Government Digitalization",
-      title: "A real-time management dashboard for a local government office",
+      title: "A real-time management dashboard for Tân Vĩnh Lộc commune",
       teaser: "Led a 17-person team to unify 7 fragmented reporting systems into one live dashboard.",
-      context: "A local commune government's administrative data was scattered across separate departments — economic affairs, party affairs, security, and administrative reform — compiled manually with no real-time visibility for leadership.",
+      context: "Tân Vĩnh Lộc commune's administrative data was scattered across separate departments — economic affairs, party affairs, security, and administrative reform — compiled manually with no real-time visibility for leadership.",
       approach: "Led requirement-gathering sessions directly with commune leadership, mapped a sitemap and user flow, then designed and built a centralized dashboard on PHP and MySQL with Chart.js visualizations, deployed on cPanel — directing a 17-person team split across UI/UX, database, and front-end integration.",
       results: "Unified 7 major information systems (elections, economic/budget, digital transformation, and more) into a single interface, giving leadership a live, transparent view of budget progress, case-resolution rates, and social-welfare indicators.",
-      learnings: "First real experience running a project that was as much about people as software — breaking a 17-person team into coordinated workstreams while keeping every module on the same data model and timeline."
+      learnings: "First real experience running a project that was as much about people as software — breaking a 17-person team into coordinated workstreams while keeping every module on the same data model and timeline.",
+      demoUrl: ""
     },
     {
       tag: "Self-Directed Case Study · Retail Analytics",
@@ -771,6 +772,16 @@
       approach: "Analyzed the tension between revenue share and stockout rate across channels, then modeled customer retention with an RFM (Recency, Frequency, Monetary) framework to isolate a 'buy-once-and-vanish' pattern, and proposed a computer-vision shelf-recognition workflow alongside a 7-day automated re-engagement trigger.",
       results: "The analysis linked a 25% stockout rate directly to a channel responsible for roughly 59% of total revenue — the single largest quantified risk in the case — and proposed a concrete retention trigger timed to the 7-day post-purchase window where drop-off was sharpest.",
       learnings: "Practice building a business case entirely from data patterns without anyone handing me the 'right' answer — and defending a recommendation on the strength of a chart, not a hunch."
+    },
+    {
+      tag: "Full-Stack Build · Commemorative Web Platform",
+      title: "Lửa Dệt Sử Đỏ: a memorial website for Vietnam's Heroic Mothers",
+      teaser: "PM and front-end lead — reached 10,000 students and drew 500 fund contributions.",
+      context: "The Faculty of Business Information Technology's 'Lửa Dệt Sử Đỏ' program honors Vietnamese Heroic Mothers and war invalids/martyrs and runs 'về nguồn' outreach activities, but had no digital home to tell their stories or run a transparent donation fund for their welfare.",
+      approach: "As Project Manager and Front-end Developer, built the site on HTML, CSS, JavaScript, and PHP, featuring a public tribute honoring 10 Vietnamese Heroic Mothers (kept to 10 of the full list for their privacy and security) alongside an integrated MoMo donation fund and updates on the faculty's outreach activities.",
+      results: "Reached roughly 10,000 students across the faculty, drew about 500 contributions to the donation fund supporting the Mothers and war invalids/martyrs, and collected 300 pieces of visitor feedback on the site.",
+      learnings: "First time holding both the PM and hands-on front-end role at once — deciding what could be published without compromising the Mothers' privacy, while still making each tribute feel personal rather than a form.",
+      demoUrl: ""
     }
   ];
 
@@ -810,7 +821,8 @@
           <div>Documentation excerpt</div>
           <div>Prototype / output</div>
         </div>
-      </div>`;
+      </div>
+      ${p.demoUrl ? `<div class="modal-section"><a class="btn primary" href="${p.demoUrl}" target="_blank" rel="noopener noreferrer">Xem demo trực tiếp →</a></div>` : ''}`;
     modalOverlay.classList.add('open');
     document.body.classList.add('modal-lock');
   }
