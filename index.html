@@ -89,8 +89,8 @@
   .story-item.open .story-icon{transform:rotate(180deg);}
 
   /* ---- Projects ---- */
-  .project-grid{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
-  .project-card{background:var(--bg);padding:40px 36px;cursor:pointer;transition:background .25s ease;display:flex;flex-direction:column;min-height:260px;}
+  .project-grid{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .project-card{background:var(--bg);padding:34px 28px;cursor:pointer;transition:background .25s ease;display:flex;flex-direction:column;min-height:280px;}
   .project-card:hover{background:var(--bg-alt);}
   .project-tag{font-size:12px;color:var(--ink-soft);margin-bottom:16px;}
   .project-card h3{font-size:22px;font-weight:600;letter-spacing:-0.015em;line-height:1.3;}
@@ -124,6 +124,34 @@
   .tl-org{font-size:14px;color:var(--ink-soft);margin-top:2px;}
   .tl-desc{margin-top:12px;font-size:15px;line-height:1.65;color:var(--ink);max-width:640px;}
   .tl-badge{display:inline-block;font-size:11px;padding:3px 9px;border-radius:980px;background:var(--bg-alt);color:var(--ink-soft);margin-top:12px;}
+
+  /* ---- Transcript ---- */
+  .transcript-box{margin-top:56px;display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start;}
+  .transcript-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
+  .transcript-stat{background:var(--bg);padding:22px;}
+  .transcript-stat dt{font-size:12px;color:var(--ink-soft);margin-bottom:8px;}
+  .transcript-stat dd{font-size:19px;font-weight:600;letter-spacing:-0.01em;}
+  .gpa-chart{margin-top:28px;}
+  .gpa-chart-label{font-size:12px;color:var(--ink-soft);margin-bottom:14px;}
+  .gpa-bars{display:flex;align-items:flex-end;gap:14px;height:120px;border-bottom:1px solid var(--line);padding-bottom:0;}
+  .gpa-bar-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;}
+  .gpa-bar{width:100%;max-width:34px;background:var(--ink);border-radius:4px 4px 0 0;transition:opacity .2s ease;}
+  .gpa-bar-col:hover .gpa-bar{opacity:.6;}
+  .gpa-bar-val{font-size:11px;color:var(--ink);font-weight:600;margin-bottom:6px;}
+  .gpa-labels{display:flex;gap:14px;margin-top:10px;}
+  .gpa-label-col{flex:1;text-align:center;font-size:10.5px;color:var(--ink-soft);}
+  .course-highlights h4{font-size:15px;font-weight:600;margin-bottom:14px;}
+  .course-tags{display:flex;flex-wrap:wrap;gap:8px;}
+  .course-tag{font-size:13px;padding:7px 13px;border:1px solid var(--line);border-radius:980px;color:var(--ink);display:flex;align-items:center;gap:6px;}
+  .course-tag b{font-weight:600;color:var(--ink-soft);}
+  .transcript-note{margin-top:26px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;}
+
+  /* ---- How I Work ---- */
+  .work-cols{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .work-col{background:var(--bg);padding:34px 28px;}
+  .work-col h4{font-size:17px;font-weight:600;letter-spacing:-0.01em;margin-bottom:14px;}
+  .work-col p{font-size:14.5px;line-height:1.65;color:var(--ink-soft);}
+  .work-col p + p{margin-top:12px;}
 
   /* ---- Certificates ---- */
   .cert-grid{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
@@ -163,11 +191,16 @@
   .foot-col a:hover{opacity:.6;}
   .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:24px;font-size:12.5px;color:var(--ink-soft);}
 
+  @media (max-width:1000px){
+    .project-grid{grid-template-columns:1fr 1fr;}
+  }
   @media (max-width:860px){
     section{padding:88px 20px;}
     .summary-box{grid-template-columns:1fr;}
     .summary-divider{display:none;}
     .edu-strip{grid-template-columns:1fr 1fr;}
+    .transcript-box{grid-template-columns:1fr;gap:40px;}
+    .work-cols{grid-template-columns:1fr;}
     .project-grid{grid-template-columns:1fr;}
     .cert-grid{grid-template-columns:1fr;}
     .skills-grid{grid-template-columns:1fr;}
@@ -198,7 +231,6 @@
       <li><a href="#story">Story</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#certificates">Certificates</a></li>
       <li><a href="#skills">Skills</a></li>
     </ul>
     <a href="#contact" class="nav-cta">Contact</a>
@@ -257,8 +289,62 @@
     </div>
   </section>
 
+  <!-- ===================== ACADEMIC TRANSCRIPT ===================== -->
+  <section id="transcript" class="section-alt">
+    <div class="wrap">
+      <div class="kicker reveal">Academic Transcript</div>
+      <h2 class="headline reveal">Three years, six semesters, one upward trend.</h2>
+      <div class="transcript-box">
+        <div class="reveal">
+          <div class="transcript-stats">
+            <div class="transcript-stat"><dt>Cumulative GPA</dt><dd>3.39 / 4.0 — Very Good</dd></div>
+            <div class="transcript-stat"><dt>Program</dt><dd>Business Information Systems</dd></div>
+            <div class="transcript-stat"><dt>Class of</dt><dd>2023 – 2026, UEH</dd></div>
+            <div class="transcript-stat"><dt>Student ID</dt><dd>31231025973</dd></div>
+          </div>
+          <div class="gpa-chart">
+            <div class="gpa-chart-label">Semester GPA (4.0 scale)</div>
+            <div class="gpa-bars">
+              <div class="gpa-bar-col"><span class="gpa-bar-val">3.50</span><div class="gpa-bar" style="height:50%;"></div></div>
+              <div class="gpa-bar-col"><span class="gpa-bar-val">3.25</span><div class="gpa-bar" style="height:25%;"></div></div>
+              <div class="gpa-bar-col"><span class="gpa-bar-val">3.16</span><div class="gpa-bar" style="height:16%;"></div></div>
+              <div class="gpa-bar-col"><span class="gpa-bar-val">3.53</span><div class="gpa-bar" style="height:53%;"></div></div>
+              <div class="gpa-bar-col"><span class="gpa-bar-val">3.38</span><div class="gpa-bar" style="height:38%;"></div></div>
+              <div class="gpa-bar-col"><span class="gpa-bar-val">3.61</span><div class="gpa-bar" style="height:61%;"></div></div>
+            </div>
+            <div class="gpa-labels">
+              <div class="gpa-label-col">Fall '23</div>
+              <div class="gpa-label-col">Spr '24</div>
+              <div class="gpa-label-col">Fall '24</div>
+              <div class="gpa-label-col">Spr '25</div>
+              <div class="gpa-label-col">Fall '25</div>
+              <div class="gpa-label-col">Spr '26</div>
+            </div>
+          </div>
+          <p class="transcript-note">Officially issued and verified by Ho Chi Minh City University of Economics (UEH), July 2026. Scale lower-bounded at 3.0 to make the semester-to-semester movement legible — the dip in year two lines up exactly with the semester I started interning full pace alongside coursework.</p>
+        </div>
+        <div class="course-highlights reveal">
+          <h4>Standout coursework</h4>
+          <div class="course-tags">
+            <span class="course-tag"><b>A+</b> Business Analysis</span>
+            <span class="course-tag"><b>A+</b> CRM</span>
+            <span class="course-tag"><b>A</b> Data Science</span>
+            <span class="course-tag"><b>A</b> Big Data & Applications</span>
+            <span class="course-tag"><b>A</b> ERP Overview</span>
+            <span class="course-tag"><b>A</b> Design Thinking</span>
+            <span class="course-tag"><b>A</b> Global SCM</span>
+            <span class="course-tag"><b>B+</b> Systems Architecture</span>
+            <span class="course-tag"><b>B+</b> Change Management</span>
+            <span class="course-tag"><b>B+</b> Systems Analysis & Design</span>
+          </div>
+          <p style="margin-top:24px;font-size:15px;line-height:1.7;color:var(--ink-soft);">Core coursework spans the full stack a technical project manager needs to move between: business analysis and process design, database and systems architecture, ERP and CRM platforms, and the data and design-thinking courses that keep a solution honest about who it's actually for.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== PERSONAL STORY ===================== -->
-  <section id="story" class="section-alt">
+  <section id="story">
     <div class="wrap">
       <div class="kicker reveal">Personal Story</div>
       <h2 class="headline reveal">The search bar that taught me what teaching could become.</h2>
@@ -269,17 +355,17 @@
   </section>
 
   <!-- ===================== ON-CAMPUS PROJECTS ===================== -->
-  <section id="projects">
+  <section id="projects" class="section-alt">
     <div class="wrap">
       <div class="kicker reveal">On-Campus Projects</div>
-      <h2 class="headline reveal">Four problems I chose to practice on before the market handed me real ones.</h2>
-      <p class="lede reveal">Click any project to open the full breakdown — context, approach, results, and what I took away from it.</p>
+      <h2 class="headline reveal">Nine problems I chose to practice on before the market handed me real ones.</h2>
+      <p class="lede reveal">Coursework, self-directed case studies, and one full-stack build for a local government office. Click any project to open the full breakdown — context, approach, results, and what I took away from it.</p>
       <div class="project-grid" id="projectGrid"></div>
     </div>
   </section>
 
   <!-- ===================== EXPERIENCE & LEADERSHIP ===================== -->
-  <section id="experience" class="section-alt">
+  <section id="experience">
     <div class="wrap">
       <div class="kicker reveal">Experience &amp; Leadership</div>
       <h2 class="headline reveal">Where the theory met people who didn't read the plan.</h2>
@@ -325,6 +411,31 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HOW I WORK ===================== -->
+  <section id="how-i-work" class="section-alt">
+    <div class="wrap">
+      <div class="kicker reveal">How I Work</div>
+      <h2 class="headline reveal">Three situations that repeat in every team, and how I handle each one.</h2>
+      <div class="work-cols reveal">
+        <div class="work-col">
+          <h4>When a new request lands</h4>
+          <p>I don't start executing the moment a request sounds clear. First question: what's the real problem behind this — if I do exactly what was asked, does it fix the root cause, or just the visible symptom?</p>
+          <p>If an approach looks like it'll create a problem downstream, I say so, with a reason and an alternative — not to be right, but because catching it early is always cheaper than catching it late.</p>
+        </div>
+        <div class="work-col">
+          <h4>When something breaks under pressure</h4>
+          <p>First move is never fixing — it's scoping: what's actually affected, what's still fine, how serious is this really. Panic usually comes from not knowing how big the problem is.</p>
+          <p>I split the problem into concrete, assigned pieces instead of leaving a team staring at one large, undivided crisis — and afterward, there's always a step asking why it happened, so it doesn't need a manual fix again.</p>
+        </div>
+        <div class="work-col">
+          <h4>When I have to learn something new fast</h4>
+          <p>Given an unfamiliar technology and two weeks to demo it, I spend the first two days understanding the problem it's meant to solve — not opening documentation. Then I read the primary source docs directly, build a rough first version, and test it against a real scenario immediately.</p>
+          <p>I know I actually understand something when I can explain it to someone non-technical in their own words. Wherever that explanation stumbles is exactly where my understanding is still thin.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -581,31 +692,31 @@
   /* ---------------- Projects data ---------------- */
   const projects = [
     {
-      tag: "Distribution Management System · Tinh Cúc Co., Ltd.",
-      title: "System analysis & enhancement proposal for a Distribution Management System",
-      teaser: "Mapping As-Is/To-Be workflows to cut order-processing errors by 15%.",
-      context: "Tinh Cúc Co., Ltd. runs distribution operations where inconsistent workflows were driving order-processing errors and warehouse inefficiency, without clear documentation of how the process actually worked end to end.",
-      approach: "Led requirement elicitation with operational stakeholders and mapped As-Is / To-Be workflows across the full distribution process, producing PRD and SRS documentation to make the proposed system behavior explicit and testable.",
-      results: "The As-Is/To-Be documentation cut order-processing errors by 15% and improved delivery and warehouse efficiency, giving the team a shared reference for how the process should run.",
-      learnings: "Hands-on practice tracking operational KPIs and coordinating cross-functional execution inside a real supply-chain context — where the plan has to survive contact with a warehouse floor, not just a slide deck."
+      tag: "Business Analysis · Distribution Management System",
+      title: "Rebuilding a distribution workflow — and proving it with a financial model",
+      teaser: "As-Is/To-Be redesign, RACI and root-cause analysis, plus an NPV/IRR case for the investment.",
+      context: "A beverage distributor serving 600+ retail accounts across central Vietnam was breaking under manual process: roughly 30 of every 100 daily orders hit an error — misentered data, mismatched inventory checks, no real-time visibility — costing the accounting team close to 200 hours a month just on fixes.",
+      approach: "Ran structured stakeholder interviews (5W1H, 5 Whys) across sales, accounting, and warehouse teams, then mapped the As-Is process with a RACI matrix and a POPIT fishbone to trace the failure to disconnected data between sales and warehouse. Modeled the To-Be workflow in BPMN with 12 use cases, 8 activity diagrams, 5 sequence diagrams, and a full ERD, then built the business case with an NPV/IRR/BCR financial model to justify the investment.",
+      results: "The redesign cut total process steps by roughly 30% (about 20 down to 14), took average order processing from 120 seconds to under 60, and — with QR-based FIFO tracking — cut inventory-count time from 15 minutes to under 10 while reducing mix-ups by 90%. The financial model held a positive NPV even under a 10%-revenue-shortfall stress test, with IRR still clearing the 12% hurdle rate.",
+      learnings: "Practice turning a fuzzy complaint ('this is too manual') into a structured root-cause diagnosis, then proving a proposed fix with numbers a finance stakeholder would actually trust — not just a diagram an engineer would."
     },
     {
-      tag: "Training Management Information System · Nam Chau English Center",
+      tag: "Systems Analysis · Training Management Information System",
       title: "Analysis and design of a Training Management Information System",
       teaser: "From stakeholder interviews to a working prototype of the training workflow.",
-      context: "Nam Chau English Center needed a structured way to manage its training operations, but no formal model existed for how students, courses, and schedules actually related to one another.",
+      context: "An English-language training center needed a structured way to manage its operations, but no formal model existed for how students, courses, and schedules actually related to one another.",
       approach: "Conducted requirement analysis through document review and stakeholder interviews, then modeled system behavior and structure using Activity Diagrams, Sequence Diagrams, Class Diagrams, and an ERD, before building a prototype to visualize the proposed workflow.",
       results: "Delivered a validated, visualized model of the proposed training management workflow that stakeholders could react to before any code was written.",
       learnings: "Direct practice translating loosely stated business requirements into structured technical design — the exact translation layer a technical project manager has to sit inside."
     },
     {
-      tag: "Data Science · Airbnb Platform",
-      title: "Identifying key determinants and predicting Superhost status",
-      teaser: "5.6M+ records, SparkSQL and K-Means, and a 0.8252 ROC-AUC early-warning model.",
-      context: "Airbnb's Superhost status is a strong signal of host quality and platform revenue, but the underlying drivers behind who earns and keeps that status weren't clearly isolated.",
-      approach: "Analyzed and segmented 5.6M+ records using SparkSQL and K-Means clustering to isolate key performance drivers, then built a classification model to flag hosts at risk of losing Superhost status.",
-      results: "Delivered an early-warning classification model with 0.8252 ROC-AUC, translating large-scale behavioral data into actionable signals for host-side revenue strategy.",
-      learnings: "Practice turning a very large, messy dataset into a decision-ready signal — the same discipline needed to keep a data-heavy product roadmap honest."
+      tag: "Big Data & Machine Learning · Airbnb Marketplace",
+      title: "Predicting Superhost status before a host loses it",
+      teaser: "279,712 listings and 5.3M+ reviews on a distributed Hadoop/Spark pipeline — 0.8252 ROC-AUC.",
+      context: "Airbnb hosts typically lose Superhost status reactively, with no early signal before it happens — a status that materially affects their visibility and revenue.",
+      approach: "Designed and ran an automated ETL pipeline on a distributed Hadoop environment, then trained a classification model with Apache Spark MLlib across 279,712 listings and 33 attributes drawn from 5.3M+ reviews, engineering features across host responsiveness, review-quality scores, and pricing-tier segments.",
+      results: "Delivered an early-warning model with 0.8252 ROC-AUC that flags hosts likely to lose Superhost status before it happens, turning a reactive problem into a preventable one. A follow-on query also found reliability of basics (Wi-Fi, cleanliness) mattered more to retained status than luxury amenities — a more actionable insight than 'add a pool.'",
+      learnings: "Direct experience with distributed data infrastructure at a scale a single machine can't handle, and with turning statistical output into a recommendation an operator can actually act on."
     },
     {
       tag: "ERP Case Study · MISA AMIS",
@@ -615,6 +726,51 @@
       approach: "Modeled two end-to-end procurement workflows via BPMN on the MISA AMIS ERP platform, self-directed, to identify process risks and bottlenecks across the procurement cycle.",
       results: "Proposed concrete fixes to streamline cross-functional efficiency, backed by a clear BPMN trace of where the process broke down.",
       learnings: "Hands-on familiarity with how ERP systems actually structure a business process, and practice reading a workflow diagram the way an operations stakeholder would."
+    },
+    {
+      tag: "Design Thinking · Mobile App Concept",
+      title: "Designing a meal-planning app for a habit people struggle to keep",
+      teaser: "Empathy-mapped 81 users to design an AI-personalized menu app — 85% satisfaction in testing.",
+      context: "People trying to eat clean in Ho Chi Minh City consistently drop the habit — not from lack of motivation, but from the daily friction of deciding what to cook with what they have.",
+      approach: "Ran semi-structured interviews and surveys with 81 users aged 18–30, synthesized the findings into an empathy map (Say–Think–Do–Feel) and a representative persona, then facilitated ideation using 10-3-5 brainstorming, SCAMPER, and a 2x2 prioritization matrix before designing wireframes and a clickable prototype in Figma featuring AI-personalized menu suggestions.",
+      results: "User testing on the prototype reached 85% satisfaction, with the clearest praise going to menu personalization and how little friction it took to plan a day of meals.",
+      learnings: "Confirmed that most 'good ideas' fail from friction, not desire — and that a persona only earns its keep when it actually changes which features get built."
+    },
+    {
+      tag: "Advanced Database · Analytics Infrastructure",
+      title: "A constellation-schema data warehouse for a fast-growing D2C retailer",
+      teaser: "Integrating ERP, CRM, and inventory data into one warehouse — cutting reporting time by 60%.",
+      context: "A direct-to-consumer apparel retailer's order, customer, and inventory systems ran independently, syncing only once a day — meaning delayed decisions and duplicated remarketing to the same customers.",
+      approach: "Designed a constellation-schema data warehouse mapping business questions to shared dimension tables (Customer, Product, Warehouse, Time) across multiple fact tables (Orders, Cart Items, Shipments, Reviews), loaded it into SQL Server, and built an OLAP cube in SSAS queried via MDX to power a drill-down Power BI dashboard.",
+      results: "Cut manual report-compilation time by 60% and surfaced a clear conversion gap by gender (5.03% male vs. 3.05% female) and by quarter (Q4 peak at 2.27%), directly informing where marketing budget should go next.",
+      learnings: "Learned that the hard part of a data warehouse isn't the schema syntax — it's correctly mapping messy business questions onto shared dimensions before a single dashboard gets built."
+    },
+    {
+      tag: "Systems Thinking · Root-Cause Analysis",
+      title: "Tracing a manufacturing workshop's output problem to its real root cause",
+      teaser: "Weighed 18 interacting operational issues to find the three actually driving underperformance.",
+      context: "A small incense-manufacturing workshop was underperforming, and the obvious explanations — slow staff, old machines — didn't hold up under closer questioning.",
+      approach: "Mapped the workshop's full input-output process and its 7 production steps, catalogued 18 interacting operational issues across labor, finance, machinery, and weather, and scored each using min-max scaling adapted from machine learning to weight severity objectively rather than by gut feeling.",
+      results: "Isolated three root causes — high humidity, high staff turnover, and unstable machinery — out of 18 candidate issues, and proposed a dehumidification system, a retention policy, and a maintenance schedule, each independently rated highly feasible by the workshop owner.",
+      learnings: "Practice separating a symptom from a root cause using systems-thinking loops (balancing, shifting-the-burden, reinforcing) instead of just fixing the most visible problem in the room."
+    },
+    {
+      tag: "Full-Stack Build · Local Government Digitalization",
+      title: "A real-time management dashboard for a local government office",
+      teaser: "Led a 17-person team to unify 7 fragmented reporting systems into one live dashboard.",
+      context: "A local commune government's administrative data was scattered across separate departments — economic affairs, party affairs, security, and administrative reform — compiled manually with no real-time visibility for leadership.",
+      approach: "Led requirement-gathering sessions directly with commune leadership, mapped a sitemap and user flow, then designed and built a centralized dashboard on PHP and MySQL with Chart.js visualizations, deployed on cPanel — directing a 17-person team split across UI/UX, database, and front-end integration.",
+      results: "Unified 7 major information systems (elections, economic/budget, digital transformation, and more) into a single interface, giving leadership a live, transparent view of budget progress, case-resolution rates, and social-welfare indicators.",
+      learnings: "First real experience running a project that was as much about people as software — breaking a 17-person team into coordinated workstreams while keeping every module on the same data model and timeline."
+    },
+    {
+      tag: "Self-Directed Case Study · Retail Analytics",
+      title: "Fixing retail's most expensive blind spot: knowing what's on the shelf",
+      teaser: "RFM analysis and a computer-vision proposal to tie stockout risk directly to revenue exposure.",
+      context: "A self-directed case study on a common retail problem: a traditional trade channel generating the majority of revenue while carrying the worst stockout rate, alongside a direct-to-consumer channel losing most customers after a single purchase.",
+      approach: "Analyzed the tension between revenue share and stockout rate across channels, then modeled customer retention with an RFM (Recency, Frequency, Monetary) framework to isolate a 'buy-once-and-vanish' pattern, and proposed a computer-vision shelf-recognition workflow alongside a 7-day automated re-engagement trigger.",
+      results: "The analysis linked a 25% stockout rate directly to a channel responsible for roughly 59% of total revenue — the single largest quantified risk in the case — and proposed a concrete retention trigger timed to the 7-day post-purchase window where drop-off was sharpest.",
+      learnings: "Practice building a business case entirely from data patterns without anyone handing me the 'right' answer — and defending a recommendation on the strength of a chart, not a hunch."
     }
   ];
 
