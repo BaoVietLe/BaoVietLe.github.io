@@ -113,7 +113,17 @@
   .modal-section p{font-size:15.5px;line-height:1.7;color:var(--ink);}
   .modal-gallery{margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
   .modal-gallery div{aspect-ratio:4/3;border-radius:10px;background:linear-gradient(155deg,#efeff1,#dcdce0);display:flex;align-items:center;justify-content:center;font-size:11.5px;color:#9a9a9e;text-align:center;padding:8px;}
+  .modal-gallery img{width:100%;height:100%;object-fit:cover;border-radius:10px;cursor:zoom-in;}
   body.modal-lock{overflow:hidden;}
+
+  /* ---- Lightbox (image zoom) ---- */
+  body img:not(.nav-mark img){cursor:zoom-in;}
+  .lightbox-overlay{position:fixed;inset:0;z-index:700;background:rgba(0,0,0,0.86);opacity:0;pointer-events:none;transition:opacity .25s ease;display:flex;align-items:center;justify-content:center;padding:40px;}
+  .lightbox-overlay.open{opacity:1;pointer-events:auto;}
+  .lightbox-overlay img{max-width:90vw;max-height:88vh;width:auto;height:auto;object-fit:contain;border-radius:8px;cursor:zoom-out;transform:scale(.96);transition:transform .25s ease;box-shadow:0 30px 80px -20px rgba(0,0,0,0.6);}
+  .lightbox-overlay.open img{transform:scale(1);}
+  .lightbox-close{position:absolute;top:22px;right:26px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.12);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:20px;transition:background .2s ease;}
+  .lightbox-close:hover{background:rgba(255,255,255,.22);}
 
   /* ---- Timeline (Experience & Leadership) ---- */
   .timeline{margin-top:56px;}
@@ -613,6 +623,12 @@
     </div>
   </div>
 
+  <!-- ===================== IMAGE LIGHTBOX ===================== -->
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Đóng">&times;</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
 <script>
   /* ---------------- Nav scroll border ---------------- */
   const nav = document.getElementById('nav');
@@ -1031,7 +1047,40 @@
   }
   modalClose.addEventListener('click', closeProject);
   modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) closeProject(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeProject(); });
+
+  /* ---------------- Image lightbox (zoom to full size) ---------------- */
+  const lightboxOverlay = document.getElementById('lightboxOverlay');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.getElementById('lightboxClose');
+
+  function openLightbox(src, alt) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    lightboxOverlay.classList.add('open');
+    document.body.classList.add('modal-lock');
+  }
+  function closeLightbox() {
+    lightboxOverlay.classList.remove('open');
+    document.body.classList.remove('modal-lock');
+    lightboxImg.src = '';
+  }
+
+  // Delegated listener: catches every <img> on the page, including ones
+  // added later (e.g. project gallery images), except the tiny nav logo.
+  document.addEventListener('click', (e) => {
+    const img = e.target.closest('img');
+    if (!img || img.closest('.nav-mark') || img.closest('.lightbox-overlay')) return;
+    openLightbox(img.currentSrc || img.src, img.alt);
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxOverlay.addEventListener('click', (e) => { if (e.target === lightboxOverlay) closeLightbox(); });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    if (lightboxOverlay.classList.contains('open')) closeLightbox();
+    else closeProject();
+  });
 </script>
 
 </body>
