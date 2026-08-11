@@ -272,7 +272,7 @@
       </div>
       <div class="contact-item">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.4"/><path d="M12 3a15 15 0 000 18M12 3a15 15 0 010 18M3 12h18" stroke="currentColor" stroke-width="1.2"/></svg>
-        <a href="https://baoleviet.github.io" target="_blank" rel="noopener">baoleviet.github.io</a>
+        <a href="https://baovietle.github.io" target="_blank" rel="noopener">baovietle.github.io</a>
       </div>
       <div class="contact-item">GitHub <a href="https://github.com/BaoVietLe" target="_blank" rel="noopener">BaoVietLe</a></div>
       <div class="contact-item">LinkedIn <a href="https://linkedin.com/in/baovietle1606" target="_blank" rel="noopener">baovietle1606</a></div>
@@ -333,7 +333,7 @@
               <div class="gpa-label-col">Spr '26</div>
             </div>
           </div>
-          <p class="transcript-note">Officially issued and verified by Ho Chi Minh City University of Economics (UEH), July 2026. Scale lower-bounded at 3.0 to make the semester-to-semester movement legible — the dip in year two lines up exactly with the semester I started interning full pace alongside coursework.</p>
+          <p class="transcript-note">Officially issued and verified by Ho Chi Minh City University of Economics (UEH), July 2026. Scale lower-bounded at 3.0 to make the semester-to-semester movement legible, which is the dip in year two lines up exactly with the semester I started interning full pace alongside coursework.</p>
         </div>
         <div class="course-highlights reveal">
           <h4>Standout coursework</h4>
@@ -443,7 +443,7 @@
     <div class="wrap">
       <div class="kicker reveal">Youth Union – Student Association Journey</div>
       <h2 class="headline reveal">Six traits a long extracurricular run built into how I work.</h2>
-      <p class="lede reveal">Alongside coursework, years inside UEH's Youth Union and Student Association became a second training ground — for project ownership, initiative, and staying steady under pressure.</p>
+      <p class="lede reveal">Alongside coursework, years inside UEH's Youth Union and Student Association became a second training ground; for project ownership, initiative, and staying steady under pressure.</p>
 
       <div class="story-list reveal" id="doanhoiList"></div>
     </div>
@@ -999,26 +999,30 @@
       demoUrl: ""
     }
   ];
-
+  const projectsClickable = false;
   const projectGrid = document.getElementById('projectGrid');
   const modalOverlay = document.getElementById('modalOverlay');
   const modalContent = document.getElementById('modalContent');
   const modalClose = document.getElementById('modalClose');
 
   projects.forEach((p, i) => {
-    const card = document.createElement('div');
-    card.className = 'project-card reveal';
-    card.innerHTML = `
-      <div class="project-tag">${p.tag}</div>
-      <h3>${p.title}</h3>
-      <p>${p.teaser}</p>
-      <span class="project-open">Xem chi tiết
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </span>`;
+  const card = document.createElement('div');
+  card.className = 'project-card reveal';
+  card.innerHTML = `
+    <div class="project-tag">${p.tag}</div>
+    <h3>${p.title}</h3>
+    <p>${p.teaser}</p>
+    ${projectsClickable ? `<span class="project-open">Xem chi tiết
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>` : ''}`;
+  if (projectsClickable) {
     card.addEventListener('click', () => openProject(i));
-    projectGrid.appendChild(card);
-    io.observe(card);
-  });
+  } else {
+    card.style.cursor = 'default';
+  }
+  projectGrid.appendChild(card);
+  io.observe(card);
+});
 
   function openProject(i) {
     const p = projects[i];
