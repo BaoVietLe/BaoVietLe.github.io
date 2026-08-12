@@ -84,11 +84,12 @@
   .story-icon{font-size:22px;font-weight:400;color:var(--ink-soft);flex-shrink:0;width:28px;text-align:center;transition:transform .2s ease;}
   .story-panel{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.16,1,.3,1);}
   .story-panel-inner{padding:0 4px 34px;max-width:760px;}
-  .story-panel-inner p{font-size:16px;line-height:1.75;color:var(--ink);margin-bottom:16px;}
+  .story-panel-inner p{font-size:16px;line-height:1.75;color:var(--ink);margin-bottom:16px;text-align:justify;}
   .story-panel-inner p:last-child{margin-bottom:0;}
   .story-item.open .story-icon{transform:rotate(180deg);}
-  .story-image{width:100%;max-width:760px;border-radius:12px;overflow:hidden;margin-bottom:22px;background:var(--bg-alt);}
+  .story-image{width:220px;max-width:40%;border-radius:12px;overflow:hidden;margin:0 0 16px 22px;background:var(--bg-alt);float:right;shape-outside:margin-box;}
   .story-image img{width:100%;height:auto;object-fit:cover;display:block;}
+  .story-panel-inner::after{content:"";display:block;clear:both;}
 
   /* ---- Projects ---- */
   .project-grid{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
@@ -96,7 +97,7 @@
   .project-card:hover{background:var(--bg-alt);}
   .project-tag{font-size:12px;color:var(--ink-soft);margin-bottom:16px;}
   .project-card h3{font-size:22px;font-weight:600;letter-spacing:-0.015em;line-height:1.3;}
-  .project-card p{margin-top:14px;font-size:14.5px;color:var(--ink-soft);line-height:1.6;flex-grow:1;}
+  .project-card p{margin-top:14px;font-size:14.5px;color:var(--ink-soft);line-height:1.6;flex-grow:1;text-align:justify;}
   .project-open{margin-top:20px;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;}
   .project-open svg{transition:transform .2s ease;}
   .project-card:hover .project-open svg{transform:translateX(4px);}
@@ -112,7 +113,7 @@
   .modal-card h2{font-size:clamp(24px,3.4vw,34px);font-weight:600;letter-spacing:-0.02em;line-height:1.2;max-width:560px;}
   .modal-section{margin-top:32px;}
   .modal-section h4{font-size:13px;font-weight:600;color:var(--ink-soft);letter-spacing:.02em;margin-bottom:10px;}
-  .modal-section p{font-size:15.5px;line-height:1.7;color:var(--ink);}
+  .modal-section p{font-size:15.5px;line-height:1.7;color:var(--ink);text-align:justify;}
   .modal-gallery{margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
   .modal-gallery div{aspect-ratio:4/3;border-radius:10px;background:linear-gradient(155deg,#efeff1,#dcdce0);display:flex;align-items:center;justify-content:center;font-size:11.5px;color:#9a9a9e;text-align:center;padding:8px;}
   .modal-gallery img{width:100%;height:100%;object-fit:cover;border-radius:10px;cursor:zoom-in;}
@@ -135,7 +136,7 @@
   .tl-date{font-size:13px;color:var(--ink-soft);}
   .tl-role{font-size:19px;font-weight:600;letter-spacing:-0.015em;}
   .tl-org{font-size:14px;color:var(--ink-soft);margin-top:2px;}
-  .tl-desc{margin-top:12px;font-size:15px;line-height:1.65;color:var(--ink);max-width:640px;}
+  .tl-desc{margin-top:12px;font-size:15px;line-height:1.65;color:var(--ink);max-width:640px;text-align:justify;}
   .tl-badge{display:inline-block;font-size:11px;padding:3px 9px;border-radius:980px;background:var(--bg-alt);color:var(--ink-soft);margin-top:12px;}
 
   /* ---- Transcript ---- */
@@ -157,13 +158,13 @@
   .course-tags{display:flex;flex-wrap:wrap;gap:8px;}
   .course-tag{font-size:13px;padding:7px 13px;border:1px solid var(--line);border-radius:980px;color:var(--ink);display:flex;align-items:center;gap:6px;}
   .course-tag b{font-weight:600;color:var(--ink-soft);}
-  .transcript-note{margin-top:26px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;}
+  .transcript-note{margin-top:26px;font-size:12.5px;color:var(--ink-soft);line-height:1.6;text-align:justify;}
 
   /* ---- How I Work ---- */
   .work-cols{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
   .work-col{background:var(--bg);padding:34px 28px;}
   .work-col h4{font-size:17px;font-weight:600;letter-spacing:-0.01em;margin-bottom:14px;}
-  .work-col p{font-size:14.5px;line-height:1.65;color:var(--ink-soft);}
+  .work-col p{font-size:14.5px;line-height:1.65;color:var(--ink-soft);text-align:justify;}
   .work-col p + p{margin-top:12px;}
 
   /* ---- Certificates ---- */
@@ -181,7 +182,7 @@
   .skill-tag{font-size:13px;padding:7px 13px;border:1px solid var(--line);border-radius:980px;color:var(--ink);}
   .interest-block{margin-top:64px;padding-top:48px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:48px;}
   .interest-block h4{font-size:15px;font-weight:600;margin-bottom:12px;}
-  .interest-block p{font-size:15px;line-height:1.7;color:var(--ink-soft);}
+  .interest-block p{font-size:15px;line-height:1.7;color:var(--ink-soft);text-align:justify;}
 
   /* ---- Dark CTA ---- */
   .cta-dark{background:var(--bg-dark);color:var(--white);text-align:center;}
@@ -224,6 +225,7 @@
     .modal-gallery{grid-template-columns:repeat(2,1fr);}
     .foot-top{flex-direction:column;}
     .foot-cols{gap:40px;}
+    .story-image{width:150px;max-width:45%;margin:0 0 14px 16px;}
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -352,7 +354,7 @@
             <span class="course-tag"><b>B+</b> Change Management</span>
             <span class="course-tag"><b>B+</b> Systems Analysis & Design</span>
           </div>
-          <p style="margin-top:24px;font-size:15px;line-height:1.7;color:var(--ink-soft);">Core coursework spans the full stack a technical project manager needs to move between: business analysis and process design, database and systems architecture, ERP and CRM platforms, and the data and design-thinking courses that keep a solution honest about who it's actually for.</p>
+          <p style="margin-top:24px;font-size:15px;line-height:1.7;color:var(--ink-soft);text-align:justify;">Core coursework spans the full stack a technical project manager needs to move between: business analysis and process design, database and systems architecture, ERP and CRM platforms, and the data and design-thinking courses that keep a solution honest about who it's actually for.</p>
         </div>
       </div>
     </div>
@@ -1033,7 +1035,7 @@
       title: "The Bunny: Social Media Platform for Education Engagement",
       teaser: "A full-stack web platform that turns studying into a connected, gamified experience, built to help 2,500+ students in  at a university find study partners, share course materials, and challenge each other in real time.",
       context: "As part of the Web Application Development course, our 4-person team identified a gap in how students at our university connected around coursework: no unified space combined document sharing, study-group formation, and peer accountability. We set out to design and build The Bunny end-to-end — from requirements gathering and system architecture to database design, front-end interfaces, and deployment, simulating the kind of cross-functional software engineering work found in a real product team.",
-      approach: "Built the front-end with HTML, CSS3, and JavaScript (jQuery for DOM manipulation and event handling), using Bootstrap for a responsive UI consistent across desktop and mobile. Implemented the backend in PHP with an MVC-inspired structure, handling business logic, authentication, and 27 relational database tables in MySQL, connected via PDO. Modeled the system with Use Case diagrams, a Business Function Diagram, Class Diagrams, and an Entity Relationship Diagram to structure five core modules; Account & Profile Management, Social Interaction, Learning Community, Practice & Battle (gamification), and System Administration. Used AJAX for non-blocking updates (real-time 1v1 battle quiz rooms, live messaging) to improve user experience without full page reloads. Applied CSRF tokens and input sanitization to mitigate XSS, used SQL transactions with rollback handling for data integrity, and implemented the Post-Redirect-Get pattern to prevent duplicate submissions. Managed version control and code review through Git/GitHub across the team, tracked via individual commit history, and deployed for testing using XAMPP locally and a public host (ProFreeHost) with Hamachi VPN for remote development access. For more details: visit https://github.com/HoQuynhNga/MangXaHoiHocTap_The_Bunny",
+      approach: "Built the front-end with HTML, CSS3, and JavaScript (jQuery for DOM manipulation and event handling), using Bootstrap for a responsive UI consistent across desktop and mobile. Implemented the backend in PHP with an MVC-inspired structure, handling business logic, authentication, and 27 relational database tables in MySQL, connected via PDO. Modeled the system with Use Case diagrams, a Business Function Diagram, Class Diagrams, and an Entity Relationship Diagram to structure five core modules; Account & Profile Management, Social Interaction, Learning Community, Practice & Battle (gamification), and System Administration. Used AJAX for non-blocking updates (real-time 1v1 battle quiz rooms, live messaging) to improve user experience without full page reloads. Applied CSRF tokens and input sanitization to mitigate XSS, used SQL transactions with rollback handling for data integrity, and implemented the Post-Redirect-Get pattern to prevent duplicate submissions. Managed version control and code review through Git/GitHub across the team, tracked via individual commit history, and deployed for testing using XAMPP locally and a public host (ProFreeHost) with Hamachi VPN for remote development access. For more details: visit https://github.com/HoQuynhNga/MangXaHoiHocTap_The_Bunny",
       results: "Delivered a fully functional social platform with 8 major feature areas: news feed, personal profiles, real-time messaging, study groups, events, document repository, notifications, and a live academic battle/quiz system with scoring and leaderboards. Designed and normalized a 27-table relational database supporting complex relationships (friendships, conversations, battles, reports, notifications) with triggers and stored procedures for automated workflows. Completed the project on schedule with even distribution of technical ownership across all 4 team members (validated by commit history).",
       learnings: "Building The Bunny gave me hands-on experience with the full software development lifecycle, which is from system analysis and database design to secure, scalable implementation. I learned how architectural decisions (like separating business logic into repository files, e.g., inbox_repository.php) directly impact maintainability as feature scope grows. Working through real production concerns, transaction safety, race conditions in duplicate conversations, and preventing spam via conditional logic, deepened my appreciation for defensive engineering, not just making it work. I also learned the value of clear task division and Git discipline in a team setting, which mirrors how larger engineering orgs stay coordinated on shared codebases.",
       demoUrl: "https://thebunny-nhom10-ueh.unaux.com/"
