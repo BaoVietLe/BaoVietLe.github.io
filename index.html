@@ -1123,6 +1123,52 @@
     if (lightboxOverlay.classList.contains('open')) closeLightbox();
     else closeProject();
   });
+  /* ---------------- Missing-image fallback ---------------- */
+  // Whenever an <img> fails to load (e.g. the file doesn't exist yet),
+  // hide its placeholder wrapper instead of showing a broken-image icon.
+  // Pure display logic only — no text/data content is touched.
+  document.addEventListener('error', (e) => {
+    const img = e.target;
+    if (!img || img.tagName !== 'IMG') return;
+ 
+    // Nav logo avatar (tiny circular image next to the site name)
+    const navMark = img.closest('.nav-mark');
+    if (navMark) {
+      const navAvatar = img.parentElement;
+      if (navAvatar) navAvatar.style.display = 'none';
+      return;
+    }
+ 
+    // Hero avatar
+    const heroAvatar = img.closest('.avatar');
+    if (heroAvatar) {
+      heroAvatar.style.display = 'none';
+      return;
+    }
+ 
+    // Story / How I Think / Youth Union accordion cover images
+    const storyImage = img.closest('.story-image');
+    if (storyImage) {
+      storyImage.style.display = 'none';
+      return;
+    }
+ 
+    // Project modal gallery thumbnails
+    const galleryFigure = img.closest('.modal-gallery figure');
+    if (galleryFigure) {
+      galleryFigure.style.display = 'none';
+      return;
+    }
+ 
+    // Lightbox (zoomed) image — close it rather than show a broken icon
+    if (img.closest('.lightbox-overlay')) {
+      closeLightbox();
+      return;
+    }
+ 
+    // Fallback: hide the image itself
+    img.style.display = 'none';
+  }, true); // capture phase — the 'error' event does not bubble
 </script>
 
 </body>
