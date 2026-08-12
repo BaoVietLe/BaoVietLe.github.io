@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Năm Châu Center</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Hiệu ứng gradient động */
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .animated-gradient {
+      background-image:url('Group 648.png');
+      background-size: 300% 300%;
+      animation: gradientShift 8s ease infinite;
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-800">
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center px-8 py-4 bg-white shadow-sm">
+    <div class="flex items-center space-x-2">
+      <img src="https://blog.logomyway.com/wp-content/uploads/2021/09/hogwarts-logo-transparent.jpg" alt="Logo" class="w-6 h-6">
+      <h1 class="text-lg font-bold text-blue-700">NĂM CHÂU CENTER</h1>
+    </div>
+    <nav class="flex items-center space-x-8 text-sm text-gray-600">
+      <a href="developing.html" class="hover:text-blue-700">Về chúng tôi</a>
+      <a href="developing.html" class="hover:text-blue-700">Tính năng</a>
+      <a href="developing.html" class="hover:text-blue-700">Bài viết</a>
+      <a href="developing.html" class="hover:text-blue-700">Liên hệ</a>
+      <a href="developing.html" class="hover:text-blue-700">Hỗ trợ học viên</a>
+      <a href="login.php" class="bg-white-100 hover:bg-orange-600 hover:text-black px-4 py-2 rounded-full text-sm font-semibold transition">
+        Đăng nhập
+      </a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+<section class="animated-gradient text-black flex flex-col md:flex-row items-center justify-center md:justify-between px-8 md:px-16 h-[calc(100vh-80px)] overflow-hidden">
+  <div class="max-w-xl space-y-6 md:space-y-8">
+    <p class="uppercase tracking-wide text-base md:text-lg text-black-100">Hello Your World</p>
+<h2 class="text-5xl md:text-6xl font-bold leading-tight text-[#3F1822]">
+  Trở thành 
+  <span class="text-5xl md:text-6xl font-bold leading-tight text-[#3F1822] underline decoration-4">Học viên</span><br>
+  Siêu cấp chỉ với <span class="text-5xl md:text-6xl font-bold leading-tight text-[#3F1822]">NĂM CHÂU</span>
+</h2>
+    <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-6 pt-6">
+      <a href="login.php" class="bg-blue-600 hover:bg-blue-700 text-black font-semibold px-8 py-4 rounded-full shadow-lg text-lg transition">
+        Đăng ký khóa học
+      </a>
+      <button class="flex items-center text-black hover:underline space-x-2">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5">
+    <path d="M8 5v14l11-7z"/>
+  </svg>
+  <span>Xem video về trung tâm</span>
+</button>
+    </div>
+  </div>
+
+  <div class="relative mt-10 md:mt-0">
+    <img src="Group 2052.png"
+         alt="Cô gái học viên"
+         class="w-[380px] md:w-[440px] rounded-lg shadow-2xl transition-transform duration-500 hover:scale-105">
+    <div class="absolute bottom-6 right-6 bg-white text-gray-800 px-5 py-3 rounded-xl shadow-xl flex items-center space-x-2">
+      <span class="font-bold text-xl">4.9</span>
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-7 h-7 rounded-full">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-7 h-7 rounded-full">
+      <img src="https://randomuser.me/api/portraits/women/65.jpg" class="w-7 h-7 rounded-full">
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="bg-white py-8 flex justify-center items-center space-x-10 opacity-80">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Slack_Icon.png" 
+       class="h-10 w-auto object-contain" alt="Slack">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/Logo_UEH_xanh.png" 
+       class="h-10 w-auto object-contain" alt="UEH">
+  <img src="https://scontent.fsgn2-9.fna.fbcdn.net/v/t39.30808-6/480829222_1052503500252819_4777798687274876781_n.jpg?stp=dst-jpg_s552x414_tt6&_nc_cat=106&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeE-ZdEiMMNkr-nzWqkRQ9Ed4XHtcPO-Otbhce1w87461ttvjhsqFqOF-0D2NWrU3pr92iV-due9qLNv3OWLweE5&_nc_ohc=XqhK1SXoRkQQ7kNvwG2CRdP&_nc_oc=AdnbaiJmNP6hL-EEbjVTqJOxaduGBKEGYRvJnzT7G_JOrM3trMm-X3LMhh7BCVS4WxM&_nc_zt=23&_nc_ht=scontent.fsgn2-9.fna&_nc_gid=oelYoqQLrK2S44JzOf5J5Q&oh=00_AffXVTnTvNvHQD75qwq3k5fkX6X6T4jzPbmQifBhzsCkMA&oe=68FFB036" 
+       class="h-10 w-auto object-contain rounded-md" alt="Zoover">
+</section>
+
+ <!-- WHY CHOOSE US -->
+<section class="bg-indigo-50 py-16 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between">
+  <img src="Group 2072.png" 
+       class="w-80 md:w-[480px] rounded-xl shadow-2xl mb-8 md:mb-0 transition-transform duration-500 hover:scale-105" 
+       alt="Học viên">
+  
+  <div class="max-w-lg space-y-4 md:pl-10">
+    <h3 class="text-orange-600 font-bold text-sm uppercase tracking-wide">TẠI SAO CHỌN CHÚNG TÔI</h3>
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 leading-tight">
+      NĂM CHÂU CENTER - NƠI HÓA MƠ THÀNH THỰC
+    </h2>
+    <ul class="space-y-2 text-gray-600 text-base">
+      <li>✔ 150+ khóa học đủ cấp độ</li>
+      <li>✔ 300+ đầu giáo trình được kiểm nghiệm thường xuyên</li>
+      <li>✔ 50+ đội ngũ giáo viên tận tâm với nghề giáo</li>
+    </ul>
+    <a href="login.php" 
+       class="inline-block mt-6 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold shadow-md transition">
+      Trở Thành Học Viên Năm Châu
+    </a>
+  </div>
+</section>
+
+
+  <!-- COURSES GRID -->
+  <section class="py-16 bg-white px-8 md:px-20 grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-sm text-gray-bold-700">
+    <div class="border rounded-xl p-4 shadow hover:shadow-lg transition">
+      <img src="https://down-vn.img.susercontent.com/file/vn-11134207-820l4-meuppkycsc1zff" class="rounded-lg mb-4">
+      <p>Trở thành đơn vị phân phối hàng đầu cho sách Let’s Go tại Việt Nam</p>
+    </div>
+    <div class="border rounded-xl p-4 shadow hover:shadow-lg transition">
+      <img src="https://stepup.edu.vn/wp-content/uploads/2020/11/phan-mem-dich-tieng-anh-6.jpg" class="rounded-lg mb-4">
+      <p>Hỗ trợ học viên dịch thuật tài liệu IT</p>
+    </div>
+     <div class="border rounded-xl p-4 shadow hover:shadow-lg transition">
+      <img src="https://liveenglish.vn/wp-content/uploads/2022/09/tron-bo-tiny-talk-1-2-3-aland-cambridge-1.jpg" class="rounded-lg mb-4">
+      <p>Là đơn vị kiểm chứng ngữ pháp cho sách Tiny Talk</p>
+    </div>
+    <div class="border rounded-xl p-4 shadow hover:shadow-lg transition">
+      <img src="https://media.clipchamp.com/clipchamp/1024/t4ykLaVX82b2o1AX1XiYl" class="rounded-lg mb-4">
+      <p>Hỗ trợ biên soạn kịch bản Tiếng Anh cho các KOLs</p>
+    </div>
+    <div class="border rounded-xl p-4 shadow hover:shadow-lg transition">
+      <img src="https://cbs-xaydung.vn/wp-content/uploads/du-an-trung-tam-anh-ngu-AEG-chi-nhanh-quan-7-CBS-Viet-Nam-03.jpg" class="rounded-lg mb-4">
+      <p>Là trung tâm đạt chất lượng cao trong giảng dạy (2025 by Geometrics)</p>
+    </div>
+       <div class="border rounded-xl p-4 shadow hover:shadow-lg transition">
+      <img src="https://static-assets.prepcdn.com/content-management-system/khoa_hoc_tieng_anh_giao_tiep_88f6070099.jpg" class="rounded-lg mb-4">
+      <p>Xem thêm về khoá học tại Năm Châu</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="bg-indigo-50 py-20 text-center relative">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/World_map_dots.svg" class="mx-auto opacity-20 mb-8 w-2/3">
+    <h3 class="font-bold text-xl mb-6">CẢM NGHĨ HỌC VIÊN</h3>
+    <div class="bg-gradient-to-r from-blue-600 to-pink-500 text-white inline-block rounded-xl p-8 shadow-lg max-w-xl">
+      <p class="italic mb-4">“Em yêu trường em với bao bạn thân, và cô giáo hiền như yêu quê hương. Cắp sách đến trường trong muôn vàn yêu thương hệ hệ.”</p>
+      <div class="flex items-center justify-center space-x-3">
+        <img src="https://randomuser.me/api/portraits/men/50.jpg" class="w-10 h-10 rounded-full border-2 border-white">
+        <div>
+          <p class="font-semibold">Nguyễn Khánh Hoàng</p>
+          <p class="text-sm text-blue-100">IELTS 7.5</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-blue-900 text-blue-100 text-sm py-6 text-center">
+    <p><span class="italic text-blue-300">PEBISNIS</span> ULUNG.</p>
+  </footer>
+
+</body>
+</html>
