@@ -87,6 +87,8 @@
   .story-panel-inner p{font-size:16px;line-height:1.75;color:var(--ink);margin-bottom:16px;}
   .story-panel-inner p:last-child{margin-bottom:0;}
   .story-item.open .story-icon{transform:rotate(180deg);}
+  .story-image{width:100%;max-width:760px;border-radius:12px;overflow:hidden;margin-bottom:22px;background:var(--bg-alt);}
+  .story-image img{width:100%;height:auto;object-fit:cover;display:block;}
 
   /* ---- Projects ---- */
   .project-grid{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
@@ -114,6 +116,7 @@
   .modal-gallery{margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
   .modal-gallery div{aspect-ratio:4/3;border-radius:10px;background:linear-gradient(155deg,#efeff1,#dcdce0);display:flex;align-items:center;justify-content:center;font-size:11.5px;color:#9a9a9e;text-align:center;padding:8px;}
   .modal-gallery img{width:100%;height:100%;object-fit:cover;border-radius:10px;cursor:zoom-in;}
+  .modal-gallery figure{margin:0;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:linear-gradient(155deg,#efeff1,#dcdce0);}
   body.modal-lock{overflow:hidden;}
 
   /* ---- Lightbox (image zoom) ---- */
@@ -733,7 +736,10 @@
         <span class="story-icon">+</span>
       </button>
       <div class="story-panel">
-        <div class="story-panel-inner">${s.body.map(p => `<p>${p}</p>`).join('')}</div>
+        <div class="story-panel-inner">
+          <div class="story-image"><img src="img/story-${i+1}.jpg" alt="${s.title}" loading="lazy"></div>
+          ${s.body.map(p => `<p>${p}</p>`).join('')}
+        </div>
       </div>`;
     storyList.appendChild(item);
 
@@ -813,7 +819,10 @@
         <span class="story-icon">+</span>
       </button>
       <div class="story-panel">
-        <div class="story-panel-inner">${s.body.map(p => `<p>${p}</p>`).join('')}</div>
+        <div class="story-panel-inner">
+          <div class="story-image"><img src="img/learn-${i+1}.jpg" alt="${s.title}" loading="lazy"></div>
+          ${s.body.map(p => `<p>${p}</p>`).join('')}
+        </div>
       </div>`;
     learnList.appendChild(item);
 
@@ -898,7 +907,10 @@
         <span class="story-icon">+</span>
       </button>
       <div class="story-panel">
-        <div class="story-panel-inner">${s.body.map(p => `<p>${p}</p>`).join('')}</div>
+        <div class="story-panel-inner">
+          <div class="story-image"><img src="img/doanhoi-${i+1}.jpg" alt="${s.title}" loading="lazy"></div>
+          ${s.body.map(p => `<p>${p}</p>`).join('')}
+        </div>
       </div>`;
     doanhoiList.appendChild(item);
 
@@ -1053,6 +1065,9 @@
 
   function openProject(i) {
     const p = projects[i];
+    const galleryImgs = [1,2,3].map(n =>
+      `<figure><img src="img/project-${i+1}-${n}.jpg" alt="${p.title} — image ${n}" loading="lazy"></figure>`
+    ).join('');
     modalContent.innerHTML = `
       <div class="modal-tag">${p.tag}</div>
       <h2>${p.title}</h2>
@@ -1062,11 +1077,7 @@
       <div class="modal-section"><h4>What I really learn from it</h4><p>${p.learnings}</p></div>
       <div class="modal-section">
         <h4>Some actual works related</h4>
-        <div class="modal-gallery">
-          <div>Process diagram</div>
-          <div>Documentation excerpt</div>
-          <div>Prototype / output</div>
-        </div>
+        <div class="modal-gallery">${galleryImgs}</div>
       </div>
       ${p.demoUrl ? `<div class="modal-section"><a class="btn primary" href="${p.demoUrl}" target="_blank" rel="noopener noreferrer">Xem demo trực tiếp →</a></div>` : ''}`;
     modalOverlay.classList.add('open');
